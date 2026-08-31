@@ -1,3 +1,0 @@
-# Documentation
-
-Published by codedocs.

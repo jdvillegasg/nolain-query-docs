@@ -1,0 +1,2189 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../SYSTEM_PHILOSOPHY/">
+      
+      
+        <link rel="next" href="../cloud_api-app-generation-plans-config-README/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Telemetry - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#telemetry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Telemetry
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BILLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_DEV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAG Connection Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query LLM costs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_ARCHITECUTRE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Celery worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-lifecycle-job_statejob_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job lifecycle (job_state:{job_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline status values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-and-artifact-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan and artifact scoreboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-and-attempt-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retry and attempt counters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-and-latency-totals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token and latency totals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-attempt-diagnostics-generation_attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-attempt diagnostics (generation_attempts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-attempt diagnostics (generation_attempts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields-written-at-invoke-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields written at invoke time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields-added-after-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields added after preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-billing-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job billing scoreboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery-result-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery result backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logs-worker-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs (worker stdout)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-api-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud API process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud API process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health (GET /health)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intent classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-session-conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation session (conversation:{session_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-poll-get-apiv1get_task_statustask_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status poll (GET /api/v1/get_task_status/{task_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-engine-and-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local engine and desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supabase-credit-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase credit ledger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-not-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read a job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-of-truth-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source-of-truth map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_api-app-generation-plans-config-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desktop_app-frontend-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tauri + React + Typescript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nolainquery-website-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Celery worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-lifecycle-job_statejob_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job lifecycle (job_state:{job_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline status values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-and-artifact-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan and artifact scoreboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry-and-attempt-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retry and attempt counters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-and-latency-totals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token and latency totals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-attempt-diagnostics-generation_attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-attempt diagnostics (generation_attempts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-attempt diagnostics (generation_attempts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fields-written-at-invoke-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields written at invoke time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fields-added-after-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fields added after preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-billing-scoreboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job billing scoreboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celery-result-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Celery result backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-logs-worker-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs (worker stdout)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-api-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud API process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud API process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health (GET /health)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intent classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-session-conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation session (conversation:{session_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-poll-get-apiv1get_task_statustask_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status poll (GET /api/v1/get_task_status/{task_id})
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-engine-and-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local engine and desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supabase-credit-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase credit ledger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-not-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read a job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-of-truth-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source-of-truth map
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="telemetry">Telemetry</h1>
+<p>This document is the catalog of <strong>observability the product actually emits</strong>: job progress, per-attempt generation diagnostics, token and latency totals, credit receipts, conversation session state, health pings, and structured logs.</p>
+<p>There is <strong>no</strong> OpenTelemetry SDK, Langfuse, Prometheus, Flower, Sentry, or third-party APM. Celery <code>task_send_sent_event</code> / Flower event streaming is not enabled. What exists is first-party state in Redis, a credit ledger in Supabase, Celery’s result backend, and Python logs.</p>
+<p>Related docs: <a href="../SYSTEM_ARCHITECUTRE/">SYSTEM_ARCHITECUTRE.md</a> (pipeline), <a href="../CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a> (chat loop), <a href="../BILLING/">BILLING.md</a> (credits), <a href="../CLOUD_API_USAGE/">CLOUD_API_USAGE.md</a> (status payload).</p>
+<hr />
+<h2 id="processes">Processes</h2>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>How it runs (dev)</th>
+<th>What it emits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cloud API</strong> (FastAPI / Uvicorn, port 8000)</td>
+<td><code>scripts/launch-cloud-dev.sh</code></td>
+<td>HTTP health, conversation session Redis, classifier logs, per-call credit charges <strong>without</strong> a job id, status polling surface</td>
+</tr>
+<tr>
+<td><strong>Celery worker</strong> (<code>data_query_tasks</code>)</td>
+<td>same launcher: <code>celery -A app.core.celery_app worker --loglevel=info</code></td>
+<td>Redis <code>job_state:{job_id}</code>, Celery result backend, structured attempt logs, per-call credit charges <strong>with</strong> a job id</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>Docker from the launcher</td>
+<td>Job state (1 h TTL), conversation sessions (24 h TTL), Celery broker + result backend</td>
+</tr>
+<tr>
+<td><strong>Supabase</strong></td>
+<td>hosted</td>
+<td>Credit balance + <code>credit_balance_ledger_nolain_query</code> receipts</td>
+</tr>
+<tr>
+<td><strong>Local Python engine</strong> (port 8001)</td>
+<td><code>launch.sh</code></td>
+<td>Execution results posted back to the Cloud API; no generation telemetry of its own</td>
+</tr>
+<tr>
+<td><strong>Desktop (Tauri)</strong></td>
+<td><code>launch.sh</code></td>
+<td>Polls job status; posts <code>/conversation/result</code>; does not persist worker diagnostics locally</td>
+</tr>
+</tbody>
+</table>
+<p>OpenRouter is the LLM gateway. Token counts and <code>finish_reason</code> come from LangChain <code>AIMessage.usage_metadata</code> / <code>response_metadata</code> after each invoke. The app does not scrape OpenRouter’s dashboard.</p>
+<hr />
+<h2 id="stores">Stores</h2>
+<pre><code class="language-text">Celery worker / Cloud API
+  ├─ Redis  job_state:{job_id}          1 hour   running scoreboard for one generation job
+  ├─ Redis  conversation:{session_id} 24 hours  chat thread, last job, exec-repair history
+  ├─ Redis  celery-as-broker/backend    Celery task metadata (execution_status)
+  ├─ Redis  job_charge:{job_id}        unused today (legacy settlement lock)
+  ├─ stdout logs                       pandas_generation_attempt, pandas_attempt_outcome, …
+  └─ Supabase ledger                   durable credit receipts (event_type=llm_call)
+</code></pre>
+<p><code>GET /api/v1/get_task_status/{task_id}</code> is the read API for job telemetry. Redis is authoritative; Celery <code>AsyncResult</code> is a fallback when Redis has no row (unusual for current jobs).</p>
+<hr />
+<h2 id="celery-worker">Celery worker</h2>
+<p>The worker is the main telemetry producer. Admission queues <code>code_generator_task</code> with a stable <code>task_id</code> that <strong>is</strong> the <code>job_id</code>. That task builds a Plan and dispatches <code>run_stage_task</code> once per Stage (and again on sandbox retry). Legacy v1 still uses <code>planner_task</code> → <code>compiler_task</code> → <code>routing_task</code>.</p>
+<p>Worker settings that affect observability (<code>app/core/celery_app.py</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_track_started</code></td>
+<td><code>true</code></td>
+<td><code>GET /get_task_status</code> can show Celery <code>STARTED</code>, not only <code>PENDING</code> / <code>SUCCESS</code> / <code>FAILURE</code></td>
+</tr>
+<tr>
+<td><code>task_acks_late</code></td>
+<td><code>true</code></td>
+<td>A killed worker redelivers the task; job_state may already contain partial token/billing totals</td>
+</tr>
+<tr>
+<td><code>worker_prefetch_multiplier</code></td>
+<td><code>1</code></td>
+<td>One job at a time per worker process</td>
+</tr>
+</tbody>
+</table>
+<p>The status poll payload includes both:</p>
+<ul>
+<li><code>execution_status</code> — Celery (<code>PENDING</code>, <code>STARTED</code>, <code>SUCCESS</code>, <code>FAILURE</code>, …)</li>
+<li><code>dag_status</code> — product pipeline status from Redis (<code>generating_code</code>, <code>success</code>, …)</li>
+</ul>
+<h3 id="job-lifecycle-job_statejob_id">Job lifecycle (<code>job_state:{job_id}</code>)</h3>
+<p>Created by <code>queue_generation_task</code> before <code>apply_async</code>. Ownership (<code>client_id</code>) is set once and cannot be overwritten by later worker updates. Cancellation wins over late status writes.</p>
+<p>Initial fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td><code>queued</code></td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td>API-key client that owns the job</td>
+</tr>
+<tr>
+<td><code>cancel_requested</code> / <code>cancel_requested_at</code> / <code>cancelled_at</code> / <code>cancelled_by</code></td>
+<td>Cooperative cancel</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>UTC ISO timestamp</td>
+</tr>
+<tr>
+<td><code>billing.model_id</code></td>
+<td>Catalog model id from the request (scoreboard seed; totals accumulate later)</td>
+</tr>
+</tbody>
+</table>
+<p>Every Stage then merges through <code>update_job_state</code> (<code>app/core/job_state.py</code>). Token maps are <strong>additive</strong>. Result maps overwrite keys except the protected ownership/cancel fields.</p>
+<h3 id="pipeline-status-values">Pipeline status values</h3>
+<p>Pandas Plan (<code>app/generation/plans/artifact_graph.py</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th><code>status</code> while running</th>
+<th><code>status</code> when the stage succeeds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(queued, plan persisted)</td>
+<td><code>queued</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>generate_pandas</code></td>
+<td><code>generating_code</code></td>
+<td><code>code_generated</code></td>
+</tr>
+<tr>
+<td><code>compile_dag</code></td>
+<td><code>compiling_from_code</code></td>
+<td><code>compiled</code></td>
+</tr>
+<tr>
+<td><code>format_visualization</code></td>
+<td><code>formatting_visualization</code></td>
+<td><code>visualization_formatted</code></td>
+</tr>
+<tr>
+<td><code>validate_visualization</code></td>
+<td><code>validating_visualization</code></td>
+<td><code>visualization_validated</code></td>
+</tr>
+<tr>
+<td><code>validate_dag</code></td>
+<td><code>validating</code></td>
+<td><code>validated</code></td>
+</tr>
+<tr>
+<td><code>finalize_plan</code></td>
+<td><code>finalizing</code></td>
+<td><code>success</code> (written by <code>finalize_success</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Cross-cutting statuses: <code>retrying</code> (sandbox or compiler retry queued), <code>failed</code>, <code>cancelled</code>. Optional-stage failure does <strong>not</strong> fail the job: the worker records the slot as failed and continues.</p>
+<p>Legacy v1 (<code>planner_task</code> chain): <code>planning</code>, <code>planning_completed</code>, <code>compiling</code>, <code>compiled</code>, <code>validating</code>, <code>retrying</code>, <code>success</code>, <code>failed</code>.</p>
+<h3 id="plan-and-artifact-scoreboard">Plan and artifact scoreboard</h3>
+<p>Persisted on every <code>_persist_plan_fields</code> write:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>capability_id</code></td>
+<td>Always <code>data_analysis</code> today</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td><code>data_analysis/pandas</code></td>
+</tr>
+<tr>
+<td><code>plan</code></td>
+<td>Full Plan dict (stage ids, options, status labels)</td>
+</tr>
+<tr>
+<td><code>current_stage</code> / <code>stage_index</code></td>
+<td>Stage currently running or just finished</td>
+</tr>
+<tr>
+<td><code>compile_dag</code> / <code>include_visualization</code></td>
+<td>Request options that shaped the Plan</td>
+</tr>
+<tr>
+<td><code>artifacts[]</code></td>
+<td>Typed envelope written at success (<code>kind</code>, <code>schema_version</code>, <code>storage_key</code>, <code>payload</code>)</td>
+</tr>
+<tr>
+<td><code>artifact_slots[]</code></td>
+<td>Canvas slots: <code>{ kind, status, reason? }</code></td>
+</tr>
+<tr>
+<td><code>requested_artifact_kinds</code></td>
+<td>Kinds the request asked for</td>
+</tr>
+</tbody>
+</table>
+<p>Slot <code>status</code> values (<code>build_artifact_slots</code>): <code>not_requested</code>, <code>pending</code>, <code>ready</code>, <code>failed</code>, <code>skipped</code>.</p>
+<h3 id="retry-and-attempt-counters">Retry and attempt counters</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pandas_retries</code></td>
+<td>Sandbox retries <strong>used</strong> in this job (<code>sandbox_max - pandas_sandbox_retries_left</code> at accept/reject time)</td>
+</tr>
+<tr>
+<td><code>pandas_sandbox_retries_left</code></td>
+<td>Remaining <strong>in-cloud</strong> <code>generate_pandas</code> retries (reset on each runtime-repair job)</td>
+</tr>
+<tr>
+<td><code>pandas_retries_left</code></td>
+<td>Remaining <strong>local-exec</strong> repair jobs (<code>POST /conversation/result</code>)</td>
+</tr>
+<tr>
+<td><code>pandas_attempts_used</code></td>
+<td>LLM generate/repair calls consumed across the <strong>whole chain</strong> (sandbox + runtime repair jobs)</td>
+</tr>
+<tr>
+<td><code>pandas_total_max_attempts</code></td>
+<td>Hard ceiling (<code>generation.yaml</code>, default 9)</td>
+</tr>
+<tr>
+<td><code>generation_attempts</code></td>
+<td>Bounded list of per-call diagnostics (see below)</td>
+</tr>
+<tr>
+<td><code>last_pandas_error</code></td>
+<td>Last sandbox/preflight/runtime error string</td>
+</tr>
+<tr>
+<td><code>last_failed_code</code></td>
+<td>Last rejected pandas candidate (not executable)</td>
+</tr>
+<tr>
+<td><code>compiler_retries</code></td>
+<td>Compiler/viz retries used (<code>max_retries - retries_left</code>)</td>
+</tr>
+<tr>
+<td><code>last_compiler_error</code></td>
+<td>Last DAG compile/validate error</td>
+</tr>
+<tr>
+<td><code>errors[]</code></td>
+<td>Current failure list (cleared on <code>success</code>)</td>
+</tr>
+<tr>
+<td><code>pandas_code</code> / <code>graph</code> / <code>visualization_spec</code></td>
+<td>Latest <strong>accepted</strong> artifacts. Rejected pandas candidates are stored as <code>last_failed_code</code>, not as executable <code>pandas_code</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Runtime repair <strong>copies</strong> <code>pandas_attempts_used</code>, <code>generation_attempts</code>, and
+error history from the previous job into the new job’s worker config so the
+chain ceiling is not reset. It <strong>resets</strong> <code>pandas_sandbox_retries_left</code> to
+<code>pandas_sandbox_max_retries</code> so a depleted sandbox budget cannot block
+in-job retries on the repair.</p>
+<h3 id="token-and-latency-totals">Token and latency totals</h3>
+<p>Every Stage that returns <code>StageResult.tokens</code> feeds <code>update_job_state(..., tokens=...)</code>. The merge is cumulative for the job:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input_tokens</code></td>
+<td><code>tokens.input_tokens</code> or <code>prompt_tokens</code></td>
+<td>Sum across all billed LLM calls in this job</td>
+</tr>
+<tr>
+<td><code>output_tokens</code></td>
+<td><code>tokens.output_tokens</code> or <code>completion_tokens</code></td>
+<td>Visible completion tokens as reported by the provider</td>
+</tr>
+<tr>
+<td><code>reasoning_tokens</code></td>
+<td><code>output_token_details.reasoning</code></td>
+<td>Sum; 0 when the model does not report hidden reasoning</td>
+</tr>
+<tr>
+<td><code>llm_times[]</code></td>
+<td><code>tokens.llm_time</code> when <code>&gt; 0</code></td>
+<td>Per-call wall time in seconds (pandas generate currently sets this)</td>
+</tr>
+<tr>
+<td><code>total_llm_time</code></td>
+<td>sum of those</td>
+<td>Same unit</td>
+</tr>
+</tbody>
+</table>
+<p>Compiler, visualization formatter, planner, and semantic-agent-on-worker paths pass LangChain <code>usage_metadata</code> through as <code>tokens</code>. They usually <strong>do not</strong> set <code>llm_time</code>, so <code>llm_times</code> is pandas-generation-centric.</p>
+<p>HTTP-side LLM calls (intent classifier, semantic analysis, answer synthesizer) are billed but <strong>do not</strong> land in this job_state. Poll <code>get_task_status</code> for <strong>worker</strong> usage only. Conversation classifier/semantic charges appear only on the Supabase ledger (no <code>job_id</code>).</p>
+<h3 id="per-attempt-diagnostics-generation_attempts">Per-attempt diagnostics (<code>generation_attempts</code>)</h3>
+<p>This is the structured contract between <code>CodeGeneratorService.generate</code> and the rest of the stack. One object per pandas LLM call, kept to the last <code>pandas_total_max_attempts</code> entries.</p>
+<p>Emitted twice as JSON logs, then stored on the job:</p>
+<ol>
+<li><strong><code>pandas_generation_attempt</code></strong> — immediately after the LLM returns, before preflight (<code>code_generator.py</code>).</li>
+<li><strong><code>pandas_attempt_outcome</code></strong> — after accept/reject, with outcome fields (<code>data_analysis.py</code>).</li>
+</ol>
+<h4 id="fields-written-at-invoke-time">Fields written at invoke time</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attempt_index</code></td>
+<td>0-based index in the chain (<code>pandas_attempts_used</code> before this call)</td>
+</tr>
+<tr>
+<td><code>retry_source</code></td>
+<td><code>initial</code> (first pass), <code>sandbox</code> (in-job preflight retry), <code>runtime</code> (local exec repair job)</td>
+</tr>
+<tr>
+<td><code>trigger_category</code></td>
+<td>Failure category that <strong>caused</strong> this call (<code>none</code> on first pass)</td>
+</tr>
+<tr>
+<td><code>policy_profile</code></td>
+<td><code>catalog</code> on first pass; otherwise a <code>pandas_repair_profiles</code> key (<code>syntax</code>, <code>length</code>, <code>runtime</code>, <code>repeated_failure</code>, …)</td>
+</tr>
+<tr>
+<td><code>reasoning_effort</code></td>
+<td>Effective reasoning effort (<code>none</code> / <code>low</code> / <code>medium</code> / …)</td>
+</tr>
+<tr>
+<td><code>max_tokens</code></td>
+<td>Completion cap used for this call</td>
+</tr>
+<tr>
+<td><code>finish_reason</code></td>
+<td>Provider finish reason (<code>stop</code>, <code>length</code>, …) from <code>response_metadata</code></td>
+</tr>
+<tr>
+<td><code>input_tokens</code></td>
+<td>This call only</td>
+</tr>
+<tr>
+<td><code>output_tokens</code></td>
+<td>This call only</td>
+</tr>
+<tr>
+<td><code>reasoning_tokens</code></td>
+<td>Hidden reasoning tokens for this call</td>
+</tr>
+<tr>
+<td><code>latency_seconds</code></td>
+<td>Wall time around the invoke</td>
+</tr>
+<tr>
+<td><code>code_length</code></td>
+<td>Characters of extracted code (0 if empty)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="fields-added-after-preflight">Fields added after preflight</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>outcome</code></td>
+<td><code>accepted</code> or <code>rejected</code></td>
+</tr>
+<tr>
+<td><code>failure_category</code></td>
+<td><code>null</code> when accepted; otherwise <code>length</code>, <code>empty_output</code>, <code>syntax</code>, <code>invalid_unicode</code>, <code>sandbox_policy</code>, <code>runtime</code>, …</td>
+</tr>
+<tr>
+<td><code>error_summary</code></td>
+<td>First error string, truncated to 300 characters (rejected only)</td>
+</tr>
+<tr>
+<td><code>error_signature</code></td>
+<td>Stable <code>{category}:{normalized message}</code> for repeated-failure detection</td>
+</tr>
+</tbody>
+</table>
+<p>Categories are defined in <code>app/generation/llm_call_policy.py</code>. <code>repeated_failure</code> is a <strong>policy profile</strong>, not an outcome category: if the same signature appears twice in history, the next repair uses the <code>repeated_failure</code> profile.</p>
+<p>A truncated completion (<code>finish_reason=length</code>) records <code>failure_category=length</code> on the attempt, but the history entry keeps the <strong>previous actionable error</strong> and sets <code>truncated=true</code>. The next repair prompt still targets that error; call parameters may use the <code>length</code> profile (no reasoning, higher <code>max_tokens</code>) so hidden reasoning cannot replace the original defect as the repair target.</p>
+<p>Sandbox rejects that still have budget set job <code>status</code> to <code>retrying</code> and re-queue <code>run_stage_task</code> for <code>generate_pandas</code>. Exhaustion sets <code>failed</code> and zeroes <code>pandas_sandbox_retries_left</code>.</p>
+<h3 id="job-billing-scoreboard">Job billing scoreboard</h3>
+<p>While a stage runs, <code>run_stage_task</code> wraps the Stage in <code>billing_scope(client_id, job_id=job_id)</code>. Every <code>invoke_llm</code> / <code>invoke_llm_chain</code> then:</p>
+<ol>
+<li>Charges the portal balance (<code>llm_call</code> ledger row with this <code>job_id</code>).</li>
+<li>Increments Redis <code>billing</code> on the same job.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><code>billing</code> field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model_id</code></td>
+<td>Seeded at queue time (request model)</td>
+</tr>
+<tr>
+<td><code>token_credits</code></td>
+<td>Sum of token-derived credits</td>
+</tr>
+<tr>
+<td><code>surplus_credits</code></td>
+<td>Sum of surplus</td>
+</tr>
+<tr>
+<td><code>charged_credits</code></td>
+<td><code>token_credits + surplus_credits</code></td>
+</tr>
+<tr>
+<td><code>llm_calls</code></td>
+<td>Number of billed invokes in this job</td>
+</tr>
+<tr>
+<td><code>surplus_rate</code></td>
+<td>Rate from the first charge</td>
+</tr>
+</tbody>
+</table>
+<p>This is a <strong>running scoreboard</strong>, not the source of truth for “may we charge again.” The ledger is. Failed and cancelled jobs keep charges for calls that already completed. Unlinked owner developer keys skip settlement; Redis totals may still increment if a charge dict is produced, but <code>charge_client_balance_sync</code> returns success without writing a receipt.</p>
+<p><code>job_charge:{job_id}</code> helpers in <code>job_state.py</code> are unused. They are leftover from a single-settlement design.</p>
+<h3 id="celery-result-backend">Celery result backend</h3>
+<p>Each task return value is stored in Redis as the Celery result. Typical payloads:</p>
+<ul>
+<li><code>code_generator_task</code>: <code>{ job_id, capability_id, plan_id, stages }</code></li>
+<li><code>run_stage_task</code>: <code>{ status, next_stage, artifacts }</code> or <code>{ status: retrying, … }</code> or terminal <code>{ status, pandas_code, graph, … }</code></li>
+</ul>
+<p>The poll endpoint prefers Redis <code>dag_status</code> and artifacts. <code>execution_status</code> is the only Celery-native field routinely shown to clients.</p>
+<p><code>_celery_retries</code> (<code>self.request.retries</code>) is passed into <code>finalize_success</code> as <code>celery_retries</code>. Finalize no longer retries charging; the argument is unused.</p>
+<h3 id="structured-logs-worker-stdout">Structured logs (worker stdout)</h3>
+<p>Dev workers run at <code>--loglevel=info</code>. Useful lines:</p>
+<table>
+<thead>
+<tr>
+<th>Logger / prefix</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pandas_generation_attempt {json}</code></td>
+<td>After every pandas LLM call</td>
+</tr>
+<tr>
+<td><code>pandas_attempt_outcome {json}</code></td>
+<td>After accept or reject (includes <code>outcome</code>)</td>
+</tr>
+<tr>
+<td><code>Pandas code generation returned empty content (finish_reason=…, reasoning_preview=…)</code></td>
+<td>Empty extract; warning</td>
+</tr>
+<tr>
+<td><code>Error updating job status: …</code></td>
+<td>Redis write failed inside <code>_update_job_status</code> (printed, not logged)</td>
+</tr>
+</tbody>
+</table>
+<p>Grep worker logs for <code>pandas_generation_attempt</code> or <code>pandas_attempt_outcome</code> to reconstruct a job without polling.</p>
+<hr />
+<h2 id="cloud-api-process">Cloud API process</h2>
+<p>The API process does not run Stages. It admits work, charges HTTP-side LLM calls, and exposes telemetry.</p>
+<h3 id="health-get-health">Health (<code>GET /health</code>)</h3>
+<p><code>runtime_health()</code> pings Redis and <code>celery inspect ping</code> (1 s timeout), then adds Supabase config:</p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;ok&quot; | &quot;degraded&quot;,
+  &quot;services&quot;: {
+    &quot;redis&quot;: { &quot;ok&quot;: true },
+    &quot;celery&quot;: { &quot;ok&quot;: true, &quot;workers&quot;: [&quot;celery@host&quot;] },
+    &quot;supabase&quot;: { &quot;ok&quot;: true, &quot;host&quot;: &quot;….supabase.co&quot; }
+  }
+}
+</code></pre>
+<p>Generation endpoints return <strong>503</strong> when Redis or a worker is down (<code>ensure_generation_runtime</code>). This is liveness, not per-job telemetry.</p>
+<h3 id="intent-classification">Intent classification</h3>
+<p><code>IntentClassifierService</code> logs:</p>
+<pre><code class="language-text">Intent classified: {intent} (confidence=…, capability=…, plan=…)
+</code></pre>
+<p>Conversation may also log <code>Escalating meta_question to data_query (requires file computation)</code>.</p>
+<p>These calls run inside <code>billing_scope(client_id)</code> <strong>without</strong> <code>job_id</code>. Credits hit the ledger; they never appear on <code>get_task_status</code>.</p>
+<h3 id="semantic-analysis">Semantic analysis</h3>
+<p><code>POST /api/v1/analyze_query</code> (and the conversation graph’s analysis node) accumulate <code>n_in_tokens_semantic</code> / <code>n_out_tokens_semantic</code> on the agent instance. The analyze endpoint returns them on the <code>SemanticAnalysis</code> object. Conversation does not copy those counters onto the session.</p>
+<h3 id="answer-synthesis">Answer synthesis</h3>
+<p><code>POST /api/v1/conversation/synthesize</code> bills inside <code>billing_scope(client_id)</code> with no job id. Failures log <code>Answer synthesis failed</code>.</p>
+<h3 id="conversation-session-conversationsession_id">Conversation session (<code>conversation:{session_id}</code>)</h3>
+<p>TTL 24 hours. Not a substitute for job_state; it is the chat control plane.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Role in telemetry / repair</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code> / <code>client_id</code></td>
+<td>Ownership</td>
+</tr>
+<tr>
+<td><code>messages[]</code></td>
+<td><code>{ role, content, intent, timestamp }</code> plus <code>exec_error</code> on execution_result rows</td>
+</tr>
+<tr>
+<td><code>query_state</code></td>
+<td>Structured follow-up state</td>
+</tr>
+<tr>
+<td><code>current_dag</code> / <code>current_result</code></td>
+<td>Last local execution (<code>result</code>, <code>exec_error</code>)</td>
+</tr>
+<tr>
+<td><code>last_task_id</code></td>
+<td>Job to poll; also the job whose retry budgets are copied on repair</td>
+</tr>
+<tr>
+<td><code>last_generation_*</code></td>
+<td>Query, metadata, model, Plan options for repair without re-classifying</td>
+</tr>
+<tr>
+<td><code>pandas_error_history</code></td>
+<td>Cross-job error entries (<code>errors</code>, <code>code</code>, <code>category</code>, <code>error_signature</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>GET /api/v1/conversation/{session_id}</code> returns this document (minus internals the schema omits).</p>
+<h3 id="status-poll-get-apiv1get_task_statustask_id">Status poll (<code>GET /api/v1/get_task_status/{task_id}</code>)</h3>
+<p>Auth-only (readable after credits hit zero). Maps Redis job_state to the client payload: pipeline status, artifacts, retry counters, <code>generation_attempts</code>, usage totals, <code>billing</code>, plan/slot fields. See <a href="../CLOUD_API_USAGE/">CLOUD_API_USAGE.md</a> for a full example.</p>
+<hr />
+<h2 id="local-engine-and-desktop">Local engine and desktop</h2>
+<p>The sidecar executes Artifacts. It does not call LLMs and does not write <code>job_state</code>.</p>
+<p>After <code>POST /execute_pandas</code> (and optional DAG execute), the desktop posts:</p>
+<pre><code class="language-http">POST /api/v1/conversation/result
+{ session_id, pandas_code?, exec_error?, exec_result?, dag? }
+</code></pre>
+<p>That is the <strong>only</strong> execution telemetry the control plane receives. On <code>exec_error</code> with remaining <code>pandas_retries_left</code> and chain attempts left, the API queues a new generation job (<code>status: repairing</code>) and copies attempt history forward with <code>retry_source=runtime</code>.</p>
+<p>The sidecar logs load/runtime errors to its own logger (<code>safe_pandas_executor</code>). Those lines never reach Cloud API logs unless the desktop forwards <code>exec_error</code>.</p>
+<hr />
+<h2 id="supabase-credit-ledger">Supabase credit ledger</h2>
+<p>Durable billing telemetry. Table <code>credit_balance_ledger_nolain_query</code> (<code>sql/003_account_balance.sql</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>Portal user</td>
+</tr>
+<tr>
+<td><code>delta</code></td>
+<td>Negative for charges</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>llm_call</code> for model invokes</td>
+</tr>
+<tr>
+<td><code>job_id</code></td>
+<td>Set for worker calls; <strong>null</strong> for classifier / semantic / synthesize</td>
+</tr>
+<tr>
+<td><code>event_type</code></td>
+<td><code>llm_call</code>, <code>grant</code>, <code>settlement</code> (unused), <code>adjustment</code></td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>Credit math for that call (<code>model_id</code>, <code>model_cost_usd</code>, <code>token_credits</code>, <code>surplus_*</code>, <code>charged_credits</code>)</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>When the receipt was written</td>
+</tr>
+</tbody>
+</table>
+<p>Sum <code>delta</code> where <code>job_id = …</code> to reconstruct worker cost. HTTP-side calls have no job id, so they cannot be joined to a generation job except by time and user.</p>
+<hr />
+<h2 id="what-is-not-collected">What is not collected</h2>
+<table>
+<thead>
+<tr>
+<th>Absent</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace / span IDs</td>
+<td>Cannot stitch classifier → worker → sidecar in one trace</td>
+</tr>
+<tr>
+<td>Per-stage latency except pandas <code>llm_time</code></td>
+<td>Compiler/viz duration is not in <code>llm_times</code></td>
+</tr>
+<tr>
+<td>Prompt / completion text in job_state</td>
+<td>Only <code>code_length</code>, <code>error_summary</code>, and artifacts</td>
+</tr>
+<tr>
+<td>Model name per attempt</td>
+<td>Scoreboard has request <code>model_id</code>; attempts do not repeat it</td>
+</tr>
+<tr>
+<td>Sidecar CPU, row counts, exec wall time</td>
+<td>Only <code>exec_error</code> / <code>exec_result</code> preview</td>
+</tr>
+<tr>
+<td>Celery Flower / task events</td>
+<td>No event monitor</td>
+</tr>
+<tr>
+<td>Prometheus / OTLP</td>
+<td>No metrics scrape endpoint</td>
+</tr>
+<tr>
+<td><code>job_charge:*</code></td>
+<td>Helpers exist; nothing calls them</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-to-read-a-job">How to read a job</h2>
+<ol>
+<li><strong>Live:</strong> <code>GET /api/v1/get_task_status/{task_id}</code> until <code>dag_status</code> is <code>success</code>, <code>failed</code>, or <code>cancelled</code>. Inspect <code>generation_attempts</code>, <code>billing</code>, token totals, and <code>artifact_slots</code>.</li>
+<li><strong>Worker logs:</strong> grep <code>pandas_generation_attempt</code> and <code>pandas_attempt_outcome</code> (JSON after the prefix).</li>
+<li><strong>Redis:</strong> <code>GET job_state:{job_id}</code> (TTL 1 hour). Conversation repair context: <code>GET conversation:{session_id}</code>.</li>
+<li><strong>Money:</strong> ledger rows with that <code>job_id</code>. Conversation overhead is ledger rows with <code>job_id</code> null around the same time.</li>
+<li><strong>Health:</strong> <code>GET /health</code> if jobs never leave <code>queued</code>.</li>
+</ol>
+<hr />
+<h2 id="source-of-truth-map">Source-of-truth map</h2>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Celery app / worker flags</td>
+<td><code>cloud_api/app/core/celery_app.py</code></td>
+</tr>
+<tr>
+<td>Queue + health</td>
+<td><code>cloud_api/app/core/runtime.py</code></td>
+</tr>
+<tr>
+<td>Redis job merge / TTL / cancel</td>
+<td><code>cloud_api/app/core/job_state.py</code></td>
+</tr>
+<tr>
+<td>Plan stage tasks</td>
+<td><code>cloud_api/app/tasks/pandas_generation.py</code></td>
+</tr>
+<tr>
+<td>Legacy v1 tasks</td>
+<td><code>cloud_api/app/tasks/generation.py</code></td>
+</tr>
+<tr>
+<td>Status poll</td>
+<td><code>cloud_api/app/routers/generation.py</code></td>
+</tr>
+<tr>
+<td>Attempt object + logs</td>
+<td><code>cloud_api/app/services/code_generator.py</code></td>
+</tr>
+<tr>
+<td>Outcome / retry / chain ceiling</td>
+<td><code>cloud_api/app/generation/capabilities/data_analysis.py</code></td>
+</tr>
+<tr>
+<td>Failure categories / repair profiles</td>
+<td><code>cloud_api/app/generation/llm_call_policy.py</code>, <code>cloud_api/app/config/generation.yaml</code></td>
+</tr>
+<tr>
+<td>Token charge + job billing</td>
+<td><code>cloud_api/app/core/llm_billing.py</code>, <code>cloud_api/app/core/llm_config.py</code></td>
+</tr>
+<tr>
+<td>Ledger</td>
+<td><code>cloud_api/app/core/account_balance.py</code>, <code>cloud_api/sql/003_account_balance.sql</code></td>
+</tr>
+<tr>
+<td>Conversation session + runtime repair</td>
+<td><code>cloud_api/app/services/conversation_manager.py</code></td>
+</tr>
+<tr>
+<td>Artifact slot derivation</td>
+<td><code>cloud_api/app/generation/plans/artifact_graph.py</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

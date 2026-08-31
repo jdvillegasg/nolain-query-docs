@@ -1,0 +1,1595 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../CLOUD_API_USER/">
+      
+      
+        <link rel="next" href="../CREDITS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cloud API conversation workflow - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloud-api-conversation-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud API conversation workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BILLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_DEV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conversation-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-1-start-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1 — Start session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-2-send-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2 — Send message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 2 — Send message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate response types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarification-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarification shortcut
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-3-poll-generation-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3 — Poll generation job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-4-local-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4 — Local execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-5-report-result-and-runtime-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5 — Report result and runtime repair
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 5 — Report result and runtime repair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime repair
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-6-optional-synthesize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 6 — Optional synthesize
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-analysis-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported analysis boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversation-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAG Connection Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query LLM costs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_ARCHITECUTRE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TELEMETRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_api-app-generation-plans-config-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desktop_app-frontend-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tauri + React + Typescript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nolainquery-website-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conversation-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-1-start-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1 — Start session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-2-send-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2 — Send message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 2 — Send message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-response-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate response types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarification-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarification shortcut
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-3-poll-generation-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3 — Poll generation job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-4-local-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4 — Local execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-5-report-result-and-runtime-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5 — Report result and runtime repair
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 5 — Report result and runtime repair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime repair
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-6-optional-synthesize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 6 — Optional synthesize
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-analysis-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported analysis boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversation-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cloud-api-conversation-workflow">Cloud API conversation workflow</h1>
+<p>This document describes the desktop <strong>Ask Queries</strong> conversation loop — the full path from session start through local execution and optional runtime repair. For platform architecture (Capability → Plan → Stage → Artifact), see <a href="../SYSTEM_ARCHITECUTRE/">SYSTEM_ARCHITECUTRE.md</a>. For job diagnostics, attempt logs, and credit receipts, see <a href="../TELEMETRY/">TELEMETRY.md</a>.</p>
+<h2 id="conversation-loop">Conversation loop</h2>
+<p>The desktop app uses this end-to-end path. Direct generation APIs such as <code>POST /api/v2/generate_dag</code> cover only steps 3–4; they do <strong>not</strong> run the runtime repair loop in steps 5–6.</p>
+<pre><code class="language-text">1. POST /api/v1/conversation/start
+     { metadata }
+   → { session_id }
+
+2. POST /api/v1/conversation/message
+     { session_id, message, metadata, compile_dag?, plan_id?, ... }
+   → text_response | meta_answer | clarification | generation { task_id, ... }
+
+3. Poll GET /api/v1/get_task_status/{task_id}
+   → pandas_code, optional dag / visualization_spec,
+     pandas_retries_left, pandas_retries, billing, ...
+
+4. Execute locally (desktop sidecar, port 8001)
+   → POST /execute_pandas for pandas code
+   → POST /execute_dag when a DAG Artifact is present
+
+5. POST /api/v1/conversation/result
+     { session_id, pandas_code?, exec_error?, exec_result?, dag? }
+   → exec ok: { status: &quot;ok&quot; } — result stored for follow-ups
+   → exec_error and pandas_retries_left &gt; 0:
+        { status: &quot;repairing&quot;, task_id: &quot;...&quot; }
+
+6. On repairing: repeat steps 3–5 with the new task_id until local
+   execution succeeds or the pandas retry budget is exhausted.
+
+7. Optional: POST /api/v1/conversation/synthesize
+     { session_id, question, result_summary, outcome, ... }
+   → framed narrative for the UI
+</code></pre>
+<p><strong>Two kinds of pandas retries</strong> use separate source budgets and share one
+chain-wide LLM-attempt ceiling:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>When</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sandbox retry</strong></td>
+<td>Truncated/empty code or static policy reject during cloud generation</td>
+<td>Inside the Celery job at step 3 (<code>generate_pandas</code> stage); spends <code>pandas_sandbox_max_retries</code></td>
+</tr>
+<tr>
+<td><strong>Runtime repair</strong></td>
+<td>Code passes generation but fails when executed locally</td>
+<td>Step 5 → new job at step 3 (<code>POST /conversation/result</code>); spends <code>pandas_max_retries</code></td>
+</tr>
+</tbody>
+</table>
+<p>Both paths increment <code>pandas_attempts_used</code> and cannot exceed
+<code>pandas_total_max_attempts</code> (default 9: initial generation, its sandbox
+retries, and each runtime-repair job with a fresh sandbox budget). Compiler
+retries (<code>max_retries</code> in <code>generation.yaml</code>) remain independent.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>The desktop app derives dataset metadata from the local engine (<code>POST http://localhost:8001/data_summary</code>).</li>
+<li>Requests require a valid <code>X-API-Key</code>.</li>
+<li>Sessions are reused until the desktop resets local state; server sessions expire after 24 hours.</li>
+</ul>
+<h2 id="vocabulary">Vocabulary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Role in this loop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intent</strong></td>
+<td>Which conversation branch to take</td>
+</tr>
+<tr>
+<td><strong>Capability</strong></td>
+<td>Registered generator (<code>data_analysis</code>) once generation is admitted</td>
+</tr>
+<tr>
+<td><strong>Plan</strong></td>
+<td>Engine pipeline (<code>data_analysis/pandas</code>)</td>
+</tr>
+<tr>
+<td><strong>Artifact</strong></td>
+<td>Optional outputs (<code>dag</code> via Compile DAG; <code>visualization_spec</code> for charts)</td>
+</tr>
+</tbody>
+</table>
+<p><code>descriptive</code> / <code>visualization</code> / <code>transformation</code> are <strong>not</strong> Capabilities or Plans.</p>
+<h2 id="stage-1-start-session">Stage 1 — Start session</h2>
+<pre><code class="language-text">POST /api/v1/conversation/start
+{ metadata }
+</code></pre>
+<p>Creates <code>conversation:{session_id}</code> in Redis. No LLM call; no credit charge.</p>
+<h2 id="stage-2-send-message">Stage 2 — Send message</h2>
+<pre><code class="language-text">POST /api/v1/conversation/message
+{ session_id, message, metadata, provider?, model?, clarifications?, compile_dag?, plan_id? }
+</code></pre>
+<p><code>compile_dag</code> is the Compile DAG UI toggle (optional DAG Artifact). <code>plan_id</code> is optional; default is <code>data_analysis/pandas</code>.</p>
+<p>Without <code>clarifications</code>, LangGraph classifies intent:</p>
+<pre><code class="language-text">classify intent
+  |- out_of_scope                              -&gt; text_response (no matching Capability)
+  |- off_topic / inappropriate / underspecified -&gt; text_response
+  |- meta_question                             -&gt; meta_answer
+  |- explanation                               -&gt; grounded text_response
+  |- execution_feedback                        -&gt; semantic analysis -&gt; queue generation
+  `- data_query                                -&gt; semantic analysis
+                                              |- ambiguity -&gt; clarification
+                                              |- semantic failure -&gt; text_response
+                                              `- clear -&gt; queue generation
+                                                (data_analysis / pandas Plan;
+                                                 optional Artifacts from request options)
+</code></pre>
+<p>The classifier chooses <strong>intent</strong> using the registered Capabilities as prompt context. For generation intents it may suggest <code>capability_id</code>, <code>plan_id</code>, and <code>include_visualization</code>. Policy admits the Plan. Client <code>compile_dag</code> selects the DAG Artifact.</p>
+<h3 id="immediate-response-types">Immediate response types</h3>
+<table>
+<thead>
+<tr>
+<th>Response type</th>
+<th>Meaning</th>
+<th>Client action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text_response</code></td>
+<td>Off-topic, unsafe, underspecified, explanation, out of scope, or fallback</td>
+<td>Display text</td>
+</tr>
+<tr>
+<td><code>meta_answer</code></td>
+<td>Dataset-structure question</td>
+<td>Display metadata answer</td>
+</tr>
+<tr>
+<td><code>clarification</code></td>
+<td>Ambiguous terms</td>
+<td>Resend with <code>clarifications</code></td>
+</tr>
+<tr>
+<td><code>generation</code></td>
+<td>Job accepted</td>
+<td>Continue to stage 3</td>
+</tr>
+</tbody>
+</table>
+<p><code>generation</code> responses include <code>task_id</code>, <code>capability_id</code>, <code>plan_id</code>, <code>compile_dag</code>, and <code>include_visualization</code>.</p>
+<h3 id="clarification-shortcut">Clarification shortcut</h3>
+<p>When <code>clarifications</code> is set, the graph is skipped. The server queues the pandas Plan with the current <code>compile_dag</code> option.</p>
+<h2 id="stage-3-poll-generation-job">Stage 3 — Poll generation job</h2>
+<pre><code class="language-text">GET /api/v1/get_task_status/{task_id}
+</code></pre>
+<p>The desktop app polls at ~1.5s intervals (up to ~80 attempts). When <code>dag_status</code> is <code>success</code> or <code>failed</code>, the job is done.</p>
+<p>Key fields for the repair loop:</p>
+<ul>
+<li><code>pandas_code</code> — code to execute locally</li>
+<li><code>pandas_retries_left</code> — remaining local-runtime repair jobs</li>
+<li><code>pandas_sandbox_retries_left</code> — remaining in-cloud static retries</li>
+<li><code>pandas_attempts_used</code> / <code>pandas_total_max_attempts</code> — chain-level LLM-call usage and ceiling</li>
+<li><code>generation_attempts</code> — bounded attempt diagnostics (finish reason, category, selected profile, token usage, and outcome)</li>
+<li><code>pandas_retries</code> — sandbox retries already used</li>
+</ul>
+<p>While the job runs, the worker may retry <code>generate_pandas</code> internally when a
+completion is truncated (<code>finish_reason=length</code>), empty, or rejected by static
+preflight. Partial length-limited code is never sent for execution.</p>
+<h2 id="stage-4-local-execution">Stage 4 — Local execution</h2>
+<p>Execution runs on the desktop sidecar (port 8001), not on the cloud API:</p>
+<ul>
+<li><code>POST http://localhost:8001/execute_pandas</code> — run generated pandas code against the loaded dataset</li>
+<li><code>POST http://localhost:8001/execute_dag</code> — run the DAG Artifact when present</li>
+</ul>
+<p>No cloud credit is charged for local execution.</p>
+<h2 id="stage-5-report-result-and-runtime-repair">Stage 5 — Report result and runtime repair</h2>
+<pre><code class="language-text">POST /api/v1/conversation/result
+{ session_id, dag?, exec_result?, exec_error?, pandas_code? }
+</code></pre>
+<p>After every local execution (success or failure), the client notifies the server so follow-up questions have execution context.</p>
+<h3 id="success">Success</h3>
+<p>When execution succeeds, the server stores the result and returns <code>{ "status": "ok" }</code>.</p>
+<h3 id="runtime-repair">Runtime repair</h3>
+<p>When <code>exec_error</code> and <code>pandas_code</code> are both set, the previous generation job
+succeeded (<code>status=success</code>), and that job still has <code>pandas_retries_left &gt; 0</code>,
+the server:</p>
+<ol>
+<li>Reads the remaining budget from the previous job's state</li>
+<li>Queues a new <code>generate_pandas</code> repair job with the failed code and error in
+   the bounded <code>pandas_error_history</code> (no new classifier or semantic turn)</li>
+<li>Decrements <code>pandas_retries_left</code> on the new job</li>
+<li>Resets the in-cloud sandbox retry budget for that repair job, and carries
+   attempt history plus the chain-level attempt count instead of resetting them</li>
+<li>Returns <code>{ "status": "repairing", "task_id": "..." }</code></li>
+</ol>
+<p>The client then repeats stages 3–5 with the new <code>task_id</code>. If no retries
+remain, the server returns <code>{ "status": "ok" }</code> and the client keeps the error.</p>
+<p>Repair settings are selected from <code>pandas_repair_profiles</code> by normalized error
+category and retry index. All Pandas generation calls remain bounded by
+<code>pandas_total_max_attempts</code>.</p>
+<h2 id="stage-6-optional-synthesize">Stage 6 — Optional synthesize</h2>
+<pre><code class="language-text">POST /api/v1/conversation/synthesize
+{ session_id, question, result_summary, outcome, ... }
+</code></pre>
+<p>Optional answer framing after a successful execution. On failure, the endpoint returns <code>{ "status": "success", "narrative": {} }</code>.</p>
+<h2 id="branch-reference">Branch reference</h2>
+<table>
+<thead>
+<tr>
+<th>User case</th>
+<th>Server path</th>
+<th>Credit effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Off-topic / inappropriate / underspecified</td>
+<td>Classifier → text</td>
+<td>Charged if that path calls an LLM</td>
+</tr>
+<tr>
+<td>Meta question</td>
+<td>Classifier → metadata answer</td>
+<td>Free when no LLM is called</td>
+</tr>
+<tr>
+<td>Explanation</td>
+<td>Classifier → grounded text</td>
+<td>Charged if that path calls an LLM</td>
+</tr>
+<tr>
+<td>Out of scope (no matching Capability)</td>
+<td>Classifier or regex → text</td>
+<td>Charged if that path calls an LLM</td>
+</tr>
+<tr>
+<td>Clear data question</td>
+<td>Classifier → semantic → generation</td>
+<td>Credits per LLM call in the job</td>
+</tr>
+<tr>
+<td>Ambiguous question</td>
+<td>Classifier → semantic → clarification</td>
+<td>Credits per LLM call already made</td>
+</tr>
+<tr>
+<td>Clarification reply</td>
+<td>Bypass classify/semantic → generation</td>
+<td>Credits per LLM call in the job</td>
+</tr>
+<tr>
+<td>Execution feedback (“that looks wrong”)</td>
+<td>Always semantic → generation</td>
+<td>Credits per LLM call in the job</td>
+</tr>
+<tr>
+<td>Local pandas exec error with retries left</td>
+<td>Stage 5 → repair job</td>
+<td>Credits per LLM call in the repair job</td>
+</tr>
+<tr>
+<td>Local execution</td>
+<td>Desktop port 8001</td>
+<td>No Cloud charge</td>
+</tr>
+<tr>
+<td>Answer framing</td>
+<td>Stage 6 synthesize</td>
+<td>Credits per LLM call</td>
+</tr>
+</tbody>
+</table>
+<p>Worker LLM cost details and Plan stage lists: <a href="../SYSTEM_ARCHITECUTRE/">SYSTEM_ARCHITECUTRE.md</a>.</p>
+<h2 id="supported-analysis-boundaries">Supported analysis boundaries</h2>
+<ul>
+<li>Data questions (including charts and reshape) admit the <code>data_analysis</code> pandas Plan. Charts set <code>include_visualization</code>; they do not change <code>plan_id</code>.</li>
+<li>Requests that no registered Capability can serve (<code>out_of_scope</code>) return a text message naming the available Capabilities and do not admit generation. A regex safety gate still catches forecasting, statistical inference, optimization, and anomaly detection while only <code>data_analysis</code> is enabled.</li>
+<li><strong>Explanation</strong> requests use saved result context and do not queue generation.</li>
+</ul>
+<h2 id="conversation-endpoints">Conversation endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST /api/v1/conversation/start</code></td>
+<td>Create session (stage 1)</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/message</code></td>
+<td>Main decision + job admission (stage 2)</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/get_task_status/{task_id}</code></td>
+<td>Poll generation job (stage 3)</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/result</code></td>
+<td>Store local execution outcome; trigger repair (stage 5)</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/synthesize</code></td>
+<td>Optional answer narrative (stage 6)</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/conversation/{session_id}</code></td>
+<td>Read session</td>
+</tr>
+<tr>
+<td><code>DELETE /api/v1/conversation/{session_id}</code></td>
+<td>Delete session</td>
+</tr>
+</tbody>
+</table>
+<p>Session read/delete does not verify session ownership by API key (current behavior).</p>
+<h2 id="cancellation">Cancellation</h2>
+<pre><code class="language-text">POST /api/v1/cancel_task/{task_id}
+</code></pre>
+<p>Cooperative cancellation between Stages. LLM calls already completed keep their credit charges.</p>
+<h2 id="related-docs">Related docs</h2>
+<ul>
+<li><a href="../SYSTEM_ARCHITECUTRE/">SYSTEM_ARCHITECUTRE.md</a> — Capabilities, Plans, Artifacts, direct APIs</li>
+<li><a href="../CREDITS/">CREDITS.md</a> — what users pay</li>
+<li><a href="../BILLING/">BILLING.md</a> — credit charging</li>
+<li><a href="../CLOUD_API_USAGE/">CLOUD_API_USAGE.md</a> — HTTP reference</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

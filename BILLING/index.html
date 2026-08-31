@@ -1,0 +1,1203 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../AUTH_SETUP/">
+      
+      
+        <link rel="next" href="../CD/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Billing — developer and operator guide - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#billing-developer-and-operator-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Billing — developer and operator guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#credit-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-token-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model token rates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receipts-one-job-many-llm-charges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receipts: one job, many LLM charges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_DEV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAG Connection Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query LLM costs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_ARCHITECUTRE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TELEMETRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_api-app-generation-plans-config-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desktop_app-frontend-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tauri + React + Typescript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nolainquery-website-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#credit-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-token-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model token rates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receipts-one-job-many-llm-charges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receipts: one job, many LLM charges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="billing-developer-and-operator-guide">Billing — developer and operator guide</h1>
+<p>User-facing pricing and examples: <strong><a href="../CREDITS/">CREDITS.md</a></strong>.</p>
+<h2 id="credit-formula">Credit formula</h2>
+<pre><code class="language-text">token_credits = ceil(model_token_cost_usd × credits_per_dollar)
+surplus_credits = ceil(token_credits × surplus_rate)     # default 1.0 (100%)
+charged_credits = token_credits + surplus_credits      # 0 if token_credits is 0
+</code></pre>
+<p>Policy: <code>app/config/billing.yaml</code> (env overrides: <code>CREDITS_PER_DOLLAR</code>, <code>CREDIT_SURPLUS_RATE</code>, <code>BILLING_CONFIG</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th style="text-align: right;">Default</th>
+<th>Env override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>credits_per_dollar</code></td>
+<td style="text-align: right;">1000</td>
+<td><code>CREDITS_PER_DOLLAR</code></td>
+</tr>
+<tr>
+<td><code>surplus_rate</code></td>
+<td style="text-align: right;">1.0</td>
+<td><code>CREDIT_SURPLUS_RATE</code></td>
+</tr>
+<tr>
+<td><code>MONTHLY_PLAN_CREDITS["free"]</code></td>
+<td style="text-align: right;">1000</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>MONTHLY_PLAN_CREDITS["premium"]</code></td>
+<td style="text-align: right;">50000</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="model-token-rates">Model token rates</h2>
+<p><strong>Primary source:</strong> OpenRouter <code>GET /api/v1/models</code> (pricing keyed by each
+catalog model's <code>openrouter_model</code> slug in <code>llm_models.yaml</code>).</p>
+<p><strong>Fallback:</strong> <code>billing.yaml</code> → <code>pricing.model_overrides</code> (USD per 1M tokens).</p>
+<p>Set <code>pricing.source: yaml</code> to use overrides only (tests, offline).</p>
+<p>Implementation: <code>app/core/openrouter_pricing.py</code>, <code>app/core/credit_pricing.py</code>.</p>
+<h2 id="implementation-map">Implementation map</h2>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy config</td>
+<td><code>app/config/billing.yaml</code>, <code>app/core/billing_config.py</code></td>
+</tr>
+<tr>
+<td>Token rates</td>
+<td><code>app/core/openrouter_pricing.py</code></td>
+</tr>
+<tr>
+<td>Credit math</td>
+<td><code>app/core/credit_pricing.py</code></td>
+</tr>
+<tr>
+<td>Per-LLM charging</td>
+<td><code>app/core/llm_billing.py</code>, <code>app/core/llm_config.py</code> (<code>invoke_llm*</code>)</td>
+</tr>
+<tr>
+<td>Balance / ledger</td>
+<td><code>app/core/account_balance.py</code>, <code>sql/003_account_balance.sql</code></td>
+</tr>
+<tr>
+<td>Admission 402</td>
+<td><code>app/core/security.py</code></td>
+</tr>
+<tr>
+<td>Job billing totals</td>
+<td>accumulated in Redis via <code>llm_billing._accumulate_job_billing</code></td>
+</tr>
+<tr>
+<td>Stripe grants</td>
+<td><code>app/routers/billing.py</code> (requires <code>STRIPE_PRICE_CREDITS_JSON</code>)</td>
+</tr>
+<tr>
+<td>Full telemetry catalog</td>
+<td><a href="../TELEMETRY/">TELEMETRY.md</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="consumption">Consumption</h2>
+<p>Billable API keys must be <strong>portal-linked</strong> (<code>clients_nolain_query.user_id</code>
+set). Admission reads <code>profiles_nolain_query.credit_balance</code> and returns HTTP
+<strong>402</strong> when the balance is empty.</p>
+<p><strong>Unlinked owner keys</strong> (developer keys from <code>scripts/ensure-developer-key.sql</code>,
+with <code>tier = 'owner'</code> and no <code>user_id</code>) skip credit admission and settlement.
+<strong>Linked owner keys</strong> follow the same rules as free/premium portal keys.</p>
+<p><strong>Unlinked non-owner keys</strong> are rejected with <strong>402</strong> (no portal account).</p>
+<p><strong>Charge timing:</strong> every LLM invoke inside an active <code>billing_scope(client_id)</code>.
+Workers wrap stage execution; HTTP handlers wrap conversation, <code>analyze_query</code>,
+and <code>synthesize</code>.</p>
+<p>Credit charges use the atomic RPCs in <code>sql/003_account_balance.sql</code>. Existing
+databases that still have <code>query_balance</code> should apply <code>sql/008_credit_rename.sql</code>.
+Configure Stripe packages as a JSON map, for example
+<code>{"price_basic":"1000","price_team":"10000"}</code>. The webhook accepts only paid
+sessions whose <code>price_id</code> and declared credits match this map.</p>
+<h2 id="receipts-one-job-many-llm-charges">Receipts: one job, many LLM charges</h2>
+<p>Every time the product calls an LLM (code generation, DAG, chart, and so on),
+two things happen:</p>
+<ol>
+<li><strong>OpenRouter</strong> runs the model. That costs us money.</li>
+<li>The app then <strong>subtracts credits</strong> from the user's account so they pay for
+   that call.</li>
+</ol>
+<p>A typical pandas job with a chart and a DAG is <strong>several LLM calls</strong>, not one.
+Each call should take some credits.</p>
+<p>Two stores are involved:</p>
+<ul>
+<li><strong>User balance</strong> (<code>credit_balance</code>) — a number: how many credits the user has
+  left.</li>
+<li><strong>Ledger</strong> (<code>credit_balance_ledger_nolain_query</code>) — the receipt book. Each
+  charge adds a row: “minus 6 credits for job X”, then “minus 4 credits for
+  the same job”, and so on.</li>
+</ul>
+<p>When a charge works, both update: the balance goes down, and a new receipt is
+added. The receipt stores the <strong>job id</strong> so you can later ask what that query
+cost by summing its rows.</p>
+<p>Receipts are tagged with <code>event_type</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>llm_call</code></td>
+<td>One LLM call was charged. A job may have many of these.</td>
+</tr>
+<tr>
+<td><code>grant</code></td>
+<td>Credits were added (plan or Stripe top-up).</td>
+</tr>
+<tr>
+<td><code>settlement</code></td>
+<td>Reserved. At most <strong>one</strong> row of this tag per job.</td>
+</tr>
+</tbody>
+</table>
+<p>The database still has a rule: <strong>at most one <code>settlement</code> receipt per job</strong>.
+That is unused today. It is kept for a future “one total row for the whole
+job” if we ever need it. Per-call charges use <code>llm_call</code>, which that rule
+does not cover, so a job can have many receipts.</p>
+<p>If a later LLM call in the same job were written as <code>settlement</code>, the
+database would reject it (HTTP 409). The job would skip that stage even
+though the model already ran. Conversation endpoints that omit <code>job_id</code> never
+hit this rule.</p>
+<p>Redis job billing totals are only a running scoreboard. They do not decide
+whether a second charge is allowed. The ledger does.</p>
+<h2 id="manual-testing">Manual testing</h2>
+<ol>
+<li>Grant credits: <code>update profiles_nolain_query set credit_balance = 1000 ...</code></li>
+<li>Run a pandas-only job (<code>compile_dag: false</code>, <code>include_visualization: false</code>).</li>
+<li>Poll <code>GET /api/v1/get_task_status/{job_id}</code> until <code>success</code>.</li>
+<li>Expect <code>billing.charged_credits</code> reflecting <strong>all</strong> LLM calls in the job.</li>
+<li>Repeat with <code>compile_dag: true</code> — expect higher totals (more LLM calls + tokens).</li>
+</ol>
+<pre><code class="language-bash">cd cloud_api &amp;&amp; PYTHONPATH=. pytest -q
+</code></pre>
+<h2 id="known-limitations">Known limitations</h2>
+<p>Admission requires a positive credit balance for portal-linked keys. Unlinked
+owner developer keys skip admission and settlement. Each LLM credit charge is
+atomic; if writing the receipt fails, the call fails rather than continuing
+as if it were unpaid.</p>
+<h2 id="change-checklist">Change checklist</h2>
+<ol>
+<li>Update <a href="../CREDITS/">CREDITS.md</a> if user-visible pricing changes.</li>
+<li>Keep <code>billing.yaml</code> and plan grants in sync.</li>
+<li>Ensure every catalog model resolves rates (OpenRouter or yaml override).</li>
+<li>Route all LLM invokes through <code>invoke_llm</code> / <code>invoke_llm_chain</code>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

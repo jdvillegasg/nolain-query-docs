@@ -1,0 +1,2803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../CLOUD_API_DEV/">
+      
+      
+        <link rel="next" href="../CLOUD_API_USER/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cloud API — Usage Reference - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloud-api-usage-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud API — Usage Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BILLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_DEV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumption-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumption limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1llmmodels-model-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/llm/models — Model Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📡 Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-service-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET / — Service Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-runtime-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health — Runtime Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1capabilities-capability-plan-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/capabilities — Capability / Plan Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1analyze_query-semantic-analysis-synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/analyze_query — Semantic Analysis 🧠 (Synchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v1/analyze_query — Semantic Analysis 🧠 (Synchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1generate_dag-legacy-planner-compiler-asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/generate_dag — Legacy Planner → Compiler ⭐ (Asynchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v1/generate_dag — Legacy Planner → Compiler ⭐ (Asynchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv2generate_dag-data_analysis-capability-asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v2/generate_dag — data_analysis Capability (Asynchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v2/generate_dag — data_analysis Capability (Asynchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1get_task_statustask_id-poll-for-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/get_task_status/{task_id} — Poll for Result 📈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /api/v1/get_task_status/{task_id} — Poll for Result 📈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successful-polling-response-v2-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Successful Polling Response (v2 / conversation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1cancel_tasktask_id-cancel-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/cancel_task/{task_id} — Cancel a Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-endpoints-apiv1conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation endpoints (/api/v1/conversation/*)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conversation endpoints (/api/v1/conversation/*)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationsynthesize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/synthesize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1conversationsession_id-delete-apiv1conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/conversation/{session_id} / DELETE /api/v1/conversation/{session_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiauthkey-status-desktop-consumption-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/auth/key-status — Desktop consumption status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billing-endpoints-apibilling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing endpoints (/api/billing/*)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Billing endpoints (/api/billing/*)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apibillingstripecheckout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/billing/stripe/checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apibillingstripewebhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/billing/stripe/webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📂 Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarifications-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarifications Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-operations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Available Operations Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Related Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAG Connection Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query LLM costs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_ARCHITECUTRE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TELEMETRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_api-app-generation-plans-config-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desktop_app-frontend-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tauri + React + Typescript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nolainquery-website-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery website
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumption-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumption limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1llmmodels-model-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/llm/models — Model Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📡 Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-service-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET / — Service Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-runtime-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health — Runtime Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1capabilities-capability-plan-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/capabilities — Capability / Plan Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1analyze_query-semantic-analysis-synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/analyze_query — Semantic Analysis 🧠 (Synchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v1/analyze_query — Semantic Analysis 🧠 (Synchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1generate_dag-legacy-planner-compiler-asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/generate_dag — Legacy Planner → Compiler ⭐ (Asynchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v1/generate_dag — Legacy Planner → Compiler ⭐ (Asynchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv2generate_dag-data_analysis-capability-asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v2/generate_dag — data_analysis Capability (Asynchronous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /api/v2/generate_dag — data_analysis Capability (Asynchronous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realistic-full-featured-example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Full-Featured Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1get_task_statustask_id-poll-for-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/get_task_status/{task_id} — Poll for Result 📈
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /api/v1/get_task_status/{task_id} — Poll for Result 📈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successful-polling-response-v2-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Successful Polling Response (v2 / conversation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1cancel_tasktask_id-cancel-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/cancel_task/{task_id} — Cancel a Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-endpoints-apiv1conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation endpoints (/api/v1/conversation/*)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conversation endpoints (/api/v1/conversation/*)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationmessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1conversationsynthesize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/v1/conversation/synthesize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1conversationsession_id-delete-apiv1conversationsession_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/v1/conversation/{session_id} / DELETE /api/v1/conversation/{session_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiauthkey-status-desktop-consumption-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/auth/key-status — Desktop consumption status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billing-endpoints-apibilling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing endpoints (/api/billing/*)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Billing endpoints (/api/billing/*)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apibillingstripecheckout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/billing/stripe/checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apibillingstripewebhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/billing/stripe/webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📂 Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Object
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarifications-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarifications Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-operations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Available Operations Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Related Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cloud-api-usage-reference">Cloud API — Usage Reference</h1>
+<p>This document covers how to call the Cloud API endpoints, with full cURL examples and parameter references.</p>
+<p>The Cloud API turns a natural-language question plus <strong>dataset metadata</strong> into <strong>Artifacts</strong> for local execution: Pandas code (<code>code_pandas</code>), an optional computation-graph DAG (<code>dag</code>), and an optional chart contract (<code>visualization_spec</code>). The Cloud API never receives the full data file.</p>
+<p>The desktop <strong>Ask Queries</strong> path uses the conversation endpoints. Direct <code>generate_dag</code> endpoints exist for the same generation Capability without a chat session.</p>
+<p>Related docs:</p>
+<table>
+<thead>
+<tr>
+<th>Doc</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a></td>
+<td>Desktop chat loop, intents, clarification</td>
+</tr>
+<tr>
+<td><a href="../SYSTEM_ARCHITECUTRE/">SYSTEM_ARCHITECUTRE.md</a></td>
+<td>Capability → Plan → Stage → Artifact</td>
+</tr>
+<tr>
+<td><a href="../TELEMETRY/">TELEMETRY.md</a></td>
+<td>Job state, attempt logs, tokens, credit receipts</td>
+</tr>
+<tr>
+<td><a href="../CREDITS/">CREDITS.md</a></td>
+<td>User-facing credits, monthly allowance, examples</td>
+</tr>
+<tr>
+<td><a href="../BILLING/">BILLING.md</a></td>
+<td>Developer billing internals</td>
+</tr>
+<tr>
+<td><a href="../AUTH_SETUP/">AUTH_SETUP.md</a></td>
+<td>Portal Google/Supabase auth</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="authentication">🔐 Authentication</h2>
+<p>Every request to <code>/api/v1/*</code> or <code>/api/v2/*</code> must include your API key in the <code>X-API-Key</code> header.</p>
+<pre><code class="language-bash">-H &quot;X-API-Key: &lt;your-api-key&gt;&quot;
+</code></pre>
+<p>You obtain your API key from the <strong>Nolain portal</strong> (see <code>CLOUD_API_USER.md</code> and <code>POST /api/auth/keys</code> in <code>AUTH_SETUP.md</code>).</p>
+<p>Portal account routes under <code>/api/auth/*</code> use a Supabase access token instead:</p>
+<pre><code class="language-bash">-H &quot;Authorization: Bearer &lt;access_token&gt;&quot;
+</code></pre>
+<p>The exception is <code>GET /api/auth/key-status</code>, which authenticates with <code>X-API-Key</code> (desktop Settings panel).</p>
+<h3 id="consumption-limits">Consumption limits</h3>
+<p>Consumption is <strong>account-based</strong> for portal-linked keys. Admission reads
+<code>profiles_nolain_query.credit_balance</code> and returns <code>402 Payment Required</code> when
+the balance is empty.</p>
+<table>
+<thead>
+<tr>
+<th>Key type</th>
+<th>Admission</th>
+<th>Charged per LLM call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal-linked (<code>user_id</code> set)</td>
+<td>Requires <code>credit_balance &gt; 0</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Unlinked owner (<code>tier = owner</code>, no <code>user_id</code>)</td>
+<td>Always admitted</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Unlinked non-owner</td>
+<td><strong>402</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Monthly plan grants (see <a href="../CREDITS/">CREDITS.md</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Credits / month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>free</code></td>
+<td>1 000</td>
+</tr>
+<tr>
+<td><code>premium</code></td>
+<td>50 000</td>
+</tr>
+</tbody>
+</table>
+<p>Queueing a generation job does <strong>not</strong> consume credits by itself. Each LLM call
+is charged from token usage plus surplus as soon as it completes. Details:
+<a href="../CREDITS/">CREDITS.md</a>, <a href="../BILLING/">BILLING.md</a>.</p>
+<p>All LLM traffic routes through <strong>OpenRouter</strong>. Pass an optional <code>model</code> field
+(catalog id from <code>GET /api/v1/llm/models</code>); omit it to use the server default
+(<code>deepseek-v4-flash-0731</code> unless overridden in <code>llm_models.yaml</code>).</p>
+<hr />
+<h3 id="get-apiv1llmmodels-model-catalog"><code>GET /api/v1/llm/models</code> — Model Catalog</h3>
+<p>Lists selectable models and the server default. Uses authentication-only mode.</p>
+<pre><code class="language-bash">curl http://localhost:8000/api/v1/llm/models \
+  -H &quot;X-API-Key: sk-your-key-here&quot;
+</code></pre>
+<p><strong>Response (shape):</strong></p>
+<pre><code class="language-json">{
+  &quot;provider&quot;: &quot;openrouter&quot;,
+  &quot;default_model_id&quot;: &quot;deepseek-v4-flash-0731&quot;,
+  &quot;models&quot;: [
+    { &quot;id&quot;: &quot;deepseek-v4-flash-0731&quot;, &quot;label&quot;: &quot;DeepSeek V4 Flash (0731)&quot;, &quot;openrouter_model&quot;: &quot;deepseek/deepseek-v4-flash-0731&quot;, &quot;default&quot;: true },
+    { &quot;id&quot;: &quot;gpt-5.6-luna&quot;, &quot;label&quot;: &quot;GPT-5.6 Luna&quot;, &quot;openrouter_model&quot;: &quot;openai/gpt-5.6-luna&quot; }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="endpoints">📡 Endpoints</h2>
+<h3 id="get-service-status"><code>GET /</code> — Service Status</h3>
+<pre><code class="language-bash">curl http://localhost:8000/
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;app&quot;: &quot;Data Query DAG Generator API&quot;,
+  &quot;status&quot;: &quot;online&quot;,
+  &quot;documentation&quot;: &quot;/docs&quot;
+}
+</code></pre>
+<hr />
+<h3 id="get-health-runtime-health"><code>GET /health</code> — Runtime Health</h3>
+<p>Reports Redis, Celery workers, and Supabase configuration. Generation endpoints return <code>503</code> when Redis or a Celery worker is unavailable.</p>
+<pre><code class="language-bash">curl http://localhost:8000/health
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;services&quot;: {
+    &quot;redis&quot;: { &quot;ok&quot;: true },
+    &quot;celery&quot;: { &quot;ok&quot;: true, &quot;workers&quot;: [&quot;celery@host&quot;] },
+    &quot;supabase&quot;: { &quot;ok&quot;: true, &quot;host&quot;: &quot;your-project.supabase.co&quot; }
+  }
+}
+</code></pre>
+<p><code>status</code> is <code>"degraded"</code> when any listed service is not ok.</p>
+<hr />
+<h3 id="get-apiv1capabilities-capability-plan-catalog"><code>GET /api/v1/capabilities</code> — Capability / Plan Catalog</h3>
+<p>Lists registered generation Capabilities, Plans, and optional Artifacts. Intent classification is separate: optional Artifacts (DAG, visualization spec) are request options on a Plan, not extra plan ids.</p>
+<p>Uses authentication-only mode (does not enforce remaining credits).</p>
+<pre><code class="language-bash">curl http://localhost:8000/api/v1/capabilities \
+  -H &quot;X-API-Key: sk-your-key-here&quot;
+</code></pre>
+<p><strong>Response (shape):</strong></p>
+<pre><code class="language-json">{
+  &quot;capabilities&quot;: [
+    {
+      &quot;id&quot;: &quot;data_analysis&quot;,
+      &quot;enabled&quot;: true,
+      &quot;plans&quot;: [
+        {
+          &quot;plan_id&quot;: &quot;data_analysis/pandas&quot;,
+          &quot;selectable&quot;: true,
+          &quot;default&quot;: true,
+          &quot;implemented&quot;: true,
+          &quot;engine&quot;: &quot;pandas&quot;,
+          &quot;stages&quot;: [&quot;generate_pandas&quot;, &quot;compile_dag&quot;, &quot;format_visualization&quot;, &quot;validate_visualization&quot;, &quot;validate_dag&quot;, &quot;finalize_plan&quot;],
+          &quot;optional_stages&quot;: [&quot;compile_dag&quot;, &quot;format_visualization&quot;, &quot;validate_visualization&quot;],
+          &quot;optional_artifacts&quot;: [&quot;dag&quot;, &quot;visualization_spec&quot;],
+          &quot;terminal_artifact_kinds&quot;: [&quot;code_pandas&quot;, &quot;dag&quot;, &quot;visualization_spec&quot;]
+        },
+        {
+          &quot;plan_id&quot;: &quot;data_analysis/ibis&quot;,
+          &quot;selectable&quot;: false,
+          &quot;implemented&quot;: false
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<p><code>data_analysis/ibis</code> is catalogued but not selectable. Legacy plan ids such as <code>data_analysis/analysis/with_dag</code> map to <code>data_analysis/pandas</code> plus options.</p>
+<hr />
+<h3 id="post-apiv1analyze_query-semantic-analysis-synchronous"><code>POST /api/v1/analyze_query</code> — Semantic Analysis 🧠 (Synchronous)</h3>
+<p>Analyzes a natural language query to detect ambiguous concepts (polysemy, granularity, vagueness) before DAG generation.</p>
+<p>This <strong>direct</strong> endpoint charges credits for the LLM call(s) it makes. The same
+semantic step inside <code>POST /api/v1/conversation/message</code> is also charged when it
+invokes a model.</p>
+<h4 id="request-body-parameters">Request Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>✅</td>
+<td>Natural language question about your data</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>✅</td>
+<td>Dataset schema info (see <a href="#metadata-object">Metadata Object</a>)</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Catalog model id (e.g. <code>"deepseek-v4-flash-0731"</code>). Default: server default from <code>llm_models.yaml</code>.</td>
+</tr>
+<tr>
+<td><code>n_interpretations</code></td>
+<td><code>int</code></td>
+<td>❌</td>
+<td>Candidate interpretations per ambiguity. Default: <code>4</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="realistic-full-featured-example">Realistic Full-Featured Example</h4>
+<p>Scenario: Analyzing a complex query about an e-commerce dataset using <strong>GPT-5.6 Luna</strong>.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/analyze_query \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;query&quot;: &quot;What are the top 5 countries by total revenue for high-volume transactions?&quot;,
+    &quot;metadata&quot;: {
+      &quot;available_columns&quot;: [&quot;Invoice&quot;, &quot;StockCode&quot;, &quot;Description&quot;, &quot;Quantity&quot;, &quot;InvoiceDate&quot;, &quot;Price&quot;, &quot;Customer ID&quot;, &quot;Country&quot;],
+      &quot;sample_data&quot;: [
+        { &quot;Invoice&quot;: &quot;489434&quot;, &quot;StockCode&quot;: &quot;85048&quot;, &quot;Description&quot;: &quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:45:00&quot;, &quot;Price&quot;: 6.95, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; },
+        { &quot;Invoice&quot;: &quot;489435&quot;, &quot;StockCode&quot;: &quot;22350&quot;, &quot;Description&quot;: &quot;CAT BOWL &quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:46:00&quot;, &quot;Price&quot;: 2.55, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; }
+      ],
+      &quot;column_semantics&quot;: {
+        &quot;Invoice&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 28816, &quot;sample_values&quot;: [&quot;489434&quot;, &quot;489435&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;identifier&quot; },
+        &quot;StockCode&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4631, &quot;sample_values&quot;: [&quot;85048&quot;, &quot;22350&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Description&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4681, &quot;sample_values&quot;: [&quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;, &quot;CAT BOWL &quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Quantity&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 500, &quot;sample_values&quot;: [12, 12], &quot;data_type&quot;: &quot;int&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;InvoiceDate&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 25210, &quot;sample_values&quot;: [&quot;2009-12-01 07:45:00&quot;, &quot;2009-12-01 07:46:00&quot;], &quot;data_type&quot;: &quot;date&quot;, &quot;semantic_type&quot;: &quot;temporal&quot; },
+        &quot;Price&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 1606, &quot;sample_values&quot;: [6.95, 2.55], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;Customer ID&quot;: { &quot;null_ratio&quot;: 0.21, &quot;cardinality&quot;: 4383, &quot;sample_values&quot;: [13085.0], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Country&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 37, &quot;sample_values&quot;: [&quot;United Kingdom&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; }
+      }
+    },
+    &quot;model&quot;: &quot;gpt-5.6-luna&quot;,
+    &quot;n_interpretations&quot;: 5
+  }'
+</code></pre>
+<hr />
+<h3 id="post-apiv1generate_dag-legacy-planner-compiler-asynchronous"><code>POST /api/v1/generate_dag</code> — Legacy Planner → Compiler ⭐ (Asynchronous)</h3>
+<p>Starts the <strong>legacy v1</strong> background chain (planner text → graph). Prefer <code>POST /api/v2/generate_dag</code> or the conversation endpoints for the registered <code>data_analysis</code> Capability.</p>
+<h4 id="request-body-parameters_1">Request Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>✅</td>
+<td>Natural language question</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>✅</td>
+<td>Dataset schema info</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Catalog model id</td>
+</tr>
+<tr>
+<td><code>n_interpretations</code></td>
+<td><code>int</code></td>
+<td>❌</td>
+<td>Number of interpretations for the planner step.</td>
+</tr>
+<tr>
+<td><code>clarifications</code></td>
+<td><code>array</code></td>
+<td>❌</td>
+<td>List of <code>{ "term": "...", "chosen_interpretation": "..." }</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="realistic-full-featured-example_1">Realistic Full-Featured Example</h4>
+<p>Scenario: Generating a DAG using <strong>DeepSeek</strong> with explicit clarifications for ambiguous terms identified in the previous step.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/generate_dag \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;query&quot;: &quot;What are the top 5 countries by total revenue for high-volume transactions?&quot;,
+    &quot;metadata&quot;: {
+      &quot;available_columns&quot;: [&quot;Invoice&quot;, &quot;StockCode&quot;, &quot;Description&quot;, &quot;Quantity&quot;, &quot;InvoiceDate&quot;, &quot;Price&quot;, &quot;Customer ID&quot;, &quot;Country&quot;],
+      &quot;sample_data&quot;: [
+        { &quot;Invoice&quot;: &quot;489434&quot;, &quot;StockCode&quot;: &quot;85048&quot;, &quot;Description&quot;: &quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:45:00&quot;, &quot;Price&quot;: 6.95, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; }
+      ],
+      &quot;column_semantics&quot;: {
+        &quot;Invoice&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 28816, &quot;sample_values&quot;: [&quot;489434&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;identifier&quot; },
+        &quot;StockCode&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4631, &quot;sample_values&quot;: [&quot;85048&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Description&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4681, &quot;sample_values&quot;: [&quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Quantity&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 500, &quot;sample_values&quot;: [12], &quot;data_type&quot;: &quot;int&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;InvoiceDate&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 25210, &quot;sample_values&quot;: [&quot;2009-12-01 07:45:00&quot;], &quot;data_type&quot;: &quot;date&quot;, &quot;semantic_type&quot;: &quot;temporal&quot; },
+        &quot;Price&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 1606, &quot;sample_values&quot;: [6.95], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;Customer ID&quot;: { &quot;null_ratio&quot;: 0.21, &quot;cardinality&quot;: 4383, &quot;sample_values&quot;: [13085.0], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Country&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 37, &quot;sample_values&quot;: [&quot;United Kingdom&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; }
+      }
+    },
+    &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+    &quot;n_interpretations&quot;: 3,
+    &quot;clarifications&quot;: [
+      {
+        &quot;term&quot;: &quot;revenue&quot;,
+        &quot;chosen_interpretation&quot;: &quot;Quantity multiplied by Price&quot;
+      },
+      {
+        &quot;term&quot;: &quot;high-volume&quot;,
+        &quot;chosen_interpretation&quot;: &quot;Transactions where Quantity is greater than 100&quot;
+      }
+    ]
+  }'
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;queued&quot;,
+  &quot;task_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;
+}
+</code></pre>
+<hr />
+<h3 id="post-apiv2generate_dag-data_analysis-capability-asynchronous"><code>POST /api/v2/generate_dag</code> — <code>data_analysis</code> Capability (Asynchronous)</h3>
+<p>Admits the registered <code>data_analysis</code> Capability. The server builds a Plan of Stages from request options. The pandas Plan always produces a <code>code_pandas</code> Artifact (<code>pandas_code</code> on the status payload). Optional Stages add a DAG and/or a visualization spec. Each LLM call in the worker is charged as it completes; poll <code>billing.charged_credits</code> on the status payload for the running total.</p>
+<p><strong>Pandas Plan Stages (built from options):</strong></p>
+<ol>
+<li><code>generate_pandas</code> — LLM produces Pandas code from the query + metadata. The worker applies deterministic compatibility patches and static preflight checks (no execution on the server). Truncated (<code>finish_reason=length</code>), empty, syntactically invalid, unsafe, or structurally incomplete code is rejected before delivery and may retry under the adaptive repair policy.</li>
+<li><code>compile_dag</code> — optional (<code>compile_dag=true</code>, default); LLM translates the code into a DAG</li>
+<li><code>format_visualization</code> — optional (<code>include_visualization=true</code>, default); LLM produces a <code>visualization_spec</code></li>
+<li><code>validate_visualization</code> — optional (when <code>include_visualization=true</code>); validates the chart contract</li>
+<li><code>validate_dag</code> — optional (when <code>compile_dag=true</code>); validates the DAG</li>
+<li><code>finalize_plan</code> — mark success (no separate charge; billing is per LLM call)</li>
+</ol>
+<p><code>descriptive</code> / <code>visualization</code> / <code>transformation</code> are <strong>not</strong> Capabilities or Plans. Charts set <code>include_visualization</code>; they do not change <code>plan_id</code>.</p>
+<p>Poll responses include <code>capability_id</code>, <code>plan_id</code>, <code>current_stage</code>,
+<code>compile_dag</code>, <code>include_visualization</code>, <code>pandas_code</code>, optional <code>graph</code> /
+<code>visualization_spec</code>, and an optional <code>artifacts[]</code> envelope. Pandas reliability
+fields are:</p>
+<ul>
+<li><code>pandas_retries_left</code>: remaining local-runtime repair jobs</li>
+<li><code>pandas_sandbox_retries_left</code>: remaining in-cloud retries</li>
+<li><code>pandas_attempts_used</code> / <code>pandas_total_max_attempts</code>: chain usage and ceiling</li>
+<li><code>generation_attempts</code>: bounded diagnostics for each LLM call, including
+  finish reason, selected policy profile, token counts, and outcome</li>
+</ul>
+<h4 id="request-body-parameters_2">Request Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>✅</td>
+<td>Natural language question</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>✅</td>
+<td>Dataset schema info</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Catalog model id</td>
+</tr>
+<tr>
+<td><code>clarifications</code></td>
+<td><code>array</code></td>
+<td>❌</td>
+<td>List of <code>{ "term": "...", "chosen_interpretation": "..." }</code></td>
+</tr>
+<tr>
+<td><code>compile_dag</code></td>
+<td><code>boolean</code></td>
+<td>❌</td>
+<td>Include the optional <code>compile_dag</code> Stage (default <code>true</code>)</td>
+</tr>
+<tr>
+<td><code>include_visualization</code></td>
+<td><code>boolean</code></td>
+<td>❌</td>
+<td>Produce a <code>visualization_spec</code> Artifact (default <code>true</code>)</td>
+</tr>
+<tr>
+<td><code>capability_id</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Registered Capability id (default <code>data_analysis</code>)</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Catalog Plan id (default <code>data_analysis/pandas</code>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="realistic-full-featured-example_2">Realistic Full-Featured Example</h4>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v2/generate_dag \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;query&quot;: &quot;What are the top 5 countries by total revenue for high-volume transactions?&quot;,
+    &quot;metadata&quot;: {
+      &quot;available_columns&quot;: [&quot;Invoice&quot;, &quot;StockCode&quot;, &quot;Description&quot;, &quot;Quantity&quot;, &quot;InvoiceDate&quot;, &quot;Price&quot;, &quot;Customer ID&quot;, &quot;Country&quot;],
+      &quot;sample_data&quot;: [
+        { &quot;Invoice&quot;: &quot;489434&quot;, &quot;StockCode&quot;: &quot;85048&quot;, &quot;Description&quot;: &quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:45:00&quot;, &quot;Price&quot;: 6.95, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; }
+      ],
+      &quot;column_semantics&quot;: {
+        &quot;Invoice&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 28816, &quot;sample_values&quot;: [&quot;489434&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;identifier&quot; },
+        &quot;StockCode&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4631, &quot;sample_values&quot;: [&quot;85048&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Description&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4681, &quot;sample_values&quot;: [&quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Quantity&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 500, &quot;sample_values&quot;: [12], &quot;data_type&quot;: &quot;int&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;InvoiceDate&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 25210, &quot;sample_values&quot;: [&quot;2009-12-01 07:45:00&quot;], &quot;data_type&quot;: &quot;date&quot;, &quot;semantic_type&quot;: &quot;temporal&quot; },
+        &quot;Price&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 1606, &quot;sample_values&quot;: [6.95], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+        &quot;Customer ID&quot;: { &quot;null_ratio&quot;: 0.21, &quot;cardinality&quot;: 4383, &quot;sample_values&quot;: [13085.0], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+        &quot;Country&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 37, &quot;sample_values&quot;: [&quot;United Kingdom&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; }
+      }
+    },
+    &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+    &quot;compile_dag&quot;: true,
+    &quot;include_visualization&quot;: true,
+    &quot;clarifications&quot;: [
+      {
+        &quot;term&quot;: &quot;revenue&quot;,
+        &quot;chosen_interpretation&quot;: &quot;Quantity multiplied by Price&quot;
+      },
+      {
+        &quot;term&quot;: &quot;high-volume&quot;,
+        &quot;chosen_interpretation&quot;: &quot;Transactions where Quantity is greater than 100&quot;
+      }
+    ]
+  }'
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;queued&quot;,
+  &quot;task_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+  &quot;capability_id&quot;: &quot;data_analysis&quot;,
+  &quot;plan_id&quot;: &quot;data_analysis/pandas&quot;,
+  &quot;compile_dag&quot;: true,
+  &quot;include_visualization&quot;: true,
+  &quot;stages&quot;: [&quot;generate_pandas&quot;, &quot;compile_dag&quot;, &quot;format_visualization&quot;, &quot;validate_visualization&quot;, &quot;validate_dag&quot;, &quot;finalize_plan&quot;],
+  &quot;message&quot;: &quot;Poll status via GET /api/v1/get_task_status/{task_id} (the v1 status endpoint works for these tasks)&quot;
+}
+</code></pre>
+<p>Unknown <code>capability_id</code> / <code>plan_id</code> values return <code>400</code>. Redis or Celery unavailable returns <code>503</code>.</p>
+<hr />
+<h3 id="get-apiv1get_task_statustask_id-poll-for-result"><code>GET /api/v1/get_task_status/{task_id}</code> — Poll for Result 📈</h3>
+<p>Checks progress and retrieves Artifacts. Uses authentication-only mode so you can still read work that already started after credits are exhausted.</p>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_id</code></td>
+<td><code>uuid</code></td>
+<td>✅</td>
+<td>The ID returned by <code>generate_dag</code> or a conversation <code>generation</code> response</td>
+</tr>
+</tbody>
+</table>
+<h4 id="full-example">Full Example</h4>
+<pre><code class="language-bash">curl -X GET http://localhost:8000/api/v1/get_task_status/a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
+  -H &quot;X-API-Key: sk-your-key-here&quot;
+</code></pre>
+<p>Useful <code>dag_status</code> values include <code>queued</code>, <code>generating_code</code>, <code>compiling_from_code</code>, <code>formatting_visualization</code>, <code>validating_visualization</code>, <code>validating</code>, <code>finalizing</code>, <code>success</code>, <code>failed</code>, and <code>cancelled</code>.</p>
+<h4 id="successful-polling-response-v2-conversation">Successful Polling Response (v2 / conversation)</h4>
+<pre><code class="language-json">{
+  &quot;task_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+  &quot;execution_status&quot;: &quot;SUCCESS&quot;,
+  &quot;dag_status&quot;: &quot;success&quot;,
+  &quot;graph&quot;: {
+    &quot;graph_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+    &quot;nodes&quot;: [
+      {
+        &quot;id&quot;: &quot;node_0&quot;,
+        &quot;op&quot;: &quot;filter_extract&quot;,
+        &quot;params&quot;: { &quot;column&quot;: &quot;Quantity&quot;, &quot;operator&quot;: &quot;gt&quot;, &quot;value&quot;: 100 },
+        &quot;inputs&quot;: []
+      }
+    ],
+    &quot;output_node&quot;: &quot;node_0&quot;
+  },
+  &quot;errors&quot;: [],
+  &quot;compiler_retries&quot;: 0,
+  &quot;pandas_retries&quot;: 0,
+  &quot;pandas_retries_left&quot;: 2,
+  &quot;last_compiler_error&quot;: null,
+  &quot;pandas_code&quot;: &quot;result = df.loc[df['Quantity'] &gt; 100].groupby('Country')['revenue'].sum().nlargest(5)&quot;,
+  &quot;visualization_spec&quot;: {
+    &quot;version&quot;: 1,
+    &quot;kind&quot;: &quot;bar&quot;,
+    &quot;title&quot;: &quot;Top 5 countries by revenue&quot;,
+    &quot;x&quot;: &quot;Country&quot;,
+    &quot;y&quot;: [&quot;revenue&quot;],
+    &quot;sort_direction&quot;: &quot;desc&quot;
+  },
+  &quot;capability_id&quot;: &quot;data_analysis&quot;,
+  &quot;plan_id&quot;: &quot;data_analysis/pandas&quot;,
+  &quot;current_stage&quot;: &quot;validate_dag&quot;,
+  &quot;compile_dag&quot;: true,
+  &quot;include_visualization&quot;: true,
+  &quot;plan&quot;: {},
+  &quot;billing&quot;: {
+    &quot;token_credits&quot;: 8,
+    &quot;surplus_credits&quot;: 8,
+    &quot;charged_credits&quot;: 16,
+    &quot;llm_calls&quot;: 4,
+    &quot;surplus_rate&quot;: 1.0
+  },
+  &quot;artifacts&quot;: [
+    { &quot;kind&quot;: &quot;code_pandas&quot;, &quot;schema_version&quot;: 1, &quot;storage_key&quot;: &quot;pandas_code&quot;, &quot;payload&quot;: &quot;...&quot; },
+    { &quot;kind&quot;: &quot;dag&quot;, &quot;schema_version&quot;: 1, &quot;storage_key&quot;: &quot;graph&quot;, &quot;payload&quot;: {} },
+    { &quot;kind&quot;: &quot;visualization_spec&quot;, &quot;schema_version&quot;: 1, &quot;storage_key&quot;: &quot;visualization_spec&quot;, &quot;payload&quot;: {} }
+  ],
+  &quot;input_tokens&quot;: 1200,
+  &quot;output_tokens&quot;: 400,
+  &quot;reasoning_tokens&quot;: 0,
+  &quot;total_llm_time&quot;: 8.2,
+  &quot;llm_times&quot;: []
+}
+</code></pre>
+<p>When <code>compile_dag=false</code>, <code>graph</code> is omitted/null and <code>pandas_code</code> is the executable Artifact. When <code>include_visualization=false</code>, <code>visualization_spec</code> is omitted/null.</p>
+<p>Execute Artifacts locally (desktop engine on port 8001): <code>POST /execute_pandas</code> and, when a DAG is present, <code>POST /execute_dag</code>.</p>
+<hr />
+<h3 id="post-apiv1cancel_tasktask_id-cancel-a-job"><code>POST /api/v1/cancel_task/{task_id}</code> — Cancel a Job</h3>
+<p>Cooperative cancellation between Plan Stages. LLM calls already completed keep their credit charges. Restricted to the API key that owns the job.</p>
+<p>Uses authentication-only mode (usable after credits are exhausted).</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/cancel_task/a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
+  -H &quot;X-API-Key: sk-your-key-here&quot;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200</code></td>
+<td>Cancellation recorded (<code>status</code>: <code>"cancelled"</code>)</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td>Key does not own this job</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Job not found</td>
+</tr>
+<tr>
+<td><code>409</code></td>
+<td>Job can no longer be cancelled</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="conversation-endpoints-apiv1conversation">Conversation endpoints (<code>/api/v1/conversation/*</code>)</h3>
+<p>This is the desktop <strong>Ask Queries</strong> loop. Full branch table: <a href="../CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a>.</p>
+<p>Sessions live in Redis (<code>conversation:{session_id}</code>) for 24 hours. Session GET/DELETE currently do not verify that the calling key created the session.</p>
+<h4 id="post-apiv1conversationstart"><code>POST /api/v1/conversation/start</code></h4>
+<p>Creates a session. No LLM call; no charge.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/conversation/start \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{ &quot;metadata&quot;: { &quot;available_columns&quot;: [&quot;Country&quot;, &quot;Price&quot;] } }'
+</code></pre>
+<pre><code class="language-json">{ &quot;session_id&quot;: &quot;c0a1b2c3-d4e5-6789-abcd-ef1234567890&quot; }
+</code></pre>
+<h4 id="post-apiv1conversationmessage"><code>POST /api/v1/conversation/message</code></h4>
+<p>Main decision + optional job admission.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session_id</code></td>
+<td><code>string</code></td>
+<td>✅</td>
+<td>From <code>/start</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>✅</td>
+<td>User text</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>✅</td>
+<td>Dataset schema info</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Catalog model id</td>
+</tr>
+<tr>
+<td><code>clarifications</code></td>
+<td><code>array</code></td>
+<td>❌</td>
+<td>When set, skips classify/semantic and queues generation</td>
+</tr>
+<tr>
+<td><code>compile_dag</code></td>
+<td><code>boolean</code></td>
+<td>❌</td>
+<td>Compile DAG UI toggle (default <code>true</code>)</td>
+</tr>
+<tr>
+<td><code>include_visualization</code></td>
+<td><code>boolean</code></td>
+<td>❌</td>
+<td>Request a chart spec (default <code>true</code>; intent classifier may also set this)</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td><code>string</code></td>
+<td>❌</td>
+<td>Optional catalog Plan (default <code>data_analysis/pandas</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>For chart-only queries the intent classifier typically keeps <code>include_visualization=true</code>. Set <code>include_visualization=false</code> when you want pandas/DAG output without a chart spec.</p>
+<p>Without <code>clarifications</code>, LangGraph classifies intent:</p>
+<table>
+<thead>
+<tr>
+<th><code>type</code> in response</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text_response</code></td>
+<td>Off-topic, unsafe, underspecified, explanation, out of scope, or semantic failure</td>
+</tr>
+<tr>
+<td><code>meta_answer</code></td>
+<td>Dataset-structure question answered from metadata</td>
+</tr>
+<tr>
+<td><code>clarification</code></td>
+<td>Ambiguous terms; resend with <code>clarifications</code></td>
+</tr>
+<tr>
+<td><code>generation</code></td>
+<td>Job accepted; poll <code>task_id</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/conversation/message \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;session_id&quot;: &quot;c0a1b2c3-d4e5-6789-abcd-ef1234567890&quot;,
+    &quot;message&quot;: &quot;Show a bar chart of the top 5 countries by total revenue&quot;,
+    &quot;metadata&quot;: { &quot;available_columns&quot;: [&quot;Country&quot;, &quot;Quantity&quot;, &quot;Price&quot;] },
+    &quot;compile_dag&quot;: true
+  }'
+</code></pre>
+<p><strong><code>generation</code> response:</strong></p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;generation&quot;,
+  &quot;task_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+  &quot;session_id&quot;: &quot;c0a1b2c3-d4e5-6789-abcd-ef1234567890&quot;,
+  &quot;capability_id&quot;: &quot;data_analysis&quot;,
+  &quot;plan_id&quot;: &quot;data_analysis/pandas&quot;,
+  &quot;compile_dag&quot;: true,
+  &quot;include_visualization&quot;: true
+}
+</code></pre>
+<p>Requests that no registered Capability can serve return <code>text_response</code> (<code>out_of_scope</code>) and do not queue generation. Forecasting, statistical inference, optimization, and anomaly detection currently fall in that branch while only <code>data_analysis</code> is enabled. Explanation requests return grounded text from saved result context and do not queue generation.</p>
+<h4 id="post-apiv1conversationresult"><code>POST /api/v1/conversation/result</code></h4>
+<p>Notify the server of local execution so follow-ups have context. No charge on a successful store.</p>
+<p>When <code>exec_error</code> and <code>pandas_code</code> are set, the previous generation job
+succeeded, that job still has <code>pandas_retries_left &gt; 0</code>, and the chain has not
+reached <code>pandas_total_max_attempts</code>, the server queues a generate_pandas
+<strong>repair</strong> job (same query, failed code + traceback, no classifier). Jobs that
+already failed in the cloud (syntax/sandbox rejects) are not re-queued as
+runtime repairs. It carries attempt history forward and resets the sandbox
+retry budget for the repair job, then returns:</p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;repairing&quot;,
+  &quot;type&quot;: &quot;generation&quot;,
+  &quot;task_id&quot;: &quot;...&quot;,
+  &quot;session_id&quot;: &quot;...&quot;,
+  &quot;capability_id&quot;: &quot;data_analysis&quot;,
+  &quot;plan_id&quot;: &quot;data_analysis/pandas&quot;,
+  &quot;compile_dag&quot;: true,
+  &quot;include_visualization&quot;: true,
+  &quot;pandas_retries_left&quot;: 1
+}
+</code></pre>
+<p>Poll that <code>task_id</code> and re-execute locally. If no retries remain, the response is <code>{ "status": "ok" }</code>.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/conversation/result \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;session_id&quot;: &quot;c0a1b2c3-d4e5-6789-abcd-ef1234567890&quot;,
+    &quot;dag&quot;: { &quot;graph_id&quot;: &quot;...&quot;, &quot;nodes&quot;: [], &quot;output_node&quot;: &quot;node_2&quot; },
+    &quot;exec_result&quot;: { &quot;preview&quot;: [{&quot;Country&quot;: &quot;United Kingdom&quot;, &quot;revenue&quot;: 912345.0}] },
+    &quot;pandas_code&quot;: &quot;result = df.groupby('Country')['Quantity'].sum()&quot;
+  }'
+</code></pre>
+<h4 id="post-apiv1conversationsynthesize"><code>POST /api/v1/conversation/synthesize</code></h4>
+<p>Optional post-execution answer framing. Charges credits if the synthesizer invokes an LLM. On LLM failure the endpoint still returns <code>{ "status": "success", "narrative": {} }</code>.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/v1/conversation/synthesize \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;session_id&quot;: &quot;c0a1b2c3-d4e5-6789-abcd-ef1234567890&quot;,
+    &quot;question&quot;: &quot;What are the top 5 countries by total revenue?&quot;,
+    &quot;result_summary&quot;: &quot;United Kingdom leads, followed by France.&quot;,
+    &quot;outcome&quot;: &quot;answered&quot;,
+    &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;
+  }'
+</code></pre>
+<h4 id="get-apiv1conversationsession_id-delete-apiv1conversationsession_id"><code>GET /api/v1/conversation/{session_id}</code> / <code>DELETE /api/v1/conversation/{session_id}</code></h4>
+<p>Read or delete the Redis session. Delete returns <code>{ "status": "deleted" }</code>. Missing session on GET returns <code>404</code>.</p>
+<hr />
+<h3 id="get-apiauthkey-status-desktop-consumption-status"><code>GET /api/auth/key-status</code> — Desktop consumption status</h3>
+<p>Validates an API key (auth-only; no credit enforcement) and returns whether it can currently spend credits. Used by the desktop Settings panel.</p>
+<pre><code class="language-bash">curl http://localhost:8000/api/auth/key-status \
+  -H &quot;X-API-Key: sk-your-key-here&quot;
+</code></pre>
+<pre><code class="language-json">{
+  &quot;tier&quot;: &quot;free&quot;,
+  &quot;masked_key&quot;: &quot;sk-free-****7890&quot;,
+  &quot;credit_balance&quot;: 42,
+  &quot;can_consume&quot;: true,
+  &quot;is_active&quot;: true,
+  &quot;label&quot;: &quot;Laptop&quot;
+}
+</code></pre>
+<p><code>credit_balance</code> is <code>null</code> for unlinked keys. <code>can_consume</code> is <code>true</code> for
+unlinked owner developer keys even when <code>credit_balance</code> is <code>null</code>. Portal CRUD
+for keys (<code>GET /api/auth/me</code>, <code>POST /api/auth/keys</code>, …) uses Bearer tokens —
+see <a href="../AUTH_SETUP/">AUTH_SETUP.md</a>.</p>
+<hr />
+<h3 id="billing-endpoints-apibilling">Billing endpoints (<code>/api/billing/*</code>)</h3>
+<p>Stripe credit top-ups for portal-linked keys. Requires server-side Stripe
+configuration (see <a href="../CLOUD_API_DEV/">CLOUD_API_DEV.md</a>).</p>
+<h4 id="post-apibillingstripecheckout"><code>POST /api/billing/stripe/checkout</code></h4>
+<p>Creates a Checkout Session. Requires a portal-linked API key.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8000/api/billing/stripe/checkout \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-API-Key: sk-your-key-here&quot; \
+  -d '{
+    &quot;price_id&quot;: &quot;price_basic&quot;,
+    &quot;success_url&quot;: &quot;https://nolainquery.com/billing/success&quot;,
+    &quot;cancel_url&quot;: &quot;https://nolainquery.com/billing/cancel&quot;
+  }'
+</code></pre>
+<pre><code class="language-json">{ &quot;checkout_url&quot;: &quot;https://checkout.stripe.com/...&quot;, &quot;session_id&quot;: &quot;cs_...&quot; }
+</code></pre>
+<p><code>price_id</code> must appear in <code>STRIPE_PRICE_CREDITS_JSON</code> on the server.</p>
+<h4 id="post-apibillingstripewebhook"><code>POST /api/billing/stripe/webhook</code></h4>
+<p>Stripe webhook (no API key). Grants credits on <code>checkout.session.completed</code> when
+payment succeeds and metadata matches a configured package.</p>
+<hr />
+<h2 id="data-structures">📂 Data Structures</h2>
+<h3 id="metadata-object">Metadata Object</h3>
+<p>Provides context to the AI about your dataset's columns and their meaning.</p>
+<pre><code class="language-json">{
+  &quot;available_columns&quot;: [&quot;Invoice&quot;, &quot;StockCode&quot;, &quot;Description&quot;, &quot;Quantity&quot;, &quot;InvoiceDate&quot;, &quot;Price&quot;, &quot;Customer ID&quot;, &quot;Country&quot;],
+  &quot;sample_data&quot;: [
+    { &quot;Invoice&quot;: &quot;489434&quot;, &quot;StockCode&quot;: &quot;85048&quot;, &quot;Description&quot;: &quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:45:00&quot;, &quot;Price&quot;: 6.95, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; },
+    { &quot;Invoice&quot;: &quot;489435&quot;, &quot;StockCode&quot;: &quot;22350&quot;, &quot;Description&quot;: &quot;CAT BOWL &quot;, &quot;Quantity&quot;: 12, &quot;InvoiceDate&quot;: &quot;2009-12-01 07:46:00&quot;, &quot;Price&quot;: 2.55, &quot;Customer ID&quot;: 13085.0, &quot;Country&quot;: &quot;United Kingdom&quot; }
+  ],
+  &quot;column_semantics&quot;: {
+    &quot;Invoice&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 28816, &quot;sample_values&quot;: [&quot;489434&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;identifier&quot; },
+    &quot;StockCode&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4631, &quot;sample_values&quot;: [&quot;85048&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+    &quot;Description&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 4681, &quot;sample_values&quot;: [&quot;15CM CHRISTMAS GLASS BALL 20 LIGHTS&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+    &quot;Quantity&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 500, &quot;sample_values&quot;: [12], &quot;data_type&quot;: &quot;int&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+    &quot;InvoiceDate&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 25210, &quot;sample_values&quot;: [&quot;2009-12-01 07:45:00&quot;], &quot;data_type&quot;: &quot;date&quot;, &quot;semantic_type&quot;: &quot;temporal&quot; },
+    &quot;Price&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 1606, &quot;sample_values&quot;: [6.95], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;numeric&quot; },
+    &quot;Customer ID&quot;: { &quot;null_ratio&quot;: 0.21, &quot;cardinality&quot;: 4383, &quot;sample_values&quot;: [13085.0], &quot;data_type&quot;: &quot;float&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; },
+    &quot;Country&quot;: { &quot;null_ratio&quot;: 0.0, &quot;cardinality&quot;: 37, &quot;sample_values&quot;: [&quot;United Kingdom&quot;], &quot;data_type&quot;: &quot;string&quot;, &quot;semantic_type&quot;: &quot;categorical&quot; }
+  }
+}
+</code></pre>
+<p>Optional extra fields such as <code>total_rows</code> are used when answering <code>meta_question</code> intents.</p>
+<h3 id="clarifications-array">Clarifications Array</h3>
+<p>Resolves linguistic ambiguities by mapping terms to specific data logic.</p>
+<pre><code class="language-json">[
+  {
+    &quot;term&quot;: &quot;loyalty&quot;,
+    &quot;chosen_interpretation&quot;: &quot;Count of unique Invoice per Customer ID&quot;
+  }
+]
+</code></pre>
+<h3 id="visualization-spec">Visualization Spec</h3>
+<p>Data-free chart contract. The local engine supplies rows at execution time. Supported <code>kind</code> values: <code>line</code>, <code>bar</code>, <code>area</code>, <code>scatter</code>, <code>pie</code>.</p>
+<pre><code class="language-json">{
+  &quot;version&quot;: 1,
+  &quot;kind&quot;: &quot;bar&quot;,
+  &quot;title&quot;: &quot;Top 5 countries by revenue&quot;,
+  &quot;x&quot;: &quot;Country&quot;,
+  &quot;y&quot;: [&quot;revenue&quot;],
+  &quot;series&quot;: null,
+  &quot;sort_by&quot;: &quot;revenue&quot;,
+  &quot;sort_direction&quot;: &quot;desc&quot;,
+  &quot;x_label&quot;: &quot;Country&quot;,
+  &quot;y_label&quot;: &quot;Revenue&quot;
+}
+</code></pre>
+<hr />
+<h2 id="error-responses">❌ Error Responses</h2>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Condition</th>
+<th>Detail Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>400</code></td>
+<td>Bad Capability / Plan</td>
+<td>Unknown or unimplemented <code>plan_id</code></td>
+</tr>
+<tr>
+<td><code>401</code></td>
+<td>Unauthorized</td>
+<td><code>"X-API-Key header is missing."</code></td>
+</tr>
+<tr>
+<td><code>402</code></td>
+<td>No credits</td>
+<td><code>"No credits remaining on your account. ..."</code> / unlinked key</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td>Forbidden</td>
+<td><code>"Invalid API key."</code> / deactivated key / cancel of another key's job</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Not found</td>
+<td>Session or generation job not found</td>
+</tr>
+<tr>
+<td><code>409</code></td>
+<td>Conflict</td>
+<td>Job can no longer be cancelled</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td>Task / agent failure</td>
+<td>Semantic agent error, or poll <code>dag_status</code>: <code>"failed"</code></td>
+</tr>
+<tr>
+<td><code>503</code></td>
+<td>Runtime unavailable</td>
+<td>Redis, Celery worker, Supabase unreachable, or <code>OPENROUTER_API_KEY</code> missing</td>
+</tr>
+</tbody>
+</table>
+<p>When a portal-linked key has <code>credit_balance &lt;= 0</code>, or a non-owner key has no
+<code>user_id</code>, most workflow endpoints return <code>402</code> <strong>before</strong> they run — including
+conversation start/message, metadata answers, and synthesis. Unlinked owner
+developer keys are exempt. Status poll and cancel remain available
+(<code>get_api_key_auth_only</code>).</p>
+<hr />
+<h2 id="available-operations-reference">📐 Available Operations Reference</h2>
+<p>Generated DAG nodes use operations from the shared <code>query_operations</code> package (<code>app/core/schema.py</code> <code>OperationType</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Extraction</strong></td>
+<td><code>filter_extract</code>, <code>load_constant</code>, <code>groupby_agg</code></td>
+</tr>
+<tr>
+<td><strong>Arithmetic</strong></td>
+<td><code>add</code>, <code>subtract</code>, <code>multiply</code>, <code>divide</code></td>
+</tr>
+<tr>
+<td><strong>Element-wise math</strong></td>
+<td><code>abs</code>, <code>round</code>, <code>pow</code>, <code>sqrt</code>, <code>log</code></td>
+</tr>
+<tr>
+<td><strong>Statistical</strong></td>
+<td><code>percentage_change</code>, <code>dot_product</code></td>
+</tr>
+<tr>
+<td><strong>Aggregation</strong></td>
+<td><code>mean</code>, <code>sum</code>, <code>max</code>, <code>min</code>, <code>nunique</code>, <code>unique</code>, <code>mode</code>, <code>median</code>, <code>std</code>, <code>count</code>, <code>value_counts</code></td>
+</tr>
+<tr>
+<td><strong>Inspection / ranking</strong></td>
+<td><code>isnan</code>, <code>nlargest</code>, <code>nsmallest</code>, <code>sort_values</code>, <code>head</code>, <code>tail</code>, <code>index</code>, <code>idxmax</code>, <code>idxmin</code>, <code>dropna</code>, <code>fillna</code></td>
+</tr>
+<tr>
+<td><strong>Comparison</strong></td>
+<td><code>eq</code>, <code>ne</code>, <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>, <code>between</code></td>
+</tr>
+<tr>
+<td><strong>Logical</strong></td>
+<td><code>logical_and</code>, <code>logical_or</code>, <code>logical_not</code></td>
+</tr>
+<tr>
+<td><strong>String / time</strong></td>
+<td><code>to_datetime</code>, <code>str</code>, <code>startswith</code>, <code>isin</code>, <code>isin_from_node</code>, <code>contains</code>, <code>lower</code>, <code>upper</code>, <code>concat_str</code></td>
+</tr>
+<tr>
+<td><strong>Index</strong></td>
+<td><code>get_index</code></td>
+</tr>
+<tr>
+<td><strong>Date / time</strong></td>
+<td><code>extract_year</code>, <code>extract_month</code>, <code>extract_day</code>, <code>extract_dayofweek</code>, <code>extract_week</code>, <code>extract_quarter</code>, <code>truncate_to</code>, <code>timedelta_to_days</code>, <code>date_add</code></td>
+</tr>
+<tr>
+<td><strong>Conditional agg</strong></td>
+<td><code>count_if</code>, <code>sum_if</code>, <code>mean_if</code></td>
+</tr>
+<tr>
+<td><strong>Percentile</strong></td>
+<td><code>quantile</code>, <code>percentile_rank</code></td>
+</tr>
+<tr>
+<td><strong>Rank / window</strong></td>
+<td><code>rank</code>, <code>cumsum</code>, <code>cumshare</code>, <code>shift</code>, <code>diff</code>, <code>rolling_mean</code>, <code>rolling_sum</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="related-services">🔗 Related Services</h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud AI API</td>
+<td><code>http://localhost:8000</code></td>
+<td>This service (conversation + generation)</td>
+</tr>
+<tr>
+<td>Swagger UI</td>
+<td><code>http://localhost:8000/docs</code></td>
+<td>Interactive API documentation</td>
+</tr>
+<tr>
+<td>ReDoc</td>
+<td><code>http://localhost:8000/redoc</code></td>
+<td>Static API reference</td>
+</tr>
+<tr>
+<td>Local Python engine</td>
+<td><code>http://localhost:8001</code></td>
+<td>Metadata derivation and Artifact execution</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
