@@ -1,0 +1,1763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../BILLING/">
+      
+      
+        <link rel="next" href="../CLOUD_API_DEV/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CI/CD — how it works today - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cicd-how-it-works-today" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CI/CD — how it works today
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Authentication
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 Authentication
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-authentication/AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/PLAN_CONFIG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Api
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 Api
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BILLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nolain-ocr-build-and-push-to-ghcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. nolain-ocr — Build and push to GHCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nolain-query-build-and-push-to-ghcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. nolain-query — Build and push to GHCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-nolain-platform-deploy-platform-to-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. nolain-platform — Deploy platform to VPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-self-hosted-github-actions-runners-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Self-hosted GitHub Actions runners (×3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghcr-github-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. GHCR (GitHub Container Registry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vps-runtime-docker-stack-optnolainenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. VPS runtime — Docker stack + /opt/nolain/.env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-you-change-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After you change code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="After you change code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocr-nolain-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR (nolain-ocr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-query-nolain-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Query (nolain-query)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-nolain-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform (nolain-platform)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-automation-is-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When automation is broken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-not-wired-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not wired yet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist-query-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick checklist (Query release)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist-ocr-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick checklist (OCR release)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_DEV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TELEMETRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    06 Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-benchmarks/QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query costs and benchmark results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nolain-ocr-build-and-push-to-ghcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. nolain-ocr — Build and push to GHCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nolain-query-build-and-push-to-ghcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. nolain-query — Build and push to GHCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-nolain-platform-deploy-platform-to-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. nolain-platform — Deploy platform to VPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-self-hosted-github-actions-runners-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Self-hosted GitHub Actions runners (×3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghcr-github-container-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. GHCR (GitHub Container Registry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vps-runtime-docker-stack-optnolainenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. VPS runtime — Docker stack + /opt/nolain/.env
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-you-change-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After you change code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="After you change code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocr-nolain-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCR (nolain-ocr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-query-nolain-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Query (nolain-query)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-nolain-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform (nolain-platform)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-automation-is-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When automation is broken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-not-wired-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not wired yet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist-query-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick checklist (Query release)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-checklist-ocr-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick checklist (OCR release)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cicd-how-it-works-today">CI/CD — how it works today</h1>
+<p>Three product repos + one infra repo, one VPS. <strong>Building images</strong> and <strong>deploying the stack</strong> are separate steps.</p>
+<pre><code>push nolain-ocr (master)                push nolain-query (main/platform)
+        │                                         │
+        ▼                                         ▼
+  Build and push to GHCR                  Build and push to GHCR
+  (OCR self-hosted runner)                (Query self-hosted runner)
+        │                                         │
+        ▼                                         ▼
+  ghcr.io/…/nolain-ocr-{backend,frontend}   ghcr.io/…/nolain-query-{backend,website}
+        │                                         │
+        └─────────────────┬───────────────────────┘
+                          │  (manual — not automatic)
+                          ▼
+                Deploy platform to VPS          ← platform self-hosted runner
+                          │
+                          ▼
+                docker compose pull &amp;&amp; up -d    ← VPS runs pulled images
+</code></pre>
+<p>Infra setup (runners, keys, and the first-time VPS layout) belongs to the
+separate <code>nolain-platform</code> repository. This page documents the release flow
+after that infrastructure is available.</p>
+<hr />
+<h2 id="components">Components</h2>
+<h3 id="1-nolain-ocr-build-and-push-to-ghcr">1. <code>nolain-ocr</code> — <strong>Build and push to GHCR</strong></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>On push to <code>master</code>, builds backend and frontend Docker images on the VPS runner, pushes them to GHCR tagged <code>:master</code>, <code>:latest</code>, and <code>:&lt;git-sha&gt;</code>. Frontend build bakes in <code>VITE_*</code> values from GitHub secrets.</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td><strong>One-time:</strong> GitHub secrets for every <code>VITE_*</code> the frontend Dockerfile expects. <strong>Per change:</strong> push to <code>master</code> (or <strong>Actions → Run workflow</strong>).</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Update <code>nolain-ocr</code> GitHub secrets when a new <code>VITE_*</code> build arg is added to the frontend, or when Supabase/Google/Stripe <em>public</em> IDs change.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-nolain-query-build-and-push-to-ghcr">2. <code>nolain-query</code> — <strong>Build and push to GHCR</strong></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>On push to <code>main</code> / <code>platform</code>, builds <code>cloud_api</code> backend and <code>nolainquery-website</code> images on the Query self-hosted runner (<code>~/actions-runner-query</code>). Tags: <code>:main</code> or <code>:platform</code>, <code>:latest</code>, <code>:&lt;git-sha&gt;</code>. Website bakes in <code>VITE_SUPABASE_*</code> from secrets; <code>VITE_CLOUD_API_URL=https://nolainquery.com</code>.</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td><strong>One-time:</strong> register third runner on VPS for <code>nolain-query</code>; set <code>VITE_SUPABASE_URL</code>, <code>VITE_SUPABASE_ANON_KEY</code> secrets (same Supabase project as OCR). <strong>Per change:</strong> push branch → wait for build ✅ → run platform deploy.</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Grant <code>nolain-platform</code> GHCR read access to new Query packages (or extend <code>GHCR_PAT</code>). While testing Phase 2, platform compose uses <code>:platform</code> tags; switch to <code>:main</code> after merge.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-nolain-platform-deploy-platform-to-vps">3. <code>nolain-platform</code> — <strong>Deploy platform to VPS</strong></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>On push to <code>platform</code> / <code>main</code>, or manual trigger: pulls latest platform repo on the VPS, logs into GHCR, runs <code>docker compose pull &amp;&amp; up -d</code> using <code>docker-compose.prod.yml</code> and <code>/opt/nolain/.env</code>. Restarts nginx, OCR, Query, redis, celery workers. Reloads nginx config after up.</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td><strong>One-time:</strong> <code>GHCR_PAT</code> secret on <code>nolain-platform</code> (read packages). Platform repo cloned on VPS with deploy key (Step 1.4 in guide). <strong>After product code changes:</strong> trigger this manually — it does <strong>not</strong> run when OCR or Query builds finish.</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Rotate <code>GHCR_PAT</code> before expiry. Update <code>/opt/nolain/.env</code> when backend <em>runtime</em> env vars change. Add Query keys (<code>DEEPSEEK_API_KEY</code>, <code>QUERY_*</code>) once (Phase 2).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4-self-hosted-github-actions-runners-3">4. Self-hosted GitHub Actions runners (×3)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>Executes workflow jobs on the VPS. One runner per repo: <code>nolain-ocr</code> (builds), <code>nolain-platform</code> (deploy), <code>nolain-query</code> (builds). All need the <code>vps</code> label.</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td><strong>One-time:</strong> install and register all three; keep systemd services running (<code>actions-runner</code>, <code>actions-runner-platform</code>, <code>actions-runner-query</code>). Query runner may run via <code>./run.sh</code> until root installs <code>svc.sh</code>.</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Upgrade runner version occasionally. Restart service if jobs sit in <strong>Waiting for a runner…</strong> while the runner shows Idle.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="5-ghcr-github-container-registry">5. GHCR (GitHub Container Registry)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>Stores built images. Platform compose references OCR <code>:master</code> and Query <code>:platform</code> (or <code>:main</code> after merge).</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td>None for day-to-day — build workflows push; deploy workflow pulls.</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Ensure <code>nolain-platform</code> has package read access for Query images (403 → refresh <code>GHCR_PAT</code> or grant package access).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-vps-runtime-docker-stack-optnolainenv">6. VPS runtime — Docker stack + <code>/opt/nolain/.env</code></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What it does</strong></td>
+<td>Runs production containers (8 services after Phase 2). Shared Supabase keys; OCR Stripe/Mistral keys; Query <code>DEEPSEEK_API_KEY</code> and <code>QUERY_*</code> quotas. Nginx routes <code>nolainocr.com</code> → OCR, <code>nolainquery.com</code> → Query (HTTP until SSL cert; see guide Step 2.3).</td>
+</tr>
+<tr>
+<td><strong>Admin action required?</strong></td>
+<td>Edit <code>.env</code> on the VPS when backend env vars change. Point DNS <code>nolainquery.com</code> → VPS IP; run certbot for HTTPS.</td>
+</tr>
+<tr>
+<td><strong>Maintenance?</strong></td>
+<td>Backup <code>.env</code> and <code>certbot/</code>. Add Supabase redirect URL for <code>https://nolainquery.com/**</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7-domains">7. Domains</h3>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Routes to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nolainocr.com</code></td>
+<td>OCR frontend + <code>/api</code> → OCR backend</td>
+</tr>
+<tr>
+<td><code>nolainquery.com</code></td>
+<td>Query website + <code>/api</code> → Query backend</td>
+</tr>
+</tbody>
+</table>
+<p>Query uses HTTP on port 80 until Let's Encrypt cert exists for <code>nolainquery.com</code> (DNS must point to VPS first).</p>
+<hr />
+<h2 id="after-you-change-code">After you change code</h2>
+<h3 id="ocr-nolain-ocr">OCR (<code>nolain-ocr</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>What changed</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backend or frontend app code</strong></td>
+<td>1. Push to <code>master</code>. 2. Wait for <strong>Build and push to GHCR</strong> ✅. 3. <strong>Deploy platform to VPS</strong> (manual). 4. Confirm <code>nolainocr.com</code>.</td>
+</tr>
+<tr>
+<td><strong>New <code>VITE_*</code></strong></td>
+<td>Update OCR secrets → push → platform deploy.</td>
+</tr>
+<tr>
+<td><strong>Backend env var</strong></td>
+<td>Edit <code>/opt/nolain/.env</code> → platform deploy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-query-nolain-query">Data Query (<code>nolain-query</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>What changed</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backend or website code</strong></td>
+<td>1. Push to <code>platform</code> (or <code>main</code>). 2. Wait for <strong>Build and push to GHCR</strong> ✅. 3. <strong>Deploy platform to VPS</strong> (manual). 4. Confirm <code>nolainquery.com</code>.</td>
+</tr>
+<tr>
+<td><strong>New <code>VITE_*</code></strong></td>
+<td>Update Query repo secrets → push → platform deploy.</td>
+</tr>
+<tr>
+<td><strong>Backend env var</strong> (<code>DEEPSEEK_API_KEY</code>, quotas)</td>
+<td>Edit <code>/opt/nolain/.env</code> → platform deploy.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-nolain-platform">Platform (<code>nolain-platform</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>What changed</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nginx / compose / infra</strong></td>
+<td>Push to <code>platform</code> — deploy runs automatically.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Short version:</strong> product push → wait for build ✅ → manually run <strong>Deploy platform to VPS</strong>.</p>
+<hr />
+<h2 id="when-automation-is-broken">When automation is broken</h2>
+<ol>
+<li><strong>Build failed</strong> — open failed <strong>Build and push to GHCR</strong> run; fix code or restart the repo's runner service on VPS.</li>
+<li><strong>Build OK, site still old</strong> — you likely skipped platform deploy. Run <strong>Deploy platform to VPS</strong> manually.</li>
+<li><strong>Deploy stuck / runner idle</strong> — restart platform runner; trigger a <strong>new</strong> workflow run.</li>
+<li><strong>Query site 301 to OCR / wrong backend</strong> — nginx config not reloaded: <code>docker compose … exec nginx nginx -s reload</code> or redeploy platform.</li>
+<li><strong>Deploy fails on GHCR <code>403</code></strong> — refresh <code>GHCR_PAT</code> or grant Query package access to <code>nolain-platform</code>.</li>
+<li><strong>Query containers fail health</strong> — check <code>DEEPSEEK_API_KEY</code> in <code>/opt/nolain/.env</code>.</li>
+</ol>
+<hr />
+<h2 id="what-is-not-wired-yet">What is <em>not</em> wired yet</h2>
+<ul>
+<li>Product builds <strong>do not</strong> auto-trigger platform deploy.</li>
+<li>Billing service (Phase 3) not on VPS yet.</li>
+</ul>
+<hr />
+<h2 id="quick-checklist-query-release">Quick checklist (Query release)</h2>
+<ul>
+<li>[ ] Push <code>nolain-query</code> → <code>platform</code> (or <code>main</code>)</li>
+<li>[ ] <strong>Build and push to GHCR</strong> green (backend + website)</li>
+<li>[ ] <strong>Deploy platform to VPS</strong> run (manual)</li>
+<li>[ ] <code>docker compose ps</code> — 8 containers Up</li>
+<li>[ ] <code>curl -H 'Host: nolainquery.com' http://&lt;VPS_IP&gt;/health</code> → JSON ok</li>
+<li>[ ] After DNS: certbot for <code>nolainquery.com</code> → enable HTTPS nginx block</li>
+</ul>
+<h2 id="quick-checklist-ocr-release">Quick checklist (OCR release)</h2>
+<ul>
+<li>[ ] Push <code>nolain-ocr</code> → <code>master</code></li>
+<li>[ ] <strong>Build and push to GHCR</strong> green</li>
+<li>[ ] <strong>Deploy platform to VPS</strong> run (manual)</li>
+<li>[ ] <code>docker compose ps</code> — all containers Up</li>
+<li>[ ] <code>https://nolainocr.com</code> loads</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

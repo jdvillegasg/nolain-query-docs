@@ -1,0 +1,1738 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../CD/">
+      
+      
+        <link rel="next" href="../TELEMETRY/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cloud API — Developer Setup Guide - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloud-api-developer-setup-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud API — Developer Setup Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nolain Data Query — Getting Started (Users)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/CREDITS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits — what you pay and what you get
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Authentication
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 Authentication
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-authentication/AUTH_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API conversation workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/PLAN_CONFIG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan artifact dependency graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-architecture/SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 Api
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 Api
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Usage Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BILLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Billing — developer and operator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD — how it works today
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud API — Developer Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Python Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Environment Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Environment Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pandas-repair-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pandas repair settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-database-setup-supabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Database Setup (Supabase)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Database Setup (Supabase)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-inserting-the-owner-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Inserting the Owner Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inserting-client-keys-portal-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inserting Client Keys (Portal / Manual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-starting-the-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Starting the Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-authentication-flow-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Authentication Flow (Code Reference)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Authentication Flow (Code Reference)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key-auth-desktop-app-cloud-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API key auth (desktop app / Cloud API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credit-enforcement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit enforcement logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stripe-top-ups-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stripe top-ups (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portal-auth-google-supabase-apiauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal auth (Google + Supabase, /api/auth/*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-rotating-the-owner-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Rotating the Owner Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TELEMETRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    06 Benchmarks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-benchmarks/QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query costs and benchmark results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-python-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Python Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Environment Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Environment Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pandas-repair-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pandas repair settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-database-setup-supabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Database Setup (Supabase)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Database Setup (Supabase)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-inserting-the-owner-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Inserting the Owner Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inserting-client-keys-portal-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inserting Client Keys (Portal / Manual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-starting-the-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Starting the Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-authentication-flow-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Authentication Flow (Code Reference)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Authentication Flow (Code Reference)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key-auth-desktop-app-cloud-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API key auth (desktop app / Cloud API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credit-enforcement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit enforcement logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stripe-top-ups-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stripe top-ups (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portal-auth-google-supabase-apiauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal auth (Google + Supabase, /api/auth/*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-rotating-the-owner-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Rotating the Owner Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cloud-api-developer-setup-guide">Cloud API — Developer Setup Guide</h1>
+<p>Everything a developer needs to do to make the Cloud API fully operational from scratch.</p>
+<hr />
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<ul>
+<li>Python 3.11+</li>
+<li>Docker Engine with the Docker Compose plugin</li>
+<li>A <a href="https://supabase.com">Supabase</a> project (free tier is fine)</li>
+<li>An <a href="https://openrouter.ai">OpenRouter</a> API key (routes all LLM calls)</li>
+</ul>
+<hr />
+<h2 id="2-python-dependencies">2. Python Dependencies</h2>
+<p>The root setup script creates the shared <code>.venv</code> and installs both desktop and
+Cloud API dependencies:</p>
+<pre><code class="language-bash">./setup.sh
+</code></pre>
+<p>Cloud API and Celery run natively from this environment. Docker is used only
+for Redis.</p>
+<hr />
+<h2 id="3-environment-variables">3. Environment Variables</h2>
+<p>Create a file at <code>cloud_api/.env</code>. <strong>Never commit this file.</strong></p>
+<pre><code class="language-dotenv"># ── Supabase ─────────────────────────────────────────────────────────────────
+# Found in: Supabase Dashboard → Project Settings → API
+SUPABASE_URL=https://your-project-id.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJI...   # &quot;service_role&quot; secret key (NOT the anon key)
+
+# ── OpenRouter (LLM gateway) ───────────────────────────────────────────────
+OPENROUTER_API_KEY=your-openrouter-key-here
+# OPENROUTER_API_BASE=https://openrouter.ai/api/v1
+# OPENROUTER_APP_URL=https://your-app.example
+# OPENROUTER_APP_TITLE=Nolain Data Query
+
+# ── LLM catalog (optional override) ─────────────────────────────────────────
+# LLM_MODELS_CONFIG=/absolute/path/to/custom_llm_models.yaml
+
+# ── Stripe credit purchases (optional) ──────────────────────────────────────
+# STRIPE_SECRET_KEY=sk_test_...
+# STRIPE_WEBHOOK_SECRET=whsec_...
+# STRIPE_PRICE_CREDITS_JSON={&quot;price_basic&quot;:&quot;1000&quot;,&quot;price_team&quot;:&quot;10000&quot;}
+</code></pre>
+<p>Copy from <code>cloud_api/.env.example</code> and fill in real values.</p>
+<p><strong>Policy files</strong> (defaults; some settings have env overrides — see <a href="../BILLING/">BILLING.md</a>):</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app/config/llm_models.yaml</code></td>
+<td>Model catalog, OpenRouter slugs, default model</td>
+</tr>
+<tr>
+<td><code>app/config/billing.yaml</code></td>
+<td>Credits per dollar, surplus rate, rate overrides</td>
+</tr>
+<tr>
+<td><code>app/config/generation.yaml</code></td>
+<td>Retry budgets, chain attempt ceiling, adaptive Pandas repair profiles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pandas-repair-settings">Pandas repair settings</h3>
+<p>No setting is required for normal users. Server operators may tune:</p>
+<ul>
+<li><code>cloud_api/app/config/generation.yaml</code></li>
+<li><code>pandas_sandbox_max_retries</code>: in-cloud retries for truncated, empty, or
+    statically rejected code</li>
+<li><code>pandas_max_retries</code>: local-execution repair jobs</li>
+<li><code>pandas_total_max_attempts</code>: hard ceiling across the complete Pandas chain</li>
+<li><code>pandas_repair_profiles</code>: reasoning effort and <code>max_tokens</code> selected by
+    failure category and retry index</li>
+<li><code>pandas_repair_reasoning</code> / <code>pandas_repair_max_tokens</code>: fallback profile</li>
+<li><code>cloud_api/app/config/llm_models.yaml</code>: first-pass model defaults and maximum
+  completion tokens. Repair profiles override reasoning and token settings only
+  on repair calls.</li>
+</ul>
+<p>Restart the API and Celery workers after changing these YAML files because
+configuration is cached by each process.</p>
+<blockquote>
+<p><strong>Why the service-role key?</strong>
+The API reads and writes the <code>clients_nolain_query</code> table to validate keys.
+Credit balances live on <code>profiles_nolain_query.credit_balance</code>.
+The anon key cannot do this (Row-Level Security blocks it).
+The service-role key bypasses RLS and must stay server-side only.</p>
+</blockquote>
+<hr />
+<h2 id="4-database-setup-supabase">4. Database Setup (Supabase)</h2>
+<p>Run the SQL migrations once in your Supabase project:</p>
+<ol>
+<li>Open the <strong>Supabase Dashboard</strong> → SQL Editor.</li>
+<li><strong>Fresh projects</strong> — run in order:</li>
+<li><code>cloud_api/sql/001_create_clients.sql</code></li>
+<li><code>cloud_api/sql/002_auth_users.sql</code></li>
+<li><code>cloud_api/sql/003_account_balance.sql</code></li>
+<li><strong>Existing databases</strong> that still have a <code>query_balance</code> column should also run <code>cloud_api/sql/008_credit_rename.sql</code>.</li>
+</ol>
+<p>Files <code>004</code>–<code>007</code> are historical upgrades superseded by <code>003</code> / <code>008</code>; do not run them on a new project.</p>
+<p>This creates the <code>clients_nolain_query</code> table, portal profiles, credit balances, and ledger RPCs.</p>
+<h3 id="schema-overview">Schema overview</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>uuid</code></td>
+<td>Internal primary key</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td><code>text</code></td>
+<td>The secret token validated on every request</td>
+</tr>
+<tr>
+<td><code>tier</code></td>
+<td><code>text</code></td>
+<td><code>owner</code> / <code>premium</code> / <code>free</code></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>uuid</code></td>
+<td>Portal account that owns the key (required for credits)</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code> = key is suspended</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>timestamptz</code></td>
+<td>When the key was issued</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-inserting-the-owner-key">5. Inserting the Owner Key</h2>
+<p>The owner key is inserted directly into the database (it is never hard-coded in source).
+It is intended as an <strong>unlinked</strong> developer credential: no <code>user_id</code>, no credit
+checks. Do not attach it to a portal profile unless you want it to spend that
+account's credits like any other linked key.</p>
+<p>Generate a secure token:</p>
+<pre><code class="language-bash">python3 -c &quot;import secrets; print('sk-owner-' + secrets.token_hex(16))&quot;
+# Example: sk-owner-3f9a1c72b4de5e01a8c9d2e3f4b5c6d7
+</code></pre>
+<p>Insert it in the Supabase SQL Editor (or adapt <code>cloud_api/scripts/ensure-developer-key.sql</code>):</p>
+<pre><code class="language-sql">insert into public.clients_nolain_query (api_key, tier, label, is_active)
+values (
+    'sk-owner-3f9a1c72b4de5e01a8c9d2e3f4b5c6d7',
+    'owner',
+    'Developer (unrestricted)',
+    true
+);
+</code></pre>
+<p>Save this key somewhere safe (e.g. a password manager). It is your root credential.</p>
+<hr />
+<h2 id="6-inserting-client-keys-portal-manual">6. Inserting Client Keys (Portal / Manual)</h2>
+<p>The <strong>Nolain portal</strong> website will do this automatically when a user registers and requests a key. For now, insert keys manually:</p>
+<pre><code class="language-bash"># Generate a free-tier key
+python3 -c &quot;import secrets; print('sk-free-' + secrets.token_hex(8))&quot;
+</code></pre>
+<pre><code class="language-sql">-- Insert a free-tier client
+insert into public.clients_nolain_query (api_key, tier)
+values ('sk-free-abcdef1234567890', 'free');
+
+-- Insert a premium-tier client
+insert into public.clients_nolain_query (api_key, tier)
+values ('sk-premium-1234567890abcdef', 'premium');
+
+-- Deactivate a key
+update public.clients_nolain_query set is_active = false where api_key = 'sk-free-abcdef1234567890';
+</code></pre>
+<hr />
+<h2 id="7-starting-the-services">7. Starting the Services</h2>
+<p>The Cloud API now uses an asynchronous architecture with Celery and Redis.</p>
+<p>From the repository root, start all cloud development services in one terminal:</p>
+<pre><code class="language-bash">./scripts/launch-cloud-dev.sh
+</code></pre>
+<p>The launcher:</p>
+<ul>
+<li>starts only Redis from <code>cloud_api/docker-compose.dev.yml</code>;</li>
+<li>waits for Redis before starting the native processes;</li>
+<li>runs Uvicorn and Celery from the root <code>.venv</code>;</li>
+<li>waits for both services to become ready; and</li>
+<li>stops Uvicorn, Celery, and its Redis container on exit.</li>
+</ul>
+<p>Start the desktop stack in a second terminal:</p>
+<pre><code class="language-bash">./launch.sh
+</code></pre>
+<p>Press Ctrl+C in each terminal to stop that launcher's services. The Cloud API
+health endpoint is <code>http://127.0.0.1:8000/health</code>; the local execution engine is
+<code>http://127.0.0.1:8001/health</code>.</p>
+<p>For production:
+- Use <code>gunicorn</code> with Uvicorn workers for the API.
+- Use a process manager like <code>supervisord</code> or <code>systemd</code> to keep the Celery worker alive.</p>
+<hr />
+<h2 id="8-authentication-flow-code-reference">8. Authentication Flow (Code Reference)</h2>
+<h3 id="api-key-auth-desktop-app-cloud-api">API key auth (desktop app / Cloud API)</h3>
+<ul>
+<li><strong><code>app/core/db.py</code></strong> — Supabase client singleton (reads <code>SUPABASE_URL</code> + <code>SUPABASE_SERVICE_ROLE_KEY</code>).</li>
+<li><strong><code>app/core/security.py</code></strong> — <code>get_api_key()</code> FastAPI dependency; validates key and enforces remaining credits.</li>
+<li><strong><code>app/routers/generation.py</code></strong> — Injects <code>ClientContext</code> via <code>Depends(get_api_key)</code>.</li>
+</ul>
+<h3 id="credit-enforcement-logic">Credit enforcement logic</h3>
+<ol>
+<li>Look up <code>api_key</code> in <code>clients_nolain_query</code>.</li>
+<li><strong>Unlinked owner keys</strong> (<code>tier = 'owner'</code>, no <code>user_id</code>) skip credit checks and charges.</li>
+<li><strong>Portal-linked keys</strong> (any tier, including owner with <code>user_id</code>): read
+   <code>profiles_nolain_query.credit_balance</code>; return <strong>HTTP 402</strong> when balance is empty.</li>
+<li><strong>Unlinked non-owner keys</strong>: return <strong>HTTP 402</strong> (not linked to a portal account).</li>
+<li>Otherwise proceed. Each LLM call charges credits immediately from token usage
+   plus surplus (<code>app/core/llm_billing.py</code>, <code>app/core/credit_pricing.py</code>).</li>
+</ol>
+<h3 id="llm-routing">LLM routing</h3>
+<ul>
+<li><strong><code>app/core/llm_config.py</code></strong> — OpenRouter client factory and model catalog (<code>llm_models.yaml</code>).</li>
+<li><strong><code>app/routers/llm.py</code></strong> — <code>GET /api/v1/llm/models</code> for client model selection.</li>
+<li>Requests pass an optional <code>model</code> field (catalog id, e.g. <code>deepseek-v4-flash-0731</code>); omit it to use the server default.</li>
+</ul>
+<h3 id="stripe-top-ups-optional">Stripe top-ups (optional)</h3>
+<ul>
+<li><strong><code>app/routers/billing.py</code></strong> — <code>POST /api/billing/stripe/checkout</code> and webhook handler.</li>
+<li>Requires <code>STRIPE_SECRET_KEY</code>, <code>STRIPE_WEBHOOK_SECRET</code>, and <code>STRIPE_PRICE_CREDITS_JSON</code>.</li>
+</ul>
+<h3 id="portal-auth-google-supabase-apiauth">Portal auth (Google + Supabase, <code>/api/auth/*</code>)</h3>
+<p>See <a href="../../02-authentication/AUTH_SETUP/">AUTH_SETUP.md</a> for Google Cloud and
+Supabase dashboard configuration.</p>
+<ul>
+<li><strong><code>app/core/user_auth.py</code></strong> — Validates Supabase Bearer tokens via <code>get_current_user</code>.</li>
+<li><strong><code>app/routers/auth.py</code></strong> — Account profile and API-key CRUD for signed-in users.</li>
+<li><strong><code>sql/002_auth_users.sql</code></strong> — Profiles table and <code>clients_nolain_query.user_id</code> linkage.</li>
+</ul>
+<hr />
+<h2 id="9-rotating-the-owner-key">9. Rotating the Owner Key</h2>
+<ol>
+<li>Generate a new key (step 5 above).</li>
+<li>Insert the new key into <code>clients_nolain_query</code> with <code>tier = 'owner'</code>.</li>
+<li>Set <code>is_active = false</code> on the old key (or delete it).</li>
+<li>Update your password manager / secrets store.</li>
+</ol>
+<p>No server restart required — the change takes effect on the next request.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
