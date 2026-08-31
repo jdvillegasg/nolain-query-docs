@@ -927,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
@@ -1457,7 +1457,7 @@
 
 
 <h1 id="cloud-api-conversation-workflow">Cloud API conversation workflow</h1>
-<p>This document describes the desktop <strong>Ask Queries</strong> conversation loop — the full path from session start through local execution and optional runtime repair. For platform architecture (Capability → Plan → Stage → Artifact), see <a href="../SYSTEM_ARCHITECTURE/">SYSTEM_ARCHITECTURE.md</a>. For job diagnostics, attempt logs, and credit receipts, see <a href="../../05-operations/TELEMETRY/">../05-operations/TELEMETRY.md</a>.</p>
+<p>This document describes the desktop <strong>Ask Queries</strong> conversation loop — the full path from session start through local execution and optional runtime repair. For platform architecture (Capability → Plan → Stage → Artifact), see <a href="../SYSTEM_ARCHITECTURE/">System architecture</a>. For job diagnostics, attempt logs, and credit receipts, see <a href="../../05-operations/TELEMETRY/">Telemetry</a>.</p>
 <h2 id="conversation-loop">Conversation loop</h2>
 <p>The desktop app uses this end-to-end path. Direct generation APIs such as <code>POST /api/v2/generate_dag</code> cover only steps 3–4; they do <strong>not</strong> run the runtime repair loop in steps 5–6.</p>
 <pre><code class="language-text">1. POST /api/v1/conversation/start
@@ -1730,7 +1730,7 @@ category and retry index. All Pandas generation calls remain bounded by
 </tr>
 </tbody>
 </table>
-<p>Worker LLM cost details and Plan stage lists: <a href="../SYSTEM_ARCHITECTURE/">SYSTEM_ARCHITECTURE.md</a>.</p>
+<p>Worker LLM cost details and Plan stage lists: <a href="../SYSTEM_ARCHITECTURE/">System architecture</a>.</p>
 <h2 id="supported-analysis-boundaries">Supported analysis boundaries</h2>
 <ul>
 <li>Data questions (including charts and reshape) admit the <code>data_analysis</code> pandas Plan. Charts set <code>include_visualization</code>; they do not change <code>plan_id</code>.</li>
@@ -1783,10 +1783,10 @@ category and retry index. All Pandas generation calls remain bounded by
 <p>Cooperative cancellation between Stages. LLM calls already completed keep their credit charges.</p>
 <h2 id="related-docs">Related docs</h2>
 <ul>
-<li><a href="../SYSTEM_ARCHITECTURE/">SYSTEM_ARCHITECTURE.md</a> — Capabilities, Plans, Artifacts, direct APIs</li>
-<li><a href="../../01-getting-started/CREDITS/">../01-getting-started/CREDITS.md</a> — what users pay</li>
-<li><a href="../../05-operations/BILLING/">../05-operations/BILLING.md</a> — credit charging</li>
-<li><a href="../../04-api/CLOUD_API_USAGE/">../04-api/CLOUD_API_USAGE.md</a> — HTTP reference</li>
+<li><a href="../SYSTEM_ARCHITECTURE/">System architecture</a> — Capabilities, Plans, Artifacts, direct APIs</li>
+<li><a href="../../01-getting-started/CREDITS/">Credits</a> — what users pay</li>
+<li><a href="../../05-operations/BILLING/">Billing</a> — credit charging</li>
+<li><a href="../04-api/CLOUD_API_USAGE.md">Cloud API usage</a> — HTTP reference</li>
 </ul>
 
 

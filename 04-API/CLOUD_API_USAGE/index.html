@@ -1994,27 +1994,27 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../../03-architecture/CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a></td>
+<td><a href="../../03-architecture/CONVERSATION_WORKFLOW/">Conversation workflow</a></td>
 <td>Desktop chat loop, intents, clarification</td>
 </tr>
 <tr>
-<td><a href="../../03-architecture/SYSTEM_ARCHITECTURE/">SYSTEM_ARCHITECTURE.md</a></td>
+<td><a href="../../03-architecture/SYSTEM_ARCHITECTURE/">System architecture</a></td>
 <td>Capability → Plan → Stage → Artifact</td>
 </tr>
 <tr>
-<td><a href="../../05-operations/TELEMETRY/">TELEMETRY.md</a></td>
+<td><a href="../../05-operations/TELEMETRY/">Telemetry</a></td>
 <td>Job state, attempt logs, tokens, credit receipts</td>
 </tr>
 <tr>
-<td><a href="../../01-getting-started/CREDITS/">CREDITS.md</a></td>
+<td><a href="../../01-getting-started/CREDITS/">Credits</a></td>
 <td>User-facing credits, monthly allowance, examples</td>
 </tr>
 <tr>
-<td><a href="../../05-operations/BILLING/">BILLING.md</a></td>
+<td><a href="../../05-operations/BILLING/">Billing</a></td>
 <td>Developer billing internals</td>
 </tr>
 <tr>
-<td><a href="../../02-authentication/AUTH_SETUP/">AUTH_SETUP.md</a></td>
+<td><a href="../../02-authentication/AUTH_SETUP/">Authentication setup</a></td>
 <td>Portal Google/Supabase auth</td>
 </tr>
 </tbody>
@@ -2025,8 +2025,8 @@
 <pre><code class="language-bash">-H &quot;X-API-Key: &lt;your-api-key&gt;&quot;
 </code></pre>
 <p>You obtain your API key from the <strong>Nolain portal</strong> (see
-<a href="../../01-getting-started/CLOUD_API_USER/"><code>CLOUD_API_USER.md</code></a> and
-<code>POST /api/auth/keys</code> in <a href="../../02-authentication/AUTH_SETUP/"><code>AUTH_SETUP.md</code></a>).</p>
+<a href="../../01-getting-started/CLOUD_API_USER/">User guide</a> and
+<code>POST /api/auth/keys</code> in <a href="../../02-authentication/AUTH_SETUP/">Authentication setup</a>).</p>
 <p>Portal account routes under <code>/api/auth/*</code> use a Supabase access token instead:</p>
 <pre><code class="language-bash">-H &quot;Authorization: Bearer &lt;access_token&gt;&quot;
 </code></pre>
@@ -2061,7 +2061,7 @@ the balance is empty.</p>
 </tr>
 </tbody>
 </table>
-<p>Monthly plan grants (see <a href="../../01-getting-started/CREDITS/">CREDITS.md</a>):</p>
+<p>Monthly plan grants (see <a href="../../01-getting-started/CREDITS/">Credits</a>):</p>
 <table>
 <thead>
 <tr>
@@ -2082,7 +2082,7 @@ the balance is empty.</p>
 </table>
 <p>Queueing a generation job does <strong>not</strong> consume credits by itself. Each LLM call
 is charged from token usage plus surplus as soon as it completes. Details:
-<a href="../../01-getting-started/CREDITS/">CREDITS.md</a>, <a href="../../05-operations/BILLING/">BILLING.md</a>.</p>
+<a href="../../01-getting-started/CREDITS/">Credits</a>, <a href="../../05-operations/BILLING/">Billing</a>.</p>
 <p>All LLM traffic routes through <strong>OpenRouter</strong>. Pass an optional <code>model</code> field
 (catalog id from <code>GET /api/v1/llm/models</code>); omit it to use the server default
 (<code>deepseek-v4-flash-0731</code> unless overridden in <code>llm_models.yaml</code>).</p>
@@ -2582,7 +2582,7 @@ fields are:</p>
 <hr />
 <h3 id="conversation-endpoints-apiv1conversation">Conversation endpoints (<code>/api/v1/conversation/*</code>)</h3>
 <p>This is the desktop <strong>Ask Queries</strong> loop. Full branch table:
-<a href="../../03-architecture/CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a>.</p>
+<a href="../../03-architecture/CONVERSATION_WORKFLOW/">Conversation workflow</a>.</p>
 <p>Sessions live in Redis (<code>conversation:{session_id}</code>) for 24 hours. Session GET/DELETE currently do not verify that the calling key created the session.</p>
 <h4 id="post-apiv1conversationstart"><code>POST /api/v1/conversation/start</code></h4>
 <p>Creates a session. No LLM call; no charge.</p>
@@ -2770,11 +2770,11 @@ retry budget for the repair job, then returns:</p>
 <p><code>credit_balance</code> is <code>null</code> for unlinked keys. <code>can_consume</code> is <code>true</code> for
 unlinked owner developer keys even when <code>credit_balance</code> is <code>null</code>. Portal CRUD
 for keys (<code>GET /api/auth/me</code>, <code>POST /api/auth/keys</code>, …) uses Bearer tokens —
-see <a href="../../02-authentication/AUTH_SETUP/">AUTH_SETUP.md</a>.</p>
+see <a href="../../02-authentication/AUTH_SETUP/">Authentication setup</a>.</p>
 <hr />
 <h3 id="billing-endpoints-apibilling">Billing endpoints (<code>/api/billing/*</code>)</h3>
 <p>Stripe credit top-ups for portal-linked keys. Requires server-side Stripe
-configuration (see <a href="../../05-operations/CLOUD_API_DEV/">CLOUD_API_DEV.md</a>).</p>
+configuration (see <a href="../../05-operations/CLOUD_API_DEV/">Cloud API developer setup</a>).</p>
 <h4 id="post-apibillingstripecheckout"><code>POST /api/billing/stripe/checkout</code></h4>
 <p>Creates a Checkout Session. Requires a portal-linked API key.</p>
 <pre><code class="language-bash">curl -X POST http://localhost:8000/api/billing/stripe/checkout \

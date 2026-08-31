@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
@@ -1647,7 +1647,7 @@
 <h1 id="telemetry">Telemetry</h1>
 <p>This document is the catalog of <strong>observability the product actually emits</strong>: job progress, per-attempt generation diagnostics, token and latency totals, credit receipts, conversation session state, health pings, and structured logs.</p>
 <p>There is <strong>no</strong> OpenTelemetry SDK, Langfuse, Prometheus, Flower, Sentry, or third-party APM. Celery <code>task_send_sent_event</code> / Flower event streaming is not enabled. What exists is first-party state in Redis, a credit ledger in Supabase, Celery’s result backend, and Python logs.</p>
-<p>Related docs: <a href="../../03-architecture/SYSTEM_ARCHITECTURE/">SYSTEM_ARCHITECTURE.md</a> (pipeline), <a href="../../03-architecture/CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a> (chat loop), <a href="../BILLING/">BILLING.md</a> (credits), <a href="../../04-api/CLOUD_API_USAGE/">CLOUD_API_USAGE.md</a> (status payload).</p>
+<p>Related docs: <a href="../../03-architecture/SYSTEM_ARCHITECTURE/">System architecture</a> (pipeline), <a href="../../03-architecture/CONVERSATION_WORKFLOW/">Conversation workflow</a> (chat loop), <a href="../BILLING/">Billing</a> (credits), <a href="../04-api/CLOUD_API_USAGE.md">Cloud API usage</a> (status payload).</p>
 <hr />
 <h2 id="processes">Processes</h2>
 <table>
@@ -2213,7 +2213,7 @@ in-job retries on the repair.</p>
 </table>
 <p><code>GET /api/v1/conversation/{session_id}</code> returns this document (minus internals the schema omits).</p>
 <h3 id="status-poll-get-apiv1get_task_statustask_id">Status poll (<code>GET /api/v1/get_task_status/{task_id}</code>)</h3>
-<p>Auth-only (readable after credits hit zero). Maps Redis job_state to the client payload: pipeline status, artifacts, retry counters, <code>generation_attempts</code>, usage totals, <code>billing</code>, plan/slot fields. See <a href="../../04-api/CLOUD_API_USAGE/">CLOUD_API_USAGE.md</a> for a full example.</p>
+<p>Auth-only (readable after credits hit zero). Maps Redis job_state to the client payload: pipeline status, artifacts, retry counters, <code>generation_attempts</code>, usage totals, <code>billing</code>, plan/slot fields. See <a href="../04-api/CLOUD_API_USAGE.md">Cloud API usage</a> for a full example.</p>
 <hr />
 <h2 id="local-engine-and-desktop">Local engine and desktop</h2>
 <p>The sidecar executes Artifacts. It does not call LLMs and does not write <code>job_state</code>.</p>

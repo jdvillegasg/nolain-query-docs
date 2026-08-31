@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../../04-api/CLOUD_API_USAGE/">
+        <link rel="prev" href="../../04-API/CLOUD_API_USAGE/">
       
       
         <link rel="next" href="../CD/">
@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
@@ -1213,7 +1213,7 @@
 
 
 <h1 id="billing-developer-and-operator-guide">Billing — developer and operator guide</h1>
-<p>User-facing pricing and examples: <strong><a href="../../01-getting-started/CREDITS/">CREDITS.md</a></strong>.</p>
+<p>User-facing pricing and examples: <strong><a href="../../01-getting-started/CREDITS/">Credits</a></strong>.</p>
 <h2 id="credit-formula">Credit formula</h2>
 <pre><code class="language-text">token_credits = ceil(model_token_cost_usd × credits_per_dollar)
 surplus_credits = ceil(token_credits × surplus_rate)     # default 1.0 (100%)
@@ -1300,7 +1300,7 @@ catalog model's <code>openrouter_model</code> slug in <code>llm_models.yaml</cod
 </tr>
 <tr>
 <td>Full telemetry catalog</td>
-<td><a href="../TELEMETRY/">TELEMETRY.md</a></td>
+<td><a href="../TELEMETRY/">Telemetry</a></td>
 </tr>
 </tbody>
 </table>
@@ -1391,7 +1391,7 @@ atomic; if writing the receipt fails, the call fails rather than continuing
 as if it were unpaid.</p>
 <h2 id="change-checklist">Change checklist</h2>
 <ol>
-<li>Update <a href="../../01-getting-started/CREDITS/">CREDITS.md</a> if user-visible pricing changes.</li>
+<li>Update <a href="../../01-getting-started/CREDITS/">Credits</a> if user-visible pricing changes.</li>
 <li>Keep <code>billing.yaml</code> and plan grants in sync.</li>
 <li>Ensure every catalog model resolves rates (OpenRouter or yaml override).</li>
 <li>Route all LLM invokes through <code>invoke_llm</code> / <code>invoke_llm_chain</code>.</li>

@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
@@ -1185,10 +1185,10 @@ loop, a local Pandas engine, and the dataset recorded in each run's
 <code>parameters.txt</code>.</p>
 <p>Credits are the product's charged credits, not US dollars. The current default
 is 1,000 credits per dollar plus a 100% surplus; see
-<a href="../../01-getting-started/CREDITS/">CREDITS.md</a> for the user-facing formula.</p>
+<a href="../../01-getting-started/CREDITS/">Credits</a> for the user-facing formula.</p>
 <h2 id="results">Results</h2>
 <h3 id="gpt-56-luna-pandas-only">GPT-5.6 Luna, Pandas only</h3>
-<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/"><code>2026-08-31_08-48-40</code></a></p>
+<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/">Pandas-only run, GPT-5.6 Luna</a></p>
 <ul>
 <li>50 queries; 49 code executions succeeded (98%).</li>
 <li>204 credits were charged: 4.08 average, 4 median, and 8 maximum per query.</li>
@@ -1196,7 +1196,7 @@ is 1,000 credits per dollar plus a 100% surplus; see
 <li>Ground-truth comparison was unavailable.</li>
 </ul>
 <h3 id="deepseek-v4-flash-0731-pandas-only">DeepSeek V4 Flash 0731, Pandas only</h3>
-<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/"><code>2026-08-31_09-15-16</code></a></p>
+<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/">Pandas-only run, DeepSeek V4 Flash</a></p>
 <ul>
 <li>50 queries; 35 code executions succeeded (70%).</li>
 <li>138 credits were charged: 2.76 average, 2 median, and 8 maximum per query.</li>
@@ -1204,7 +1204,7 @@ is 1,000 credits per dollar plus a 100% surplus; see
 <li>Ground-truth comparison was unavailable.</li>
 </ul>
 <h3 id="gpt-56-luna-pandas-plus-dag">GPT-5.6 Luna, Pandas plus DAG</h3>
-<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/"><code>2026-08-31_09-42-01</code></a></p>
+<p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/">Pandas + DAG run, GPT-5.6 Luna</a></p>
 <ul>
 <li>50 queries; all 50 code executions succeeded (100%).</li>
 <li>45 DAG executions succeeded (90%).</li>
@@ -1228,12 +1228,12 @@ quality benchmark for every dataset. None of the three runs had ground-truth
 answers, so accuracy against a known correct answer cannot be concluded.</p>
 <h2 id="how-to-reproduce">How to reproduce</h2>
 <p>The benchmark instructions and output-file definitions are in
-<a href="../../benchmarks/custom_2/README.md"><code>benchmarks/custom_2/README.md</code></a>.
+<a href="../../benchmarks/custom_2/README.md">Custom benchmark README</a>.
 The raw statistics are available in each linked run directory:</p>
 <ul>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/custom_exec_benchmark_stats.json"><code>09-42-01 stats</code></a></li>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/custom_exec_benchmark_stats.json"><code>09-15-16 stats</code></a></li>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/custom_exec_benchmark_stats.json"><code>08-48-40 stats</code></a></li>
+<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/custom_exec_benchmark_stats.json">DAG run statistics</a></li>
+<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/custom_exec_benchmark_stats.json">DeepSeek run statistics</a></li>
+<li><a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/custom_exec_benchmark_stats.json">GPT-5.6 Luna run statistics</a></li>
 </ul>
 <p>Worker token totals and per-call billing fields are exposed in the benchmark
 JSON output. Conversation classifier, semantic-analysis, and optional answer

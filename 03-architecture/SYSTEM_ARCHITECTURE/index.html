@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
@@ -1568,11 +1568,11 @@
 
 <h1 id="system-architecture">System architecture</h1>
 <p>This document is a <strong>component catalog</strong>: services, the generation framework (Capability → Plan → Stage → Artifact), job infrastructure, and direct APIs.</p>
-<p>It is not the design rationale or steering-policy intent. For layers, workflow, and <strong>why</strong> configured decisions exist, see <a href="../SYSTEM_PHILOSOPHY/">SYSTEM_PHILOSOPHY.md</a>.
-For the desktop chat loop, see <a href="../CONVERSATION_WORKFLOW/">CONVERSATION_WORKFLOW.md</a>.
-For credits and charge timing, see <a href="../../01-getting-started/CREDITS/">CREDITS.md</a> (users) and <a href="../../05-operations/BILLING/">BILLING.md</a> (developers).
+<p>It is not the design rationale or steering-policy intent. For layers, workflow, and <strong>why</strong> configured decisions exist, see <a href="../SYSTEM_PHILOSOPHY/">System philosophy</a>.
+For the desktop chat loop, see <a href="../CONVERSATION_WORKFLOW/">Conversation workflow</a>.
+For credits and charge timing, see <a href="../../01-getting-started/CREDITS/">Credits</a> (users) and <a href="../../05-operations/BILLING/">Billing</a> (developers).
 For job diagnostics, logs, and credit receipts, see
-<a href="../../05-operations/TELEMETRY/">TELEMETRY.md</a>.</p>
+<a href="../../05-operations/TELEMETRY/">Telemetry</a>.</p>
 <h2 id="overview">Overview</h2>
 <p>The Nolain desktop app reads and executes the user's data locally. The Cloud API receives the question plus dataset metadata, selects a registered <strong>Capability</strong>, builds a <strong>Plan</strong> of <strong>Stages</strong>, produces <strong>Artifacts</strong>, and returns those Artifacts for local execution. All LLM traffic goes through <strong>OpenRouter</strong> (<code>llm_models.yaml</code> catalog).</p>
 <p>The Cloud API does <strong>not</strong> receive the full data file. Metadata can contain column names, types, summary information, and sample values.</p>
@@ -2183,7 +2183,7 @@ orchestrator --&gt; worker[Celery worker]
 <p>All workflow endpoints require <code>X-API-Key</code>. Conversation routes pre-check remaining credits without charging; each LLM call is charged immediately.</p>
 <p>Portal-linked keys with an empty balance return HTTP <strong>402</strong>. Unlinked non-owner
 keys return <strong>402</strong>. Unlinked owner developer keys skip credit checks. See
-<a href="../../05-operations/BILLING/">BILLING.md</a>.</p>
+<a href="../../05-operations/BILLING/">Billing</a>.</p>
 <h2 id="job-infrastructure">Job infrastructure</h2>
 <ul>
 <li>Queue preflight: Redis + Celery worker required (<code>503</code> if unavailable)</li>
@@ -2226,7 +2226,7 @@ keys return <strong>402</strong>. Unlinked owner developer keys skip credit chec
 </table>
 <h2 id="portal-auth">Portal auth</h2>
 <p>Account endpoints live under <code>/api/auth/*</code>. See
-<a href="../../02-authentication/AUTH_SETUP/">AUTH_SETUP.md</a>.</p>
+<a href="../../02-authentication/AUTH_SETUP/">Authentication setup</a>.</p>
 <h2 id="future-capabilities">Future capabilities</h2>
 <p>A second Capability (e.g. RAG) would:</p>
 <ol>
@@ -2336,7 +2336,7 @@ keys return <strong>402</strong>. Unlinked owner developer keys skip credit chec
 </tr>
 <tr>
 <td>Telemetry (job_state, attempts, logs, ledger)</td>
-<td><a href="../../05-operations/TELEMETRY/">TELEMETRY.md</a></td>
+<td><a href="../../05-operations/TELEMETRY/">Telemetry</a></td>
 </tr>
 </tbody>
 </table>
