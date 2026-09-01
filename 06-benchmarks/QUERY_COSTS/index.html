@@ -23,7 +23,7 @@
     
     
       
-        <title>Query costs and benchmark results - Nolain Query</title>
+        <title>Query costs - Nolain Query</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#query-costs-and-benchmark-results" class="md-skip">
+        <a href="#query-costs" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query costs and benchmark results
+              Query costs
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query documentation
+    Nolain Data Query
   
 
     
@@ -315,7 +315,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query — Getting Started (Users)
+    Using Nolain
   
 
     
@@ -343,7 +343,7 @@
   <span class="md-ellipsis">
     
   
-    Credits — what you pay and what you get
+    Credits
   
 
     
@@ -425,7 +425,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Setup Guide
+    Signing in
   
 
     
@@ -507,7 +507,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API conversation workflow
+    A conversation from start to finish
   
 
     
@@ -535,7 +535,7 @@
   <span class="md-ellipsis">
     
   
-    Plan artifact dependency graphs
+    How a Plan is declared
   
 
     
@@ -563,7 +563,7 @@
   <span class="md-ellipsis">
     
   
-    System architecture
+    The parts of the system
   
 
     
@@ -591,7 +591,7 @@
   <span class="md-ellipsis">
     
   
-    System philosophy
+    How Nolain is built
   
 
     
@@ -666,14 +666,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cloud API — Usage Reference
+    Calling the Cloud API
   
 
     
@@ -755,7 +755,7 @@
   <span class="md-ellipsis">
     
   
-    Billing — developer and operator guide
+    Billing internals
   
 
     
@@ -783,7 +783,7 @@
   <span class="md-ellipsis">
     
   
-    CI/CD — how it works today
+    Shipping to production
   
 
     
@@ -811,7 +811,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API — Developer Setup Guide
+    Running the Cloud API yourself
   
 
     
@@ -839,7 +839,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry
+    Watching a job
   
 
     
@@ -932,7 +932,7 @@
   <span class="md-ellipsis">
     
   
-    Query costs and benchmark results
+    Query costs
   
 
     
@@ -950,7 +950,7 @@
   <span class="md-ellipsis">
     
   
-    Query costs and benchmark results
+    Query costs
   
 
     
@@ -1178,14 +1178,21 @@
 
 
 
-<h1 id="query-costs-and-benchmark-results">Query costs and benchmark results</h1>
-<p>This page reports observed execution costs instead of modeled case tables. Each
-run contains 50 hard retail-invoice questions using the desktop conversation
-loop, a local Pandas engine, and the dataset recorded in each run's
-<code>parameters.txt</code>.</p>
-<p>Credits are the product's charged credits, not US dollars. The current default
-is 1,000 credits per dollar plus a 100% surplus; see
-<a href="../../01-getting-started/CREDITS/">Credits</a> for the user-facing formula.</p>
+<h1 id="query-costs">Query costs</h1>
+<p>Earlier chapters explained that you pay for <strong>reasoning work</strong>, not for
+running your file, and that a question is often several model calls. This
+chapter is the <strong>measurement</strong>: what 50 hard retail-invoice questions
+actually charged, on specific models, with and without a computation graph.</p>
+<p>These are observed execution costs, not modeled case tables. Each run used
+the desktop conversation loop, a local Pandas engine, and the dataset
+recorded in that run’s <code>parameters.txt</code>. Credits are the product’s charged
+credits, not US dollars. The current default is 1,000 credits per dollar
+plus a 100% surplus; see <a href="../../01-getting-started/CREDITS/">Credits</a> for
+the formula.</p>
+<p>Worker token totals are included. Conversation-side calls (classification,
+semantic reading, optional narrative) are <strong>not</strong>. A live question can
+therefore cost a little more than the figures below.</p>
+<hr />
 <h2 id="results">Results</h2>
 <h3 id="gpt-56-luna-pandas-only">GPT-5.6 Luna, Pandas only</h3>
 <p>Run: <a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/">Pandas-only run, GPT-5.6 Luna</a></p>
@@ -1235,9 +1242,13 @@ The raw statistics are available in each linked run directory:</p>
 <li><a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/custom_exec_benchmark_stats.json">DeepSeek run statistics</a></li>
 <li><a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/custom_exec_benchmark_stats.json">GPT-5.6 Luna run statistics</a></li>
 </ul>
-<p>Worker token totals and per-call billing fields are exposed in the benchmark
-JSON output. Conversation classifier, semantic-analysis, and optional answer
-framing calls are not included in these run totals.</p>
+<p>Worker token totals and per-call billing fields are exposed in the
+benchmark JSON. Conversation classification, semantic reading, and optional
+answer framing are not included in these run totals.</p>
+<p>That is the last chapter of the book: a measurement, not a promise. For the
+formula those credits follow, return to
+<a href="../../01-getting-started/CREDITS/">Credits</a>. For how a single job’s charges
+are recorded, see <a href="../../05-operations/BILLING/">Billing internals</a>.</p>
 
 
 

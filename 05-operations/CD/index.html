@@ -25,7 +25,7 @@
     
     
       
-        <title>CI/CD — how it works today - Nolain Query</title>
+        <title>Shipping to production - Nolain Query</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cicd-how-it-works-today" class="md-skip">
+        <a href="#shipping-to-production" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CI/CD — how it works today
+              Shipping to production
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query documentation
+    Nolain Data Query
   
 
     
@@ -317,7 +317,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query — Getting Started (Users)
+    Using Nolain
   
 
     
@@ -345,7 +345,7 @@
   <span class="md-ellipsis">
     
   
-    Credits — what you pay and what you get
+    Credits
   
 
     
@@ -427,7 +427,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Setup Guide
+    Signing in
   
 
     
@@ -509,7 +509,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API conversation workflow
+    A conversation from start to finish
   
 
     
@@ -537,7 +537,7 @@
   <span class="md-ellipsis">
     
   
-    Plan artifact dependency graphs
+    How a Plan is declared
   
 
     
@@ -565,7 +565,7 @@
   <span class="md-ellipsis">
     
   
-    System architecture
+    The parts of the system
   
 
     
@@ -593,7 +593,7 @@
   <span class="md-ellipsis">
     
   
-    System philosophy
+    How Nolain is built
   
 
     
@@ -668,14 +668,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cloud API — Usage Reference
+    Calling the Cloud API
   
 
     
@@ -759,7 +759,7 @@
   <span class="md-ellipsis">
     
   
-    Billing — developer and operator guide
+    Billing internals
   
 
     
@@ -796,7 +796,7 @@
   <span class="md-ellipsis">
     
   
-    CI/CD — how it works today
+    Shipping to production
   
 
     
@@ -814,7 +814,7 @@
   <span class="md-ellipsis">
     
   
-    CI/CD — how it works today
+    Shipping to production
   
 
     
@@ -1050,7 +1050,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API — Developer Setup Guide
+    Running the Cloud API yourself
   
 
     
@@ -1078,7 +1078,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry
+    Watching a job
   
 
     
@@ -1160,7 +1160,7 @@
   <span class="md-ellipsis">
     
   
-    Query costs and benchmark results
+    Query costs
   
 
     
@@ -1412,28 +1412,30 @@
 
 
 
-<h1 id="cicd-how-it-works-today">CI/CD — how it works today</h1>
-<p>Three product repos + one infra repo, one VPS. <strong>Building images</strong> and <strong>deploying the stack</strong> are separate steps.</p>
-<pre><code>push nolain-ocr (master)                push nolain-query (main/platform)
-        │                                         │
-        ▼                                         ▼
-  Build and push to GHCR                  Build and push to GHCR
-  (OCR self-hosted runner)                (Query self-hosted runner)
-        │                                         │
-        ▼                                         ▼
-  ghcr.io/…/nolain-ocr-{backend,frontend}   ghcr.io/…/nolain-query-{backend,website}
-        │                                         │
-        └─────────────────┬───────────────────────┘
-                          │  (manual — not automatic)
-                          ▼
-                Deploy platform to VPS          ← platform self-hosted runner
-                          │
-                          ▼
-                docker compose pull &amp;&amp; up -d    ← VPS runs pulled images
-</code></pre>
+<h1 id="shipping-to-production">Shipping to production</h1>
+<p>This chapter is for someone who needs a change to reach the live site. It
+answers <strong>what</strong> the release path is, <strong>why</strong> build and deploy are separate
+steps, and <strong>how</strong> to run them for this repository.</p>
+<p>Three product repositories and one infra repository share a single VPS.
+<strong>Building images</strong> and <strong>deploying the stack</strong> are separate on purpose: a
+green build does not restart production by itself. That keeps a broken image
+from going live because a push happened to succeed, and it lets you build
+OCR and Query independently, then cut over together.</p>
 <p>Infra setup (runners, keys, and the first-time VPS layout) belongs to the
 separate <code>nolain-platform</code> repository. This page documents the release flow
 after that infrastructure is available.</p>
+<p>The picture, as a sequence rather than a graph:</p>
+<ol>
+<li>A push to <code>nolain-ocr</code> (branch <code>master</code>) or <code>nolain-query</code> (branch
+   <code>main</code> / <code>platform</code>) builds Docker images on a self-hosted runner and
+   pushes them to GHCR (GitHub Container Registry).</li>
+<li>Nothing happens on the VPS yet.</li>
+<li>Someone (or a push to <code>nolain-platform</code>) runs <strong>Deploy platform to
+   VPS</strong>. That runner pulls the images and runs <code>docker compose pull &amp;&amp; up
+   -d</code> on the machine that actually serves traffic.</li>
+</ol>
+<p>The rest of the chapter is what each component does, what you do after a
+code change, and what to check when the site is still old.</p>
 <hr />
 <h2 id="components">Components</h2>
 <h3 id="1-nolain-ocr-build-and-push-to-ghcr">1. <code>nolain-ocr</code> — <strong>Build and push to GHCR</strong></h3>

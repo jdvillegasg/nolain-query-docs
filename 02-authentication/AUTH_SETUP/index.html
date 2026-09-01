@@ -25,7 +25,7 @@
     
     
       
-        <title>Authentication Setup Guide - Nolain Query</title>
+        <title>Signing in - Nolain Query</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#authentication-setup-guide" class="md-skip">
+        <a href="#signing-in" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Authentication Setup Guide
+              Signing in
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query documentation
+    Nolain Data Query
   
 
     
@@ -317,7 +317,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query — Getting Started (Users)
+    Using Nolain
   
 
     
@@ -345,7 +345,7 @@
   <span class="md-ellipsis">
     
   
-    Credits — what you pay and what you get
+    Credits
   
 
     
@@ -438,7 +438,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Setup Guide
+    Signing in
   
 
     
@@ -456,7 +456,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Setup Guide
+    Signing in
   
 
     
@@ -482,10 +482,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#what-the-handshake-is" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        What the handshake is
       
     </span>
   </a>
@@ -736,17 +736,6 @@
     <span class="md-ellipsis">
       
         Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related docs
       
     </span>
   </a>
@@ -830,7 +819,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API conversation workflow
+    A conversation from start to finish
   
 
     
@@ -858,7 +847,7 @@
   <span class="md-ellipsis">
     
   
-    Plan artifact dependency graphs
+    How a Plan is declared
   
 
     
@@ -886,7 +875,7 @@
   <span class="md-ellipsis">
     
   
-    System architecture
+    The parts of the system
   
 
     
@@ -914,7 +903,7 @@
   <span class="md-ellipsis">
     
   
-    System philosophy
+    How Nolain is built
   
 
     
@@ -989,14 +978,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cloud API — Usage Reference
+    Calling the Cloud API
   
 
     
@@ -1078,7 +1067,7 @@
   <span class="md-ellipsis">
     
   
-    Billing — developer and operator guide
+    Billing internals
   
 
     
@@ -1106,7 +1095,7 @@
   <span class="md-ellipsis">
     
   
-    CI/CD — how it works today
+    Shipping to production
   
 
     
@@ -1134,7 +1123,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API — Developer Setup Guide
+    Running the Cloud API yourself
   
 
     
@@ -1162,7 +1151,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry
+    Watching a job
   
 
     
@@ -1244,7 +1233,7 @@
   <span class="md-ellipsis">
     
   
-    Query costs and benchmark results
+    Query costs
   
 
     
@@ -1292,10 +1281,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#what-the-handshake-is" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        What the handshake is
       
     </span>
   </a>
@@ -1552,17 +1541,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#related-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related docs
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1580,44 +1558,65 @@
 
 
 
-<h1 id="authentication-setup-guide">Authentication Setup Guide</h1>
-<p>Step-by-step configuration for Google OAuth + Supabase Auth and the nolainquery portal (API key management at <code>/account</code>).</p>
+<h1 id="signing-in">Signing in</h1>
+<p>This chapter is for someone standing up the <strong>portal</strong>: the website where a
+person creates an account, signs in with Google, and manages API keys. The
+desktop app does not create accounts. It uses a key the portal issued. The
+Cloud API does not talk to Google directly. It trusts tokens that Supabase
+issued after Google sign-in.</p>
+<p>If you only want to <em>use</em> an existing portal, you do not need this chapter.
+<a href="../../01-getting-started/CLOUD_API_USER/">Using Nolain</a> is enough. If you
+want the Cloud API running without Google at all, a developer key in
+<a href="../../05-operations/CLOUD_API_DEV/">Running the Cloud API yourself</a> is
+enough. Come here when you need the three-party handshake to work.</p>
+<p>The rest of the chapter is the <strong>how</strong>: create a Supabase project, create a
+Google OAuth client, point them at each other, tell the Cloud API and the
+website the right URLs, and verify end-to-end.</p>
 <hr />
-<h2 id="overview">Overview</h2>
+<h2 id="what-the-handshake-is">What the handshake is</h2>
+<p>Four pieces share the job, and each is allowed to see only its part.</p>
 <table>
 <thead>
 <tr>
-<th>Component</th>
-<th>Role</th>
+<th>Piece</th>
+<th>Job</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><strong>Google</strong></td>
+<td>Proves the person owns a Google account</td>
+</tr>
+<tr>
 <td><strong>Supabase Auth</strong></td>
-<td>Handles Google sign-in, issues JWT access tokens</td>
+<td>Turns that proof into a session token, and stores a profile row</td>
 </tr>
 <tr>
-<td><strong>Supabase Postgres</strong></td>
-<td>Stores <code>profiles_nolain_query</code> and links <code>clients_nolain_query</code> (API keys) to users</td>
+<td><strong>The portal website</strong></td>
+<td>Login page and account dashboard. Holds the <em>public</em> Supabase key, never the service-role secret</td>
 </tr>
 <tr>
-<td><strong>Cloud API</strong> (<code>/api/auth/*</code>)</td>
-<td>Validates Supabase tokens, creates/revokes API keys</td>
-</tr>
-<tr>
-<td><strong>Website</strong> (<code>nolainquery-website</code>)</td>
-<td>Login page (<code>/login</code>) and account dashboard (<code>/account</code>)</td>
+<td><strong>The Cloud API</strong></td>
+<td>Validates the session token, creates and revokes API keys, reads the credit balance</td>
 </tr>
 </tbody>
 </table>
-<p>Flow:</p>
+<p>The path a person actually takes:</p>
 <ol>
-<li>User clicks <strong>Continue with Google</strong> on <code>/login</code>.</li>
-<li>Supabase redirects through Google OAuth and back to <code>/account</code>.</li>
-<li>The website sends <code>Authorization: Bearer &lt;access_token&gt;</code> to the Cloud API.</li>
-<li>The API validates the token with Supabase and reads/writes keys in the <code>clients_nolain_query</code> table.</li>
+<li>They click <strong>Continue with Google</strong> on <code>/login</code>.</li>
+<li>Google sends them to Supabase, Supabase sends them to <code>/account</code>.</li>
+<li>The website calls the Cloud API with <code>Authorization: Bearer &lt;access_token&gt;</code>.</li>
+<li>The API checks that token with Supabase and reads or writes keys in
+   <code>clients_nolain_query</code>.</li>
 </ol>
-<hr />
+<p>Two redirect URIs, two different jobs. Google only needs to know the
+Supabase callback (<code>https://&lt;project&gt;.supabase.co/auth/v1/callback</code>).
+Supabase only needs to know your site (<code>/account</code>). Putting the website URL
+in Google’s console, or the Google client id in the Cloud API <code>.env</code>, is
+the usual way this goes wrong.</p>
+<p>The click-by-click work starts with a database. Supabase holds profiles,
+API keys, and credit balances. Google only proves identity; it never sees
+those tables.</p>
 <h2 id="1-supabase-project">1. Supabase project</h2>
 <h3 id="11-create-or-open-a-project">1.1 Create or open a project</h3>
 <ol>
@@ -1992,12 +1991,11 @@ npm run dev
 </tbody>
 </table>
 <hr />
-<h2 id="related-docs">Related docs</h2>
-<ul>
-<li><a href="../../05-operations/CLOUD_API_DEV/">Cloud API developer setup</a> — general API setup</li>
-<li><a href="../../01-getting-started/CREDITS/">Credits</a> — user-facing credits and examples</li>
-<li><a href="../../05-operations/BILLING/">Billing</a> — credit charging and API-key admission</li>
-</ul>
+<p>The click-by-click work is done. For the Cloud API’s own environment and
+the owner developer key, continue with
+<a href="../../05-operations/CLOUD_API_DEV/">Running the Cloud API yourself</a>.
+For what those keys spend, see <a href="../../01-getting-started/CREDITS/">Credits</a>
+(users) and <a href="../../05-operations/BILLING/">Billing internals</a> (operators).</p>
 
 
 

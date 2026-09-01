@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../../04-API/CLOUD_API_USAGE/">
+        <link rel="prev" href="../../04-api/CLOUD_API_USAGE/">
       
       
         <link rel="next" href="../CD/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Billing — developer and operator guide - Nolain Query</title>
+        <title>Billing internals - Nolain Query</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#billing-developer-and-operator-guide" class="md-skip">
+        <a href="#billing-internals" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Billing — developer and operator guide
+              Billing internals
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query documentation
+    Nolain Data Query
   
 
     
@@ -317,7 +317,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query — Getting Started (Users)
+    Using Nolain
   
 
     
@@ -345,7 +345,7 @@
   <span class="md-ellipsis">
     
   
-    Credits — what you pay and what you get
+    Credits
   
 
     
@@ -427,7 +427,7 @@
   <span class="md-ellipsis">
     
   
-    Authentication Setup Guide
+    Signing in
   
 
     
@@ -509,7 +509,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API conversation workflow
+    A conversation from start to finish
   
 
     
@@ -537,7 +537,7 @@
   <span class="md-ellipsis">
     
   
-    Plan artifact dependency graphs
+    How a Plan is declared
   
 
     
@@ -565,7 +565,7 @@
   <span class="md-ellipsis">
     
   
-    System architecture
+    The parts of the system
   
 
     
@@ -593,7 +593,7 @@
   <span class="md-ellipsis">
     
   
-    System philosophy
+    How Nolain is built
   
 
     
@@ -668,14 +668,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-API/CLOUD_API_USAGE/" class="md-nav__link">
+      <a href="../../04-api/CLOUD_API_USAGE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cloud API — Usage Reference
+    Calling the Cloud API
   
 
     
@@ -768,7 +768,7 @@
   <span class="md-ellipsis">
     
   
-    Billing — developer and operator guide
+    Billing internals
   
 
     
@@ -786,7 +786,7 @@
   <span class="md-ellipsis">
     
   
-    Billing — developer and operator guide
+    Billing internals
   
 
     
@@ -834,10 +834,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-map" class="md-nav__link">
+  <a href="#where-this-lives-in-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation map
+        Where this lives in the repository
       
     </span>
   </a>
@@ -922,7 +922,7 @@
   <span class="md-ellipsis">
     
   
-    CI/CD — how it works today
+    Shipping to production
   
 
     
@@ -950,7 +950,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud API — Developer Setup Guide
+    Running the Cloud API yourself
   
 
     
@@ -978,7 +978,7 @@
   <span class="md-ellipsis">
     
   
-    Telemetry
+    Watching a job
   
 
     
@@ -1060,7 +1060,7 @@
   <span class="md-ellipsis">
     
   
-    Query costs and benchmark results
+    Query costs
   
 
     
@@ -1130,10 +1130,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-map" class="md-nav__link">
+  <a href="#where-this-lives-in-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation map
+        Where this lives in the repository
       
     </span>
   </a>
@@ -1212,9 +1212,26 @@
 
 
 
-<h1 id="billing-developer-and-operator-guide">Billing — developer and operator guide</h1>
-<p>User-facing pricing and examples: <strong><a href="../../01-getting-started/CREDITS/">Credits</a></strong>.</p>
+<h1 id="billing-internals">Billing internals</h1>
+<p>The user-facing unit, monthly allowances, and worked examples are in
+<a href="../../01-getting-started/CREDITS/">Credits</a>. This chapter is for someone
+who needs to <strong>change</strong> that system: the formula, where rates come from,
+who is admitted, and how a receipt is written.</p>
+<p><strong>What billing is.</strong> Every time the product calls a language model, two
+things happen: OpenRouter runs the model (that costs the operator money),
+and the app subtracts credits from the user’s account so they pay for that
+call. A typical Pandas job with a chart and a graph is several calls, not
+one. Each call takes some credits.</p>
+<p><strong>Why it is built this way.</strong> Vendor cost is per call. Hiding failed
+compiles or gate calls inside a flat “query price” would misalign the
+product with the infrastructure. The ledger is the source of truth; Redis
+job totals are a running scoreboard.</p>
+<p>The rest of the chapter is the formula, the rate sources, who may spend,
+how receipts are tagged, and how to test a change.</p>
+<hr />
 <h2 id="credit-formula">Credit formula</h2>
+<p>The amount deducted for one model call is the token cost converted to
+credits, plus a surplus (the platform margin). Both parts round up.</p>
 <pre><code class="language-text">token_credits = ceil(model_token_cost_usd × credits_per_dollar)
 surplus_credits = ceil(token_credits × surplus_rate)     # default 1.0 (100%)
 charged_credits = token_credits + surplus_credits      # 0 if token_credits is 0
@@ -1257,7 +1274,7 @@ catalog model's <code>openrouter_model</code> slug in <code>llm_models.yaml</cod
 <p><strong>Fallback:</strong> <code>billing.yaml</code> → <code>pricing.model_overrides</code> (USD per 1M tokens).</p>
 <p>Set <code>pricing.source: yaml</code> to use overrides only (tests, offline).</p>
 <p>Implementation: <code>app/core/openrouter_pricing.py</code>, <code>app/core/credit_pricing.py</code>.</p>
-<h2 id="implementation-map">Implementation map</h2>
+<h2 id="where-this-lives-in-the-repository">Where this lives in the repository</h2>
 <table>
 <thead>
 <tr>
@@ -1300,7 +1317,7 @@ catalog model's <code>openrouter_model</code> slug in <code>llm_models.yaml</cod
 </tr>
 <tr>
 <td>Full telemetry catalog</td>
-<td><a href="../TELEMETRY/">Telemetry</a></td>
+<td><a href="../TELEMETRY/">Watching a job</a></td>
 </tr>
 </tbody>
 </table>
@@ -1393,9 +1410,11 @@ as if it were unpaid.</p>
 <ol>
 <li>Update <a href="../../01-getting-started/CREDITS/">Credits</a> if user-visible pricing changes.</li>
 <li>Keep <code>billing.yaml</code> and plan grants in sync.</li>
-<li>Ensure every catalog model resolves rates (OpenRouter or yaml override).</li>
-<li>Route all LLM invokes through <code>invoke_llm</code> / <code>invoke_llm_chain</code>.</li>
+<li>Ensure every catalog model resolves rates (OpenRouter or a yaml override).</li>
+<li>Keep every model call on the shared invoke path so charging cannot be skipped.</li>
 </ol>
+<p>The next operator chapter is how to <strong>see</strong> those charges on a running job:
+<a href="../TELEMETRY/">Watching a job</a>.</p>
 
 
 
