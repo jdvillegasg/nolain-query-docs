@@ -502,6 +502,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../03-architecture/CLARIFICATIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clarifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../03-architecture/CONVERSATION_WORKFLOW/" class="md-nav__link">
         
   
@@ -1718,7 +1746,7 @@ and the desktop execute and report; they do not call models.</p>
   ├─ Redis  conversation:{session_id} 24 hours  chat thread, last job, exec-repair history
   ├─ Redis  celery-as-broker/backend    Celery task metadata (execution_status)
   ├─ Redis  job_charge:{job_id}        unused today (legacy settlement lock)
-  ├─ stdout logs                       pandas_generation_attempt, pandas_attempt_outcome, …
+  ├─ stdout logs                       pandas_generation_attempt, pandas_attempt_outcome, clarification_event, …
   └─ Supabase ledger                   durable credit receipts (event_type=llm_call)
 </code></pre>
 <p><code>GET /api/v1/get_task_status/{task_id}</code> is the read API for job telemetry. Redis is authoritative; Celery <code>AsyncResult</code> is a fallback when Redis has no row (unusual for current jobs).</p>
@@ -2203,6 +2231,10 @@ adds whether Supabase is configured:</p>
 <p>These calls run inside <code>billing_scope(client_id)</code> <strong>without</strong> <code>job_id</code>. Credits hit the ledger; they never appear on <code>get_task_status</code>.</p>
 <h3 id="semantic-analysis">Semantic analysis</h3>
 <p><code>POST /api/v1/analyze_query</code> (and the conversation graph’s analysis node) accumulate <code>n_in_tokens_semantic</code> / <code>n_out_tokens_semantic</code> on the agent instance. The analyze endpoint returns them on the <code>SemanticAnalysis</code> object. Conversation does not copy those counters onto the session.</p>
+<p>Clarification outcomes are first-party logs, not job_state:</p>
+<pre><code class="language-text">clarification_event {&quot;concepts&quot;:[{&quot;chosen&quot;:null,&quot;offered&quot;:[...],&quot;skipped&quot;:false,&quot;source&quot;:&quot;polysemy&quot;,&quot;term&quot;:&quot;revenue&quot;}],&quot;event&quot;:&quot;offered&quot;}
+</code></pre>
+<p><code>event</code> is <code>offered</code>, <code>chosen</code>, or <code>skipped</code>. Use skip rate and Other-usage to tune detection; see <a href="../../03-architecture/CLARIFICATIONS/">Clarifications</a>.</p>
 <h3 id="answer-synthesis">Answer synthesis</h3>
 <p><code>POST /api/v1/conversation/synthesize</code> bills inside <code>billing_scope(client_id)</code> with no job id. Failures log <code>Answer synthesis failed</code>.</p>
 <h3 id="conversation-session-conversationsession_id">Conversation session (<code>conversation:{session_id}</code>)</h3>
