@@ -11,8 +11,10 @@
       
       
       
-        <link rel="prev" href="../../04-api/SKETCH_AND_METADATA/">
+        <link rel="prev" href="../DESKTOP_WORKFLOWS/">
       
+      
+        <link rel="next" href="../TRY_LOCALLY/">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Query costs - Nolain Query</title>
+        <title>Troubleshoot the desktop workflow - Nolain Query</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#query-costs" class="md-skip">
+        <a href="#troubleshoot-the-desktop-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query costs
+              Troubleshoot the desktop workflow
             
           </span>
         </div>
@@ -258,18 +260,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -290,7 +294,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -308,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/CLOUD_API_USER/" class="md-nav__link">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
         
   
   
@@ -336,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/CREDITS/" class="md-nav__link">
+      <a href="../CREDITS/" class="md-nav__link">
         
   
   
@@ -364,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/DESKTOP_WORKFLOWS/" class="md-nav__link">
+      <a href="../DESKTOP_WORKFLOWS/" class="md-nav__link">
         
   
   
@@ -389,10 +393,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../01-getting-started/TROUBLESHOOTING/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot the desktop workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -408,6 +439,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-api-key-is-missing-or-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The API key is missing or rejected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-service-returns-402-or-no-credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The service returns 402 or no credits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-request-is-unsupported-or-out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The request is unsupported or out of scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent-classification-returns-503" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intent classification returns 503
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-desktop-cannot-reach-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The desktop cannot reach a service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-app-asks-for-clarification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The app asks for clarification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-execution-fails-and-repair-runs-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local execution fails and repair runs out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-selected-file-does-not-appear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The selected file does not appear
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -420,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/TRY_LOCALLY/" class="md-nav__link">
+      <a href="../TRY_LOCALLY/" class="md-nav__link">
         
   
   
@@ -756,20 +895,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -790,7 +927,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -805,37 +942,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Query costs
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../06-benchmarks/QUERY_COSTS/" class="md-nav__link">
         
   
   
@@ -851,98 +961,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Results
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpt-56-luna-pandas-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GPT-5.6 Luna, Pandas only
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deepseek-v4-flash-0731-pandas-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DeepSeek V4 Flash 0731, Pandas only
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpt-56-luna-pandas-plus-dag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GPT-5.6 Luna, Pandas plus DAG
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-these-runs-show" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What these runs show
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-reproduce" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to reproduce
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -982,60 +1000,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+  <a href="#the-api-key-is-missing-or-rejected" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpt-56-luna-pandas-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GPT-5.6 Luna, Pandas only
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deepseek-v4-flash-0731-pandas-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DeepSeek V4 Flash 0731, Pandas only
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpt-56-luna-pandas-plus-dag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GPT-5.6 Luna, Pandas plus DAG
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-these-runs-show" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What these runs show
+        The API key is missing or rejected
       
     </span>
   </a>
@@ -1043,10 +1011,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-reproduce" class="md-nav__link">
+  <a href="#the-service-returns-402-or-no-credits" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to reproduce
+        The service returns 402 or no credits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-request-is-unsupported-or-out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The request is unsupported or out of scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent-classification-returns-503" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intent classification returns 503
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-desktop-cannot-reach-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The desktop cannot reach a service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-app-asks-for-clarification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The app asks for clarification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-execution-fails-and-repair-runs-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local execution fails and repair runs out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-selected-file-does-not-appear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The selected file does not appear
       
     </span>
   </a>
@@ -1070,85 +1104,132 @@
 
 
 
-<h1 id="query-costs">Query costs</h1>
-<p>Earlier chapters explained that you pay for <strong>reasoning work</strong>, not for
-running your file, and that a question is often several model calls. This
-chapter is the <strong>measurement</strong>: what 50 hard retail-invoice questions
-actually charged, on specific models, with and without a computation graph.</p>
-<p>These are observed execution costs, not modeled case tables. Each run used
-the desktop conversation loop, a local Pandas engine, and the dataset
-recorded in that run’s <code>parameters.txt</code>. Credits are the product’s charged
-credits, not US dollars. The current default is 1,000 credits per dollar
-plus a 100% surplus; see <a href="../../01-getting-started/CREDITS/">Credits</a> for
-the formula.</p>
-<p>Worker token totals are included. Conversation-side calls (classification,
-semantic reading, optional narrative) are <strong>not</strong>. A live question can
-therefore cost a little more than the figures below.</p>
-<p>When semantic analysis returned a clarification, the benchmark automatically
-selected the <strong>first offered interpretation for every ambiguous term</strong> and
-resent the question. That deterministic shortcut is useful for unattended
-runs, but it may not represent the interpretation a user would choose.</p>
-<hr />
-<h2 id="results">Results</h2>
-<h3 id="gpt-56-luna-pandas-only">GPT-5.6 Luna, Pandas only</h3>
-<p>Run configuration:
-<a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/parameters.txt">Pandas-only run, GPT-5.6 Luna</a></p>
+<h1 id="troubleshoot-the-desktop-workflow">Troubleshoot the desktop workflow</h1>
+<p>Use the message visible in the desktop or Cloud API response to choose a
+recovery path. These steps stay on the user side: they restore a normal
+workflow without exposing service credentials, database checks, or maintainer
+operations.</p>
+<h2 id="the-api-key-is-missing-or-rejected">The API key is missing or rejected</h2>
+<p><strong>Visible symptom:</strong> Ask Queries says <code>No API key configured</code>, Settings says
+<code>No API key set. Queries will be blocked</code>, or a request reports a missing or
+invalid API key.</p>
+<ol>
+<li>Open <strong>Settings</strong>.</li>
+<li>Paste an active key from
+   <a href="https://nolainquery.com/account">nolainquery.com/account</a>.</li>
+<li>Choose <strong>Save API Key</strong>.</li>
+<li>Wait for the status badge to show the tier and balance before retrying.</li>
+</ol>
+<p>If the key was revoked, lost, or is still rejected, revoke it in
+<strong>Account → API Keys</strong>, create a new key, and save the replacement in the
+desktop. The portal shows a full key only at creation time.</p>
+<h2 id="the-service-returns-402-or-no-credits">The service returns 402 or no credits</h2>
+<p><strong>Visible symptom:</strong> the badge says <code>No credits remaining</code>, or the Cloud API
+returns HTTP 402 with either a zero-balance message or a message that the key
+is not linked to a portal account.</p>
 <ul>
-<li>50 queries; 49 code executions succeeded (98%).</li>
-<li>204 credits were charged: 4.08 average, 4 median, and 8 maximum per query.</li>
-<li>No Pandas, sandbox, runtime, or compiler retries occurred.</li>
-<li>Ground-truth comparison was unavailable.</li>
+<li>For an unlinked key, sign in at
+  <a href="https://nolainquery.com">nolainquery.com</a>, create the key under your own
+  <strong>Account → API Keys</strong>, and save that key in Settings.</li>
+<li>For a linked key with zero balance, confirm the balance in the portal. The
+  current <strong>Subscription</strong> and <strong>Top Up</strong> tabs direct users to
+  <a href="https://nolainquery.com/contact">contact the Nolain team</a>; self-service
+  top-ups are not available in the portal yet.</li>
 </ul>
-<h3 id="deepseek-v4-flash-0731-pandas-only">DeepSeek V4 Flash 0731, Pandas only</h3>
-<p>Run configuration:
-<a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/parameters.txt">Pandas-only run, DeepSeek V4 Flash</a></p>
-<ul>
-<li>50 queries; 35 code executions succeeded (70%).</li>
-<li>138 credits were charged: 2.76 average, 2 median, and 8 maximum per query.</li>
-<li>23 Pandas retries occurred: 21 sandbox retries and 2 runtime repairs.</li>
-<li>Ground-truth comparison was unavailable.</li>
-</ul>
-<h3 id="gpt-56-luna-pandas-plus-dag">GPT-5.6 Luna, Pandas plus DAG</h3>
-<p>Run configuration:
-<a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/parameters.txt">Pandas + DAG run, GPT-5.6 Luna</a></p>
-<ul>
-<li>50 queries; all 50 code executions succeeded (100%).</li>
-<li>45 DAG executions succeeded (90%).</li>
-<li>1,942 credits were charged: 38.84 average, 42 median, and 50 maximum per query.</li>
-<li>1 Pandas retry and 1 sandbox retry occurred; no runtime retries occurred.</li>
-<li>Pandas and DAG outputs matched for 12 of 38 comparable queries (31.58%).</li>
-<li>87 compiler retries occurred, averaging 1.74 per query.</li>
-<li>Ground-truth comparison was unavailable.</li>
-</ul>
-<h2 id="what-these-runs-show">What these runs show</h2>
-<ul>
-<li>Adding DAG compilation greatly increased observed cost in this sample:
-  38.84 average credits versus 4.08 for GPT-5.6 Luna without a DAG.</li>
-<li>The successful code rate was higher with the DAG run, but DAG execution was
-  not perfect and its output matched Pandas in only 31.58% of comparable cases.</li>
-<li>The DeepSeek run was cheaper, but its 70% code success rate and 23 retries
-  show that cost alone does not describe the user experience.</li>
-</ul>
-<p>These are measurements from one 50-query slice of the hard retail-invoice
-questions, on one dataset and the recorded configurations. They are not a
-price guarantee or a quality benchmark for other datasets, prompts, model
-versions, or deployments. None of the three runs had ground-truth answers, so
-accuracy against a known correct answer cannot be concluded. Pandas–DAG
-agreement measures two executors against each other, not correctness.</p>
-<h2 id="how-to-reproduce">How to reproduce</h2>
-<p>The benchmark instructions and output-file definitions are in
-<a href="../../benchmarks/custom_2/README.md">Custom benchmark README</a>.
-The raw statistics are available in each linked run directory:</p>
-<ul>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-42-01/custom_exec_benchmark_stats.json">DAG run statistics</a></li>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_09-15-16/custom_exec_benchmark_stats.json">DeepSeek run statistics</a></li>
-<li><a href="../../benchmarks/custom_2/output/2026-08-31_08-48-40/custom_exec_benchmark_stats.json">GPT-5.6 Luna run statistics</a></li>
-</ul>
-<p>Worker token totals and per-call billing fields are exposed in the
-benchmark JSON. Conversation classification, semantic reading, and optional
-answer framing are not included in these run totals.</p>
-<p>These figures are a measurement, not a promise. For the formula behind the
-credits, return to <a href="../../01-getting-started/CREDITS/">Credits</a>.</p>
+<p>Retry only after Settings shows a positive balance. The plan’s displayed
+monthly amount does not prove that credits were granted; see
+<a href="../CREDITS/#what-the-plan-numbers-currently-mean">Credits</a>.</p>
+<h2 id="the-request-is-unsupported-or-out-of-scope">The request is unsupported or out of scope</h2>
+<p><strong>Visible symptom:</strong> Nolain says the request cannot be done with the available
+capabilities, refuses an unrelated question, or Settings reports that
+visualization or transformation requests are disabled.</p>
+<p>The current capability performs descriptive analysis of one loaded file. Ask
+for historical summaries, comparisons, rankings, distributions, data quality,
+cleaning, reshaping, or a chart. Forecasting, statistical inference,
+optimization, and anomaly detection are unavailable.</p>
+<p>For example, replace:</p>
+<pre><code class="language-text">Forecast next quarter's revenue.
+</code></pre>
+<p>with an implemented descriptive request:</p>
+<pre><code class="language-text">Show monthly historical revenue and compare the latest quarter with the previous quarter.
+</code></pre>
+<p>If a chart or transformation was blocked locally, open
+<strong>Settings → Capabilities &amp; plans</strong>, enable the corresponding feature, save,
+and submit the request again. Otherwise keep the feature disabled and rephrase
+the request as a table or descriptive analysis.</p>
+<h2 id="intent-classification-returns-503">Intent classification returns 503</h2>
+<p><strong>Visible symptom:</strong> the request returns HTTP 503 with a message such as
+<code>Intent classification failed</code>, or reports that the language-model service is
+unavailable.</p>
+<p>The Cloud API could not classify the conversation turn, so no analysis job was
+accepted. Wait briefly and retry the same request once. If the failure
+continues, verify that the hosted site itself is reachable and
+<a href="https://nolainquery.com/contact">contact support</a> with the approximate time
+and the visible error text. Do not include your API key or file contents.</p>
+<h2 id="the-desktop-cannot-reach-a-service">The desktop cannot reach a service</h2>
+<p>Three services participate in a normal query: the desktop UI, the local Python
+engine that reads and executes the file, and the Cloud API that generates the
+calculation.</p>
+<p><strong>Local engine unreachable or connection refused</strong></p>
+<p>Restart the desktop launcher. A source run is ready only after its terminal
+prints <code>Local execution engine is ready.</code> If port 8001 is already occupied,
+stop the other engine process before starting <code>./launch.sh</code> again.</p>
+<p><strong>Cloud API unreachable or request failed to fetch</strong></p>
+<p>Confirm that the machine is online. For a source build using the hosted
+service, restart it from the repository root with:</p>
+<pre><code class="language-bash">VITE_CLOUD_API_URL=https://nolainquery.com ./launch.sh
+</code></pre>
+<p>A plain development launch defaults to a Cloud API on
+<code>http://127.0.0.1:8000</code>, so it will fail unless a maintainer has started the
+local cloud stack.</p>
+<p><strong>Cloud API online, but generation runtime unavailable</strong></p>
+<p>The API is reachable but cannot queue generation work. Hosted users should
+retry later and contact support if it persists. Maintainers running the local
+stack should use the private
+<a href="../../docs-private/05-operations/CLOUD_API_DEV.md">Cloud API development guide</a>;
+the desktop cannot repair Redis or the generation worker.</p>
+<h2 id="the-app-asks-for-clarification">The app asks for clarification</h2>
+<p><strong>Visible symptom:</strong> the conversation shows <strong>Clarification needed</strong> and offers
+interpretations for one or more terms.</p>
+<p>This is a request for intent, not an execution failure. Select one meaning for
+each term and submit the choices. Nolain sends those meanings with the resumed
+request and uses them when generating the calculation.</p>
+<p>If no option matches, choose the rephrase action and rewrite the original
+question with an explicit definition. For example, change “top customers” to
+“the five customers with the highest total revenue.” The clarified request may
+make additional model calls and consume more credits.</p>
+<h2 id="local-execution-fails-and-repair-runs-out">Local execution fails and repair runs out</h2>
+<p><strong>Visible symptom:</strong> progress reaches <strong>Repairing generated code</strong>, then the
+answer reports that it could not compute a result, generated code was blocked
+for safety, a column was not found, or the generation attempt ceiling was
+exhausted.</p>
+<p>The desktop reports a local Pandas error to the Cloud API, which can generate a
+repair. The current configuration limits sandbox, syntax, and local-runtime
+repair attempts; it does not retry indefinitely.</p>
+<p>Use the narrowest matching action:</p>
+<ol>
+<li>For an unknown column, return to <strong>Home</strong> and copy the exact column name into
+   the question.</li>
+<li>For a format-loading error, reopen a supported <code>.csv</code> or <code>.parquet</code> file.</li>
+<li>For a safety block, remove requests for filesystem, network, package, or
+   process access and ask only for a calculation over the loaded data.</li>
+<li>For a complex failure, split the request into a smaller calculation, verify
+   that result, then ask a follow-up.</li>
+<li>If Pandas produced a valid answer but only graph compilation failed, turn
+   off <strong>Computation graph</strong> and retry without that optional artifact.</li>
+</ol>
+<p>Completed model calls from failed and repaired attempts can still consume
+credits. Repeating the identical request many times is therefore less useful
+than changing the column name, scope, or optional graph setting.</p>
+<h2 id="the-selected-file-does-not-appear">The selected file does not appear</h2>
+<p>The current desktop chooser lists only <code>.csv</code> and <code>.parquet</code>. Although the
+local preprocessing code contains Excel handlers, <code>.xlsx</code> and <code>.xls</code> are not
+exposed in the current chooser and should not be treated as a supported
+desktop first-use path. Convert the workbook to CSV or Parquet, then reopen it.</p>
+<p>Once the visible symptom is resolved, return to
+<a href="../DESKTOP_WORKFLOWS/">Desktop workflows</a>. For the system boundaries behind
+these failures, continue with
+<a href="../../03-architecture/SYSTEM_PHILOSOPHY/">How Nolain is built</a>.</p>
 
 
 
