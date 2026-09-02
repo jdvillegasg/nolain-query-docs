@@ -25,7 +25,7 @@
     
     
       
-        <title>Ask your first question with Nolain - Nolain Query</title>
+        <title>Ask your first question with nolainquery - Nolain Query</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ask-your-first-question-with-nolain" class="md-skip">
+        <a href="#ask-your-first-question-with-nolainquery" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ask your first question with Nolain
+              Ask your first question with nolainquery
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query
+    nolainquery
   
 
     
@@ -328,7 +328,7 @@
   <span class="md-ellipsis">
     
   
-    Ask your first question with Nolain
+    Ask your first question with nolainquery
   
 
     
@@ -346,7 +346,7 @@
   <span class="md-ellipsis">
     
   
-    Ask your first question with Nolain
+    Ask your first question with nolainquery
   
 
     
@@ -1060,16 +1060,16 @@
 
 
 
-<h1 id="ask-your-first-question-with-nolain">Ask your first question with Nolain</h1>
-<p>Nolain combines a desktop application with a hosted reasoning service called
+<h1 id="ask-your-first-question-with-nolainquery">Ask your first question with nolainquery</h1>
+<p>nolainquery combines a desktop application with a hosted reasoning service called
 the <strong>Cloud API</strong>. The desktop reads a file on your computer, sends the Cloud
 API a compact description of that file, and runs the returned analysis locally.
 This guide takes you from sign-in to an observable answer.</p>
 <h2 id="before-you-begin">Before you begin</h2>
 <p>You need:</p>
 <ul>
-<li>the Nolain desktop app running; to build it from the public repository, follow
-  <a href="../TRY_LOCALLY/">Try Nolain locally</a></li>
+<li>the nolainquery desktop app running; to build it from the public repository, follow
+  <a href="../TRY_LOCALLY/">Try nolainquery locally</a></li>
 <li>a Google account for portal sign-in</li>
 <li>a positive credit balance</li>
 <li>one local <code>.csv</code> or <code>.parquet</code> file</li>
@@ -1111,8 +1111,7 @@ steps in <a href="../TROUBLESHOOTING/">Troubleshooting</a> before continuing.</p
 <li>Open <strong>Ask Queries</strong>.</li>
 <li>Enter a concrete question that uses columns in the file, for example:</li>
 </ol>
-<p><code>text
-   What is the total revenue by country?</code></p>
+<p><code>What is the total revenue by country?</code></p>
 <ol>
 <li>Choose <strong>Ask</strong>, or press <code>Ctrl+Enter</code> on Linux and Windows
    (<code>Command+Enter</code> on macOS).</li>
@@ -1131,8 +1130,9 @@ file.</p>
 <p>The implemented capability covers descriptive analysis of one file, including
 aggregations, comparisons, rankings, historical trends, quality checks,
 transformations, and optional charts. Forecasting, statistical inference,
-optimization, and anomaly detection are currently unavailable. Nolain labels
-those requests as out of scope instead of presenting them as completed work.</p>
+optimization, and anomaly detection are currently unavailable. nolainquery labels
+those requests as out of scope instead of presenting them as completed work. </p>
+<p>Due to the generative nature of the label classifier, there might be cases in which a query involving one of those tasks is answered. However, the capabilities of the system are not thougt for giving such type of analysis, and therefore, such answers might be limited in their analysis.</p>
 <p>Some schema-only questions, such as “What columns do I have?”, can be answered
 from the file description without generating code. An unrelated question gets
 a short refusal.</p>
@@ -1144,7 +1144,8 @@ a short refusal.</p>
 <li>Service or execution failure: see <a href="../TROUBLESHOOTING/#the-desktop-cannot-reach-a-service">service and runtime recovery</a>.</li>
 </ul>
 <p>You now have the shortest hosted workflow: a local file, a portal-issued key,
-and an answer computed on your device. Continue with
+and an answer computed on your device. </p>
+<p>Continue with
 <a href="../DESKTOP_WORKFLOWS/">Desktop workflows</a> to explore the rest of the
 implemented workspace, then read <a href="../CREDITS/">Credits</a> before estimating
 ongoing use.</p>

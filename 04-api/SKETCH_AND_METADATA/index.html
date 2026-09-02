@@ -243,7 +243,7 @@
   <span class="md-ellipsis">
     
   
-    Nolain Data Query
+    nolainquery
   
 
     
@@ -317,7 +317,7 @@
   <span class="md-ellipsis">
     
   
-    Ask your first question with Nolain
+    Ask your first question with nolainquery
   
 
     
@@ -1017,7 +1017,7 @@
 
 
 <h1 id="sketch-and-metadata">Sketch and metadata</h1>
-<p>Nolain sends a compact description of a local dataset to the Cloud API instead
+<p>nolainquery sends a compact description of a local dataset to the Cloud API instead
 of uploading the complete file. This description is the <strong>sketch</strong>. It gives
 the model enough schema context to generate analysis, but it is not anonymous:
 sample rows and sample values can contain real data.</p>
@@ -1092,7 +1092,7 @@ sends these fields to conversation endpoints:</p>
 still contain <code>sample_values</code>. Direct API callers and benchmark clients pass
 their supplied metadata object through unchanged, so they may include
 <code>sample_data</code> as well.</p>
-<p>This distinction matters for privacy statements: Nolain does not send the full
+<p>This distinction matters for privacy statements: nolainquery does not send the full
 file or its local path to the Cloud API, but a sketch may contain actual values.
 Inspect the request you send if those values are sensitive.</p>
 <h2 id="how-cloud-stages-use-it">How cloud stages use it</h2>
