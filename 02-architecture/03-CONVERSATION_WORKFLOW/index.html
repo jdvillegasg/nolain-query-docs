@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../CLARIFICATIONS/">
+        <link rel="prev" href="../02-SYSTEM_ARCHITECTURE/">
       
       
-        <link rel="next" href="../SYSTEM_ARCHITECTURE/">
+        <link rel="next" href="../04-CLARIFICATIONS/">
       
       
         
@@ -310,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/CLOUD_API_USER/" class="md-nav__link">
+      <a href="../../01-getting-started/01-CLOUD_API_USER/" class="md-nav__link">
         
   
   
@@ -338,7 +338,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/DESKTOP_WORKFLOWS/" class="md-nav__link">
+      <a href="../../01-getting-started/02-TRY_LOCALLY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try nolainquery locally
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/03-DESKTOP_WORKFLOWS/" class="md-nav__link">
         
   
   
@@ -366,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/EXCEL_AND_WORKBOOKS/" class="md-nav__link">
+      <a href="../../01-getting-started/04-EXCEL_AND_WORKBOOKS/" class="md-nav__link">
         
   
   
@@ -394,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-getting-started/TROUBLESHOOTING/" class="md-nav__link">
+      <a href="../../01-getting-started/05-TROUBLESHOOTING/" class="md-nav__link">
         
   
   
@@ -402,34 +430,6 @@
     
   
     Troubleshoot the desktop workflow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../01-getting-started/TRY_LOCALLY/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Try nolainquery locally
   
 
     
@@ -506,14 +506,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../CAPABILITY_CATALOG/" class="md-nav__link">
+      <a href="../01-SYSTEM_PHILOSOPHY/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Capability catalog
+    The system philosophy
   
 
     
@@ -534,14 +534,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../CLARIFICATIONS/" class="md-nav__link">
+      <a href="../02-SYSTEM_ARCHITECTURE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Clarifications
+    The parts of the system
   
 
     
@@ -775,14 +775,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../SYSTEM_ARCHITECTURE/" class="md-nav__link">
+      <a href="../04-CLARIFICATIONS/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The parts of the system
+    Clarifications
   
 
     
@@ -803,14 +803,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+      <a href="../05-CAPABILITY_CATALOG/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    The system philosophy
+    Capability catalog
   
 
     
@@ -1239,7 +1239,7 @@ queued.</p>
 in, classification and semantic reading are skipped. The meaning of the
 question is treated as settled; the server queues the Plan with the current
 toggles. How terms are detected, stored as a session glossary, and passed
-into generation is in <a href="../CLARIFICATIONS/">Clarifications</a>.</p>
+into generation is in <a href="../04-CLARIFICATIONS/">Clarifications</a>.</p>
 <p><strong>What the classifier is allowed to do.</strong> It chooses the <em>kind of turn</em>.
 For generation kinds it may suggest a Capability and a Plan from the live
 catalog. It does not turn the graph or the chart on or off. Those are your
@@ -1386,7 +1386,7 @@ text branch: the message request returns HTTP <code>503</code> and queues no job
   constraints, and sketch-vs-scan routing are catalog configuration. A
   wording safety net backs the classifier when the request is explicit.
   Unknown or disabled products are refused; they are never coerced to
-  descriptive analysis. See <a href="../CAPABILITY_CATALOG/">Capability catalog</a>.</li>
+  descriptive analysis. See <a href="../05-CAPABILITY_CATALOG/">Capability catalog</a>.</li>
 <li>In-thread follow-ups keep the original question and append each new
   utterance. The generator sees the original plus numbered follow-ups. The
   server does not reconstruct filters or “top N” from the wording.</li>
@@ -1442,9 +1442,9 @@ text branch: the message request returns HTTP <code>503</code> and queues no job
 synthesize. A missing session returns <code>404</code>; a different API key returns
 <code>403</code>. Status and cancellation also enforce job ownership. Model calls already
 completed keep their charges.</p>
-<p>Next, <a href="../CLARIFICATIONS/">Clarifications</a> explains why the system pauses,
+<p>Next, <a href="../04-CLARIFICATIONS/">Clarifications</a> explains why the system pauses,
 how its three-stage semantic pipeline works, and how the answer is used.
-<a href="../CAPABILITY_CATALOG/">Capability catalog</a> is the product menu those
+<a href="../05-CAPABILITY_CATALOG/">Capability catalog</a> is the product menu those
 turns honor.</p>
 
 
