@@ -1,0 +1,1706 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../DESKTOP_WORKFLOWS/">
+      
+      
+        <link rel="next" href="../TROUBLESHOOTING/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Excel and workbooks - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#excel-and-workbooks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Excel and workbooks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ask your first question with nolainquery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DESKTOP_WORKFLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desktop workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel and workbooks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel and workbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported file types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-table-scoped-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What “table-scoped” means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opening-a-workbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening a workbook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-tabular-sheets-are-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How tabular sheets are detected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How tabular sheets are detected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-first-then-one-full-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample first, then one full load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-non-empty-used-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Non-empty used range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fill-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fill density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-header-row-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Header row detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-minimum-table-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Minimum table size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-unnamed-column-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Unnamed column ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-hidden-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hidden sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skip-reasons-you-may-see-in-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skip reasons you may see in the app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-active-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default active table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-cloud-api-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Cloud API sees
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workbook-ingest-configuration-workbookyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workbook ingest configuration (workbook.yaml)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workbook ingest configuration (workbook.yaml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-headers-start-on-row-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: headers start on row 45
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-keep-the-first-visible-sheet-as-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: keep the first visible sheet as active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-treat-more-integer-id-like-columns-as-categorical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: treat more integer id-like columns as categorical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-a-sheet-you-need-was-skipped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If a sheet you need was skipped
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TROUBLESHOOTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot the desktop workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TRY_LOCALLY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try nolainquery locally
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-architecture/CAPABILITY_CATALOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capability catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-architecture/CLARIFICATIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clarifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-architecture/CONVERSATION_WORKFLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A conversation from start to finish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-architecture/SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The parts of the system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-architecture/SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The system philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Costs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 Costs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-costs/QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What queries cost
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported file types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-table-scoped-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What “table-scoped” means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opening-a-workbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening a workbook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-tabular-sheets-are-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How tabular sheets are detected
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How tabular sheets are detected">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-first-then-one-full-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample first, then one full load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-non-empty-used-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Non-empty used range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fill-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fill density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-header-row-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Header row detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-minimum-table-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Minimum table size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-unnamed-column-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Unnamed column ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-hidden-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hidden sheets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skip-reasons-you-may-see-in-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skip reasons you may see in the app
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-active-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default active table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-cloud-api-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Cloud API sees
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workbook-ingest-configuration-workbookyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workbook ingest configuration (workbook.yaml)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workbook ingest configuration (workbook.yaml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-headers-start-on-row-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: headers start on row 45
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-keep-the-first-visible-sheet-as-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: keep the first visible sheet as active
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-treat-more-integer-id-like-columns-as-categorical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: treat more integer id-like columns as categorical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-a-sheet-you-need-was-skipped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If a sheet you need was skipped
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="excel-and-workbooks">Excel and workbooks</h1>
+<p>nolainquery treats <strong>Excel</strong>, <strong>CSV</strong>, and <strong>Parquet</strong> as local inputs. Excel is
+a <strong>workbook</strong> — a container that may hold several sheets with different
+layouts. CSV and Parquet are treated as workbooks with a single table.</p>
+<p>The desktop does not query the raw <code>.xlsx</code> file directly. When you open a file,
+the local engine <strong>ingests</strong> it, detects which sheets look like tables, and
+materializes each importable table to a cached Parquet file on your machine.
+Preview, insights, and query execution always run against the <strong>active table</strong>.</p>
+<p>This page explains that model, how tabular sheets are detected, and what is
+supported today.</p>
+<h2 id="supported-file-types">Supported file types</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Extensions</th>
+<th>Desktop support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excel</td>
+<td><code>.xlsx</code>, <code>.xls</code></td>
+<td>Full first-class support</td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Full support (single table)</td>
+</tr>
+<tr>
+<td>Parquet</td>
+<td><code>.parquet</code></td>
+<td>Supported (single table; often used internally after ingest)</td>
+</tr>
+</tbody>
+</table>
+<p>Priority in the product is <strong>Excel first</strong>, then <strong>CSV</strong>. Parquet remains
+available for performance and advanced workflows.</p>
+<h2 id="what-table-scoped-means">What “table-scoped” means</h2>
+<p>Today’s analysis capability is <strong>one active table, one <code>df</code></strong>:</p>
+<ul>
+<li>You pick <strong>one importable sheet</strong> (or one CSV/Parquet file) as the active
+  dataset.</li>
+<li>The Cloud API receives a sketch of <strong>that table’s columns</strong> only.</li>
+<li>Generated code runs locally against the materialized active table.</li>
+<li><strong>Cross-sheet joins</strong> and “analyze the whole workbook at once” are <strong>not</strong>
+  supported yet.</li>
+</ul>
+<p>If your question refers to another sheet in the same workbook, switch the active
+table on <strong>Home</strong> or rephrase the question for the table you have loaded.</p>
+<h2 id="opening-a-workbook">Opening a workbook</h2>
+<ol>
+<li>Open <strong>Home</strong> and choose <strong>Choose dataset</strong>.</li>
+<li>Select <code>.xlsx</code>, <code>.xls</code>, <code>.csv</code>, or <code>.parquet</code>.</li>
+<li>The local engine calls <code>POST /open_workbook</code> and returns a <strong>catalog</strong>:</li>
+<li>importable tables (with row/column counts)</li>
+<li>skipped sheets (with a reason)</li>
+<li>the default <strong>active table</strong></li>
+<li>For Excel with multiple importable sheets, use <strong>Workbook tables</strong> on Home
+   to switch the active table.</li>
+<li>Preview, insights, and Ask Queries use the active table’s materialized path.</li>
+</ol>
+<p>The original file stays where you saved it. Cached tables live under
+<code>~/.cache/nolainquery/workbooks</code> unless overridden by
+<code>NOLAIN_WORKBOOK_CACHE_DIR</code>.</p>
+<h2 id="how-tabular-sheets-are-detected">How tabular sheets are detected</h2>
+<p>Excel workbooks often mix <strong>data sheets</strong> with <strong>cover pages</strong>, <strong>notes</strong>,
+<strong>dashboards</strong>, or <strong>sparse layouts</strong>. Before a sheet becomes queryable,
+nolainquery runs a deterministic <strong>table-detection</strong> pass on each sheet (hidden
+sheets are skipped by default).</p>
+<p>Detection does <strong>not</strong> scan every cell of a large sheet. It classifies the
+sheet from a <strong>small sample</strong>, then loads the full sheet <strong>at most once</strong> if
+that sample already looks like a table.</p>
+<h3 id="sample-first-then-one-full-load">Sample first, then one full load</h3>
+<p>For each visible sheet the engine:</p>
+<ol>
+<li>Reads only the first <strong>header sample</strong> of rows with no header applied.
+   Sample size is</li>
+</ol>
+<p><code>text
+   max(header_scan_rows + min_data_rows + header_sample_padding, header_sample_floor)</code></p>
+<p>With the defaults in <code>workbook.yaml</code> that is <code>max(20 + 2 + 5, 40)</code> = <strong>40 rows</strong>.</p>
+<ol>
+<li>
+<p>Runs the checks below on that sample’s <strong>used range</strong>, trimmed to a bounding box of non-empty cells.</p>
+</li>
+<li>
+<p>If the sample is <strong>not</strong> a table, the sheet is skipped. The rest of the sheet is never loaded.</p>
+</li>
+<li>
+<p>If the sample <strong>is</strong> a table and those sample rows were the whole sheet, that sample is the imported table — there is no second read.</p>
+</li>
+<li>
+<p>If the sample is a table and the sheet is larger, the engine reads the full sheet <strong>once</strong>, using the detected header row as column names, and materializes that grid to Parquet.</p>
+</li>
+</ol>
+<p>Importable sheets still keep <strong>all rows</strong> after that full load. The sample is
+only for classification, not a substitute for the cached table.</p>
+<p>The checks below run in order on the sample. A sheet is <strong>importable</strong> only if
+it passes all of them (unless you choose <strong>Import anyway</strong>).</p>
+<h3 id="1-non-empty-used-range">1. Non-empty used range</h3>
+<p>If the trimmed sheet has no cells, it is skipped as an <strong>empty sheet</strong>.</p>
+<h3 id="2-fill-density">2. Fill density</h3>
+<p><strong>Fill density</strong> is the share of non-empty cells inside the bounding box:</p>
+<pre><code class="language-text">fill_density = non_empty_cells / (rows × columns)
+</code></pre>
+<p>Sheets below <strong>15%</strong> fill density are treated as <strong>sparse / non-table</strong> (typical
+cover pages, title blocks, or KPI callouts with large empty regions).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum fill density</td>
+<td><code>0.15</code> (15%)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-header-row-detection">3. Header row detection</h3>
+<p>Real tables often start below title rows. The engine scans the first
+<strong><code>header_scan_rows</code></strong> (default <strong>20</strong>) rows of the sample and scores each row
+as a candidate <strong>header row</strong>.</p>
+<p><strong>Header confidence</strong> combines:</p>
+<ul>
+<li><strong>Header score</strong> — share of columns in that row with non-empty, non-numeric
+  labels (strings that look like field names).</li>
+<li><strong>Consistency score</strong> — share of columns that have at least one non-empty value
+  in the next <strong><code>header_consistency_rows</code></strong> (default <strong>5</strong>) data rows below the
+  candidate header.</li>
+</ul>
+<p>The best-scoring row must meet a minimum confidence of <strong>0.4</strong>. If no row
+qualifies, the sheet is skipped as <strong>low header confidence</strong> (unless you force
+import).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default (see <code>workbook.yaml</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header scan depth</td>
+<td><code>header_scan_rows: 20</code></td>
+</tr>
+<tr>
+<td>Header sample floor</td>
+<td><code>header_sample_floor: 40</code></td>
+</tr>
+<tr>
+<td>Header consistency rows</td>
+<td><code>header_consistency_rows: 5</code></td>
+</tr>
+<tr>
+<td>Minimum header confidence</td>
+<td><code>min_header_confidence: 0.4</code></td>
+</tr>
+</tbody>
+</table>
+<p>After a header row is chosen, the engine:</p>
+<ul>
+<li>uses that row as column names (normalizing blanks and duplicates),</li>
+<li>drops fully empty rows below the header,</li>
+<li>drops fully empty columns.</li>
+</ul>
+<h3 id="4-minimum-table-size">4. Minimum table size</h3>
+<p>The extracted grid must look like a real table:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Default threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum data rows (below header)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Minimum columns</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Sheets that fail are skipped as <strong>too few rows</strong> or <strong>too few columns</strong>.</p>
+<h3 id="5-unnamed-column-ratio">5. Unnamed column ratio</h3>
+<p>When pandas reads Excel without a clear header, it produces columns like
+<code>Unnamed: 0</code>. If more than <strong>60%</strong> of column names are unnamed or blank after
+extraction, the sheet is treated as <strong>low header confidence</strong> and skipped.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum unnamed column ratio</td>
+<td><code>0.6</code> (60%)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-hidden-sheets">6. Hidden sheets</h3>
+<p>For <code>.xlsx</code> files, sheets marked <strong>hidden</strong> or <strong>very hidden</strong> in Excel are
+skipped unless you explicitly force-import them.</p>
+<h2 id="skip-reasons-you-may-see-in-the-app">Skip reasons you may see in the app</h2>
+<table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sparse_non_table</code></td>
+<td>Fill density below 15%</td>
+</tr>
+<tr>
+<td><code>low_header_confidence</code></td>
+<td>No reliable header row, or too many unnamed columns</td>
+</tr>
+<tr>
+<td><code>too_few_rows</code></td>
+<td>Fewer than 2 data rows after extraction</td>
+</tr>
+<tr>
+<td><code>too_few_columns</code></td>
+<td>Fewer than 2 columns after extraction</td>
+</tr>
+<tr>
+<td><code>empty_sheet</code></td>
+<td>No non-empty cells</td>
+</tr>
+<tr>
+<td><code>hidden_sheet</code></td>
+<td>Sheet is hidden in Excel</td>
+</tr>
+<tr>
+<td><code>read_error</code></td>
+<td>The engine could not read the sheet</td>
+</tr>
+</tbody>
+</table>
+<p>Skipped sheets are listed on <strong>Home</strong>. Use <strong>Import anyway</strong> to bypass
+detection for a specific sheet when you know it contains usable data.</p>
+<h2 id="default-active-table">Default active table</h2>
+<p>When a workbook has several importable sheets, the desktop selects the default
+active table from <code>default_active_table</code> in <code>workbook.yaml</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>largest</code> (default)</td>
+<td>Most rows, then most columns, then sheet name</td>
+</tr>
+<tr>
+<td><code>first_visible</code></td>
+<td>First importable sheet in file order</td>
+</tr>
+</tbody>
+</table>
+<p>Cover or notes tabs that appear first in Excel are therefore less likely to
+become the active dataset when <code>largest</code> is set.</p>
+<p>The Cloud API sketch for Excel is built from that <strong>active table’s
+materialized Parquet</strong> (the same <code>open_workbook</code> ingest as Home), not from
+the first sheet or a random sample.</p>
+<h2 id="what-the-cloud-api-sees">What the Cloud API sees</h2>
+<p>For Excel, the desktop sends the usual sketch fields for the <strong>active table</strong>
+(<code>available_columns</code>, <code>column_semantics</code>, row counts) plus a compact
+<strong>workbook</strong> block:</p>
+<ul>
+<li>workbook file name</li>
+<li>active table name</li>
+<li>names of other importable tables (not their columns)</li>
+<li>skipped sheets and reasons</li>
+</ul>
+<p>The cloud uses this to answer meta questions (“What sheets do I have?”) and to
+refuse cross-table join requests with a clear message. It does <strong>not</strong> receive
+the full workbook or paths to cached files.</p>
+<h2 id="current-limits">Current limits</h2>
+<ul>
+<li>One active table per session; switch tables on Home to analyze another sheet.</li>
+<li>No cross-sheet joins or multi-table codegen in v1.</li>
+<li>Detection assumes <strong>one rectangular table per sheet</strong> (largest dense region
+  in the sample); multiple unrelated tables on the same sheet are not split
+  automatically.</li>
+<li>Tables whose header sits <strong>below the sample</strong> (beyond
+  <code>header_sample_floor</code>, default 40 rows) are not found unless you raise
+  <code>header_sample_floor</code> (or <code>NOLAIN_WORKBOOK_HEADER_SAMPLE_FLOOR</code>) or
+  <strong>Import anyway</strong>.</li>
+<li>Very large <strong>importable</strong> sheets are still fully loaded into memory once
+  during ingest (same class of limit as other local Excel reads). Cover pages
+  and other skipped sheets avoid that full load.</li>
+<li>Formulas are read as <strong>cached values</strong> shown in Excel, not re-evaluated.</li>
+</ul>
+<h2 id="workbook-ingest-configuration-workbookyaml">Workbook ingest configuration (<code>workbook.yaml</code>)</h2>
+<p>Thresholds live in
+<code>desktop_app/python_engine/src/workbook/workbook.yaml</code>. Override the whole
+file with <code>NOLAIN_WORKBOOK_CONFIG=/path/to/workbook.yaml</code>, or a single key
+with <code>NOLAIN_WORKBOOK_&lt;FIELD&gt;</code> (uppercase). The cache directory remains
+<code>NOLAIN_WORKBOOK_CACHE_DIR</code>.</p>
+<p>Checked-in defaults:</p>
+<pre><code class="language-yaml">min_data_rows: 2
+min_columns: 2
+min_fill_density: 0.15
+max_unnamed_column_ratio: 0.6
+min_header_confidence: 0.4
+header_scan_rows: 20
+header_sample_padding: 5
+header_sample_floor: 40
+header_consistency_rows: 5
+include_hidden_sheets: false
+materialized_format: parquet
+ingest_version: &quot;4&quot;
+default_active_table: largest      # or first_visible
+preview_row_cap: 100000
+identifier_cardinality_max: 20     # integer columns below this cardinality → categorical
+</code></pre>
+<h3 id="example-headers-start-on-row-45">Example: headers start on row 45</h3>
+<p>The default sample floor of 40 misses that header. Raise the floor:</p>
+<pre><code class="language-yaml">header_sample_floor: 80
+</code></pre>
+<p>or:</p>
+<pre><code class="language-bash">export NOLAIN_WORKBOOK_HEADER_SAMPLE_FLOOR=80
+</code></pre>
+<h3 id="example-keep-the-first-visible-sheet-as-active">Example: keep the first visible sheet as active</h3>
+<pre><code class="language-yaml">default_active_table: first_visible
+</code></pre>
+<h3 id="example-treat-more-integer-id-like-columns-as-categorical">Example: treat more integer id-like columns as categorical</h3>
+<pre><code class="language-yaml">identifier_cardinality_max: 50
+</code></pre>
+<p><code>preview_row_cap</code> caps local preview/insights reads (default 100_000 rows),
+not ingest itself.</p>
+<hr />
+<h2 id="if-a-sheet-you-need-was-skipped">If a sheet you need was skipped</h2>
+<ol>
+<li>Read the skip reason on <strong>Home</strong>.</li>
+<li>Try <strong>Import anyway</strong> if the layout is valid but detection was too strict.</li>
+<li>If the sheet is a cover or notes page, move the data to a dedicated tabular
+   sheet or export that sheet to CSV.</li>
+<li>Ensure the header row is readable: clear column names in one row, at least two
+   columns, and at least two data rows below the header.</li>
+</ol>
+<p>For broader file and workflow help, see
+<a href="../DESKTOP_WORKFLOWS/">Desktop workflows</a> and
+<a href="../TROUBLESHOOTING/">Troubleshooting</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

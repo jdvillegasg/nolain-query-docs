@@ -1,0 +1,1511 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Nolain Query">
+      
+      
+      
+      
+        <link rel="prev" href="../CLARIFICATIONS/">
+      
+      
+        <link rel="next" href="../SYSTEM_ARCHITECTURE/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>A conversation from start to finish - Nolain Query</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-conversation-from-start-to-finish" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nolain Query" class="md-header__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nolain Query
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A conversation from start to finish
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nolain Query" class="md-nav__button md-logo" aria-label="Nolain Query" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nolain Query
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nolainquery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/CLOUD_API_USER/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ask your first question with nolainquery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/DESKTOP_WORKFLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desktop workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/EXCEL_AND_WORKBOOKS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel and workbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/TROUBLESHOOTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot the desktop workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getting-started/TRY_LOCALLY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try nolainquery locally
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CAPABILITY_CATALOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capability catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLARIFICATIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clarifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A conversation from start to finish
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A conversation from start to finish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-loop-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The loop at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need-before-the-first-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you need before the first message
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A worked example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A worked example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-send-the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Send the question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-poll-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Poll the job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-execute-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Execute locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-report-the-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Report the outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-optional-narrative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Optional narrative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-same-loop-other-kinds-of-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The same loop, other kinds of turn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-product-will-and-will-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the product will and will not do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-http-surface-as-a-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The HTTP surface, as a table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The parts of the system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_PHILOSOPHY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The system philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 Costs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 Costs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-costs/QUERY_COSTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What queries cost
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-loop-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The loop at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need-before-the-first-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you need before the first message
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A worked example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A worked example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-a-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start a session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-send-the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Send the question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-poll-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Poll the job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-execute-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Execute locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-report-the-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Report the outcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-optional-narrative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Optional narrative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-same-loop-other-kinds-of-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The same loop, other kinds of turn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-product-will-and-will-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the product will and will not do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-http-surface-as-a-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The HTTP surface, as a table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="a-conversation-from-start-to-finish">A conversation from start to finish</h1>
+<p>The last two chapters explained the design and named the parts. This chapter
+is the <strong>desktop product in motion</strong>: what happens, request by request, from
+the moment you load a file to the moment a table (and maybe a chart) appears.</p>
+<p>The path described here is <strong>Ask Queries</strong>. There is a second door — direct
+generation without a chat — that covers only the middle of this story
+(produce artifacts, poll, execute). It does not classify, clarify, or
+repair. Both doors produce the same Capability. This chapter is the full
+loop.</p>
+<hr />
+<h2 id="the-loop-at-a-glance">The loop at a glance</h2>
+<p>Seven moves. The rest of the chapter walks each one, then shows what
+changes if the question is off-topic, ambiguous, or fails on the real file.</p>
+<ol>
+<li><strong>Start a session</strong> with the current sketch. No model call, no charge.</li>
+<li><strong>Send the question</strong> (and your graph/chart toggles). The server
+   classifies the turn and either replies immediately or admits a generation
+   job.</li>
+<li><strong>Poll the job</strong> until artifacts are ready (or the job fails).</li>
+<li><strong>Execute locally</strong> on the engine that has the file.</li>
+<li><strong>Report the outcome.</strong> On success, the result is stored for follow-ups.
+   On failure with budget remaining, the server queues a repair.</li>
+<li><strong>If repairing</strong>, poll and execute again until the run succeeds or the
+   budget is exhausted.</li>
+<li><strong>Optionally ask for a narrative</strong> wrapping of the numbers.</li>
+</ol>
+<p>Three kinds of Pandas retry are configured separately. Generation and repair
+calls are also bounded by a chain-wide ceiling (default 9):</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>When</th>
+<th>Where it happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sandbox retry</strong></td>
+<td>Truncated, empty, or statically illegal code during cloud generation</td>
+<td>Inside the worker, before anything ships</td>
+</tr>
+<tr>
+<td><strong>Syntax repair</strong></td>
+<td>Deterministic delimiter repair cannot make generated code parse</td>
+<td>Inside the worker; separate default budget of 1</td>
+</tr>
+<tr>
+<td><strong>Runtime repair</strong></td>
+<td>Code passed those checks but failed when executed locally</td>
+<td>After you report the error; a new job, no new classification</td>
+</tr>
+</tbody>
+</table>
+<p>Compiler and chart retries use another budget and do not participate in the
+local report-and-repair loop.</p>
+<hr />
+<h2 id="what-you-need-before-the-first-message">What you need before the first message</h2>
+<ul>
+<li>The desktop has asked the local engine for a sketch of the loaded file.
+  For Excel, that sketch is the <strong>active ingested table</strong> (the same ingest
+  as Home), not a random sheet sample.</li>
+<li>Requests carry a valid API key (<code>X-API-Key</code>).</li>
+<li>Sessions are reused until the desktop resets local state. On the server
+  they expire after 24 hours.</li>
+</ul>
+<hr />
+<h2 id="a-worked-example">A worked example</h2>
+<p>Suppose the loaded file has columns <code>Invoice</code>, <code>Quantity</code>, <code>Price</code>,
+<code>Country</code>, and you ask:</p>
+<blockquote>
+<p>What are the top 5 countries by total revenue?</p>
+</blockquote>
+<p>You have left both toggles on: compile a computation graph, and produce a
+chart.</p>
+<h3 id="1-start-a-session">1. Start a session</h3>
+<p>The desktop posts the sketch and receives a <code>session_id</code>. Nothing is
+classified. Nothing is charged. Redis now holds
+<code>conversation:{session_id}</code> — a short-lived thread bound to that sketch.</p>
+<pre><code class="language-http">POST /api/v1/conversation/start
+X-API-Key: YOUR_API_KEY
+Content-Type: application/json
+
+{&quot;metadata&quot;:{&quot;available_columns&quot;:[&quot;Invoice&quot;,&quot;Quantity&quot;,&quot;Price&quot;,&quot;Country&quot;]}}
+</code></pre>
+<h3 id="2-send-the-question">2. Send the question</h3>
+<p>The desktop posts the session id, the question, the sketch, and the
+toggles. Without a clarification payload, the conversation graph runs:</p>
+<pre><code class="language-http">POST /api/v1/conversation/message
+X-API-Key: YOUR_API_KEY
+Content-Type: application/json
+
+{&quot;session_id&quot;:&quot;SESSION_ID&quot;,&quot;message&quot;:&quot;What are the top 5 countries by total revenue?&quot;,&quot;metadata&quot;:{&quot;available_columns&quot;:[&quot;Invoice&quot;,&quot;Quantity&quot;,&quot;Price&quot;,&quot;Country&quot;]},&quot;compile_dag&quot;:true,&quot;include_visualization&quot;:true}
+</code></pre>
+<ol>
+<li>Classify the turn (one model call). For this question the kind is a
+   <strong>data question</strong>.</li>
+<li>Read the wording for ambiguities (semantic analysis). “Revenue” might
+   mean <code>Quantity * Price</code>, or it might mean something else in your file.
+   If the reading is ambiguous, you get a <strong>clarification</strong> and the loop
+   waits. If it fails, you get a text reply and no job.</li>
+<li>If the reading is clear, <strong>policy admits</strong> the Pandas Plan with your
+   toggles and queues a worker job.</li>
+</ol>
+<p>If the classifier cannot run or its output is unusable, this request returns
+HTTP <code>503</code>. The gate does not fail open into generation.</p>
+<p>The response type tells the desktop what to do next:</p>
+<table>
+<thead>
+<tr>
+<th>Response type</th>
+<th>Meaning</th>
+<th>What the desktop does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text_response</code></td>
+<td>Off-topic, unsafe, underspecified, explanation, out of scope, or fallback</td>
+<td>Show the text</td>
+</tr>
+<tr>
+<td><code>meta_answer</code></td>
+<td>Question about the file’s structure</td>
+<td>Show the metadata answer</td>
+</tr>
+<tr>
+<td><code>clarification</code></td>
+<td>Ambiguous terms</td>
+<td>Resend with your chosen interpretations</td>
+</tr>
+<tr>
+<td><code>generation</code></td>
+<td>Job accepted</td>
+<td>Poll <code>task_id</code></td>
+</tr>
+</tbody>
+</table>
+<p>A <code>generation</code> response also echoes <code>capability_id</code>, <code>plan_id</code>, and the
+toggles the server actually admitted, so the desktop can show what was
+queued.</p>
+<p><strong>Clarification shortcut.</strong> When you resend with <code>clarifications</code> filled
+in, classification and semantic reading are skipped. The meaning of the
+question is treated as settled; the server queues the Plan with the current
+toggles. How terms are detected, stored as a session glossary, and passed
+into generation is in <a href="../CLARIFICATIONS/">Clarifications</a>.</p>
+<p><strong>What the classifier is allowed to do.</strong> It chooses the <em>kind of turn</em>.
+For generation kinds it may suggest a Capability and a Plan from the live
+catalog. It does not turn the graph or the chart on or off. Those are your
+toggles. Policy, not the prompt, rebuilds the pipeline.</p>
+<h3 id="3-poll-the-job">3. Poll the job</h3>
+<p>The desktop asks for status about every 1.5 seconds. When the pipeline
+status is <code>success</code> or <code>failed</code>, the job is done.</p>
+<p>While the job runs, the worker may retry writing the code internally
+(truncated completion, empty extract, static sandbox reject). Partial
+length-limited code is never sent for execution.</p>
+<h3 id="4-execute-locally">4. Execute locally</h3>
+<p>Execution is on the local engine, never on the Cloud API:</p>
+<ul>
+<li>run the Pandas code against the loaded file</li>
+<li>if a graph artifact is present, run that too</li>
+</ul>
+<p>No model call runs for this step. This is the first moment the analysis
+meets the rows.</p>
+<h3 id="5-report-the-outcome">5. Report the outcome</h3>
+<p>After every local run — success or failure — the desktop tells the
+conversation what happened, so follow-up questions have execution context.</p>
+<p><strong>Success.</strong> The server stores the result and returns <code>{ "status": "ok" }</code>.
+Later, “how did you calculate that?” can be answered from this memory
+without generating again.</p>
+<p><strong>Failure with budget remaining.</strong> If the error and the failed code are
+both present, the previous job succeeded on the cloud side (it shipped
+code), and <code>pandas_retries_left</code> is still positive, the server:</p>
+<ol>
+<li>Reads the remaining budget from that job</li>
+<li>Queues a new generate-and-repair job with the failed code and the error
+   (no new classifier, no new semantic turn)</li>
+<li>Decrements the runtime-repair budget on the new job</li>
+<li>Resets the in-cloud sandbox budget for that repair (so a depleted
+   sandbox count cannot block a new attempt) and carries the chain-wide
+   attempt count forward (so repairs cannot multiply forever)</li>
+<li>Returns <code>{ "status": "repairing", "task_id": "..." }</code></li>
+</ol>
+<p>The desktop then repeats poll → execute → report with the new task id. If
+no retries remain, the server returns <code>{ "status": "ok" }</code> and the desktop
+keeps the error.</p>
+<p>Repair settings are chosen from the kind of failure and the retry index
+(syntax vs runtime vs truncation, first try vs repeated signature). All
+Pandas generate-or-repair calls remain bounded by the chain-wide ceiling.</p>
+<h3 id="6-optional-narrative">6. Optional narrative</h3>
+<p>After a successful execution, the desktop may ask the cloud to frame the
+numbers as a short paragraph. That is another model call, charged if it
+runs. If it fails, the endpoint still returns an empty narrative: you keep
+the table.</p>
+<hr />
+<h2 id="the-same-loop-other-kinds-of-turn">The same loop, other kinds of turn</h2>
+<p>The revenue question was the happy path. Dialogue exists so that not every
+message takes it.</p>
+<table>
+<thead>
+<tr>
+<th>What you asked</th>
+<th>What the server does</th>
+<th>OpenRouter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“What’s the weather?” / jailbreak / “analyze my data”</td>
+<td>Classify → text reply</td>
+<td>Billed if that path called a model</td>
+</tr>
+<tr>
+<td>“What columns do I have?”</td>
+<td>Classify → answer from the sketch</td>
+<td>The normal path includes the classifier model call</td>
+</tr>
+<tr>
+<td>“How did you calculate that?”</td>
+<td>Classify → grounded text from stored result</td>
+<td>Billed if that path called a model</td>
+</tr>
+<tr>
+<td>“Forecast next quarter’s sales”</td>
+<td>Classify or catalog safety net → named refusal</td>
+<td>Billed if that path called a model</td>
+</tr>
+<tr>
+<td>Unknown or disabled product</td>
+<td>Refuse; never run descriptive analysis</td>
+<td>Billed if classify already ran</td>
+</tr>
+<tr>
+<td>Clear data question</td>
+<td>Classify → semantic reading → generation</td>
+<td>Per model call in the job</td>
+</tr>
+<tr>
+<td>Ambiguous data question</td>
+<td>Classify → semantic reading → clarification</td>
+<td>Per model call already made</td>
+</tr>
+<tr>
+<td>Specific reply to a clarification</td>
+<td>Skip classify/semantic → generation</td>
+<td>Per model call in the job</td>
+</tr>
+<tr>
+<td>Vague Other (<code>idk</code>, <code>the usual</code>, …)</td>
+<td>Re-offer clarification <strong>once</strong>, then proceed</td>
+<td>Per model call already made</td>
+</tr>
+<tr>
+<td>Follow-up on the same thread</td>
+<td>Keep the original question and append the new utterance (not a regex rewrite of “top N” / “group by”)</td>
+<td>Per model call in the job</td>
+</tr>
+<tr>
+<td>“That doesn’t look right”</td>
+<td>Always semantic reading → generation</td>
+<td>Per model call in the job</td>
+</tr>
+<tr>
+<td>Local Pandas error, retries left</td>
+<td>Report → repair job</td>
+<td>Per model call in the repair job</td>
+</tr>
+<tr>
+<td>Local execution</td>
+<td>Desktop port 8001</td>
+<td>No model call</td>
+</tr>
+<tr>
+<td>Answer framing</td>
+<td>Optional synthesize</td>
+<td>Per model call</td>
+</tr>
+</tbody>
+</table>
+<p>A classifier outage or invalid classifier response is different from a normal
+text branch: the message request returns HTTP <code>503</code> and queues no job.</p>
+<hr />
+<h2 id="what-the-product-will-and-will-not-do">What the product will and will not do</h2>
+<ul>
+<li>Data questions — including charts and reshape — admit the Pandas Plan.
+  Charts set the visualization toggle; they do not change which Plan you
+  are on.</li>
+<li>Requests no enabled Capability can serve return a text message naming
+  what <em>is</em> available, and do not admit generation. Serves, refuses, join
+  constraints, and sketch-vs-scan routing are catalog configuration. A
+  wording safety net backs the classifier when the request is explicit.
+  Unknown or disabled products are refused; they are never coerced to
+  descriptive analysis. See <a href="../CAPABILITY_CATALOG/">Capability catalog</a>.</li>
+<li>In-thread follow-ups keep the original question and append each new
+  utterance. The generator sees the original plus numbered follow-ups. The
+  server does not reconstruct filters or “top N” from the wording.</li>
+<li>Explanation requests use saved result context and do not queue
+  generation.</li>
+</ul>
+<hr />
+<h2 id="the-http-surface-as-a-table">The HTTP surface, as a table</h2>
+<p>Once the story is clear, the endpoints are just names for the moves:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST /api/v1/conversation/start</code></td>
+<td>Open a session on a sketch</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/message</code></td>
+<td>Classify (or skip) and maybe admit a job</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/get_task_status/{task_id}</code></td>
+<td>Poll generation</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/result</code></td>
+<td>Store the local outcome; maybe queue repair</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/conversation/synthesize</code></td>
+<td>Optional narrative</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/conversation/{session_id}</code></td>
+<td>Read the session</td>
+</tr>
+<tr>
+<td><code>DELETE /api/v1/conversation/{session_id}</code></td>
+<td>Delete the session</td>
+</tr>
+<tr>
+<td><code>POST /api/v1/cancel_task/{task_id}</code></td>
+<td>Cooperative cancel between stages</td>
+</tr>
+</tbody>
+</table>
+<p>Session read and delete use the same owned-session check as message, result, and
+synthesize. A missing session returns <code>404</code>; a different API key returns
+<code>403</code>. Status and cancellation also enforce job ownership. Model calls already
+completed keep their charges.</p>
+<p>Next, <a href="../CLARIFICATIONS/">Clarifications</a> explains why the system pauses,
+how its three-stage semantic pipeline works, and how the answer is used.
+<a href="../CAPABILITY_CATALOG/">Capability catalog</a> is the product menu those
+turns honor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
